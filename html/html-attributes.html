@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Attributes - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">
+                HTML Introduction
+            </a>
+
+            <a href="html-structure.html">
+                HTML Structure
+            </a>
+
+            <a href="html-elements.html">
+                HTML Elements
+            </a>
+
+            <a href="html-attributes.html">
+                HTML Attributes
+            </a>
+
+            <a href="html-headings.html">
+                HTML Headings
+            </a>
+
+            <a href="html-formatting.html">
+                HTML Formatting
+            </a>
+
+            <a href="html-links.html">
+                HTML Links
+            </a>
+
+            <a href="html-images.html">
+                HTML Images
+            </a>
+
+            <a href="html-media.html">
+                HTML Media
+            </a>
+
+            <a href="html-lists.html">
+                HTML Lists
+            </a>
+
+            <a href="html-tables.html">
+                HTML Tables
+            </a>
+
+            <a href="html-block-inline.html">
+                Block & Inline
+            </a>
+
+            <a href="html-div-span.html">
+                Div & Span
+            </a>
+
+            <a href="html-semantic.html">
+                Semantic HTML
+            </a>
+
+            <a href="html-forms.html">
+                HTML Forms
+            </a>
+
+            <a href="html-inputs.html">
+                HTML Inputs
+            </a>
+
+            <a href="html-validation.html">
+                HTML Validation
+            </a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+
+            <h1>HTML Attributes</h1>
+
+            <p>
+                Attributes provide additional information
+                about HTML elements.
+            </p>
+
+
+            <h2>Basic Attribute Syntax</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;tag attribute="value"&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;a href="https://example.com"&gt;
+    Visit Website
+&lt;/a&gt;</code></pre>
+
+            </div>
+
+            <p>
+                Here:
+            </p>
+
+            <ul class="lesson-list">
+
+                <li>
+                    <strong>a</strong>
+                    is the element.
+                </li>
+
+                <li>
+                    <strong>href</strong>
+                    is the attribute.
+                </li>
+
+                <li>
+                    <strong>https://example.com</strong>
+                    is the attribute value.
+                </li>
+
+            </ul>
+
+
+            <h2>Image Attributes</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="attributeCode">&lt;img
+    src="student.jpg"
+    alt="Student studying"
+    width="400"
+&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('attributeCode')">
+
+                Copy Code
+
+            </button>
+
+
+            <h2>Common Image Attributes</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+
+                    <span>Attribute</span>
+                    <span>Purpose</span>
+
+                </div>
+
+
+                <div class="simple-row">
+
+                    <span>src</span>
+
+                    <span>
+                        Tells where the image comes from.
+                    </span>
+
+                </div>
+
+
+                <div class="simple-row">
+
+                    <span>alt</span>
+
+                    <span>
+                        Provides alternative text.
+                    </span>
+
+                </div>
+
+
+                <div class="simple-row">
+
+                    <span>width</span>
+
+                    <span>
+                        Controls the displayed width.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <h2>Attributes in Forms</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+&gt;</code></pre>
+
+            </div>
+
+
+            <p>
+                In this example:
+            </p>
+
+            <ul class="lesson-list">
+
+                <li>
+                    <strong>type</strong>
+                    defines the type of input.
+                </li>
+
+                <li>
+                    <strong>name</strong>
+                    identifies the field.
+                </li>
+
+                <li>
+                    <strong>placeholder</strong>
+                    provides a hint.
+                </li>
+
+                <li>
+                    <strong>required</strong>
+                    prevents empty submission.
+                </li>
+
+            </ul>
+
+
+            <h2>Coding Style</h2>
+
+            <p>
+                The course material recommends using lowercase
+                tag names and attributes.
+            </p>
+
+            <div class="example-good">
+
+                <strong>Recommended:</strong>
+
+                <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="email"
+    name="email"
+&gt;</code></pre>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Attribute values should normally be written
+                inside quotation marks.
+            </p>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-elements.html"
+                    class="secondary-button">
+
+                    ← Previous
+
+                </a>
+
+                <a
+                    href="html-headings.html"
+                    class="primary-button">
+
+                    Next →
+
+                </a>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

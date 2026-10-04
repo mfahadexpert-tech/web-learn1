@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Headings - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Headings</h1>
+
+            <p>
+                HTML headings are used to create a clear content hierarchy.
+            </p>
+
+            <p>
+                HTML provides six heading levels:
+            </p>
+
+            <div class="lesson-code">
+<pre><code>&lt;h1&gt; to &lt;h6&gt;</code></pre>
+            </div>
+
+
+            <h2>Heading Example</h2>
+
+            <div class="lesson-code">
+<pre><code id="headingCode">&lt;h1&gt;Web Technologies&lt;/h1&gt;
+
+&lt;h2&gt;HTML&lt;/h2&gt;
+
+&lt;h3&gt;Forms&lt;/h3&gt;
+
+&lt;p&gt;
+    HTML structures web content.
+&lt;/p&gt;</code></pre>
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('headingCode')">
+                Copy Code
+            </button>
+
+
+            <h2>Output</h2>
+
+            <div class="output-box">
+
+                <h1 class="demo-h1">Web Technologies</h1>
+
+                <h2 class="demo-h2">HTML</h2>
+
+                <h3 class="demo-h3">Forms</h3>
+
+                <p>
+                    HTML structures web content.
+                </p>
+
+            </div>
+
+
+            <h2>Best Practice</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Use headings to describe the structure
+                    and hierarchy of the content.
+                </p>
+
+                <p>
+                    Use CSS when you only want to change
+                    the visual size of text.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-attributes.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-formatting.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

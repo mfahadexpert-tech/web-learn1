@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Shadows - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()">
+
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Shadows</h1>
+
+            <p>
+                The
+                <code>box-shadow</code>
+                property adds a shadow around an element.
+            </p>
+
+
+            <h2>Basic Box Shadow</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.card {
+    box-shadow:
+        0
+        8px
+        24px
+        rgba(0, 0, 0, 0.15);
+}</code></pre>
+
+            </div>
+
+
+            <div class="shadow-card-demo">
+
+                <h3>
+                    Course Card
+                </h3>
+
+                <p>
+                    Learn web development.
+                </p>
+
+            </div>
+
+
+            <h2>Box Shadow Syntax</h2>
+
+            <div class="lesson-code">
+
+<pre><code>box-shadow:
+    offset-x
+    offset-y
+    blur-radius
+    spread-radius
+    color;</code></pre>
+
+            </div>
+
+
+            <h2>Example Breakdown</h2>
+
+            <div class="lesson-code">
+
+<pre><code>box-shadow:
+    0
+    8px
+    24px
+    0
+    rgba(0, 0, 0, 0.15);</code></pre>
+
+            </div>
+
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Value</span>
+                    <span>Meaning</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>0</span>
+                    <span>Horizontal shift</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>8px</span>
+                    <span>Vertical shift</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>24px</span>
+                    <span>Blur radius</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>0</span>
+                    <span>Spread radius</span>
+                </div>
+
+            </div>
+
+
+            <h2>Course Card Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="shadowCode">.course-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0, 0, 0, 0.12);
+}</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('shadowCode')">
+
+                Copy Code
+            </button>
+
+
+            <h2>Inset Shadow</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.input {
+    box-shadow:
+        inset
+        0
+        2px
+        5px
+        rgba(0, 0, 0, 0.12);
+}</code></pre>
+
+            </div>
+
+
+            <div class="output-box">
+
+                <input
+                    class="inset-shadow-demo"
+                    type="text"
+                    placeholder="Input field">
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Good Practice:</strong>
+
+                <p>
+                    Soft shadows usually look more natural
+                    than very dark, heavy shadows.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="css-gradients.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="css-opacity.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Lists - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Lists</h1>
+
+            <p>
+                Lists help organize information into easy-to-read items.
+            </p>
+
+
+            <h2>Unordered List</h2>
+
+            <p>
+                An unordered list uses the
+                <code>&lt;ul&gt;</code>
+                element.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="unorderedCode">&lt;ul&gt;
+
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+
+&lt;/ul&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('unorderedCode')">
+                Copy Code
+            </button>
+
+
+            <h2>Output</h2>
+
+            <div class="output-box">
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+
+            </div>
+
+
+            <h2>Ordered List</h2>
+
+            <p>
+                An ordered list uses numbers.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="orderedCode">&lt;ol&gt;
+
+    &lt;li&gt;Open browser&lt;/li&gt;
+    &lt;li&gt;Enter URL&lt;/li&gt;
+
+&lt;/ol&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('orderedCode')">
+                Copy Code
+            </button>
+
+
+            <div class="output-box">
+
+                <ol>
+                    <li>Open browser</li>
+                    <li>Enter URL</li>
+                </ol>
+
+            </div>
+
+
+            <h2>List Elements</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Element</span>
+                    <span>Purpose</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;ul&gt;</span>
+                    <span>Unordered list</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;ol&gt;</span>
+                    <span>Ordered list</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;li&gt;</span>
+                    <span>List item</span>
+                </div>
+
+            </div>
+
+
+            <h2>Description List</h2>
+
+            <p>
+                A description list is useful when you have
+                a term and its definition.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="descriptionCode">&lt;dl&gt;
+
+    &lt;dt&gt;HTML&lt;/dt&gt;
+
+    &lt;dd&gt;
+        Structures web content.
+    &lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+
+    &lt;dd&gt;
+        Styles web content.
+    &lt;/dd&gt;
+
+&lt;/dl&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('descriptionCode')">
+                Copy Code
+            </button>
+
+
+            <div class="output-box">
+
+                <dl>
+                    <dt><strong>HTML</strong></dt>
+                    <dd>Structures web content.</dd>
+
+                    <dt><strong>CSS</strong></dt>
+                    <dd>Styles web content.</dd>
+                </dl>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Remember:</strong>
+
+                <p>
+                    Use lists when information should be
+                    shown in clear, scan-friendly items.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-media.html"
+                    class="secondary-button">
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-tables.html"
+                    class="primary-button">
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

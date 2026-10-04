@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Pseudo Classes - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Pseudo-Classes</h1>
+
+            <p>
+                A pseudo-class selects an element when it is
+                in a particular state or condition.
+            </p>
+
+
+            <h2>Basic Syntax</h2>
+
+            <div class="lesson-code">
+
+<pre><code>selector:pseudo-class {
+    property: value;
+}</code></pre>
+
+            </div>
+
+
+            <h2>:hover</h2>
+
+            <p>
+                The
+                <code>:hover</code>
+                pseudo-class applies when the pointer is
+                over an element.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="hoverCode">a:hover {
+    color: red;
+    text-decoration: underline;
+}</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('hoverCode')">
+
+                Copy Code
+            </button>
+
+
+            <h2>:focus</h2>
+
+            <p>
+                The
+                <code>:focus</code>
+                pseudo-class applies when an element receives focus.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>input:focus {
+    border: 2px solid teal;
+    outline: none;
+}</code></pre>
+
+            </div>
+
+
+            <h2>:disabled</h2>
+
+            <div class="lesson-code">
+
+<pre><code>button:disabled {
+    opacity: 0.5;
+}</code></pre>
+
+            </div>
+
+
+            <h2>Structural Pseudo-Classes</h2>
+
+            <div class="lesson-code">
+
+<pre><code>li:first-child {
+    color: green;
+}
+
+li:last-child {
+    color: blue;
+}
+
+li:nth-child(2) {
+    color: red;
+}</code></pre>
+
+            </div>
+
+
+            <h2>Common Pseudo-Classes</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+
+                    <span>Pseudo-Class</span>
+                    <span>Meaning</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>:hover</span>
+                    <span>Pointer is over the element</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>:focus</span>
+                    <span>Element has focus</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>:active</span>
+                    <span>Element is being activated</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>:visited</span>
+                    <span>Visited link</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>:disabled</span>
+                    <span>Disabled control</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>:nth-child()</span>
+                    <span>Selects by position</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Memory Rule:</strong>
+
+                <p>
+                    Pseudo-class = state, condition, or position.
+                </p>
+
+                <p>
+                    It uses one colon:
+                    <code>:</code>
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="css-combinators.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="css-pseudo-elements.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

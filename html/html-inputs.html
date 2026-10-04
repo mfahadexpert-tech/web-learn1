@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Inputs - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Input Types</h1>
+
+            <p>
+                The
+                <code>&lt;input&gt;</code>
+                element is one of the most commonly used
+                form controls.
+            </p>
+
+
+            <h2>Text Input</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="text"
+    name="username"
+&gt;</code></pre>
+
+            </div>
+
+            <div class="output-box">
+
+                <input
+                    class="demo-input"
+                    type="text"
+                    placeholder="Enter name">
+
+            </div>
+
+
+            <h2>Email Input</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="email"
+    name="email"
+&gt;</code></pre>
+
+            </div>
+
+            <div class="output-box">
+
+                <input
+                    class="demo-input"
+                    type="email"
+                    placeholder="Enter email">
+
+            </div>
+
+
+            <h2>Password Input</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="password"
+    name="password"
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Number Input</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="number"
+    name="marks"
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Date Input</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="date"
+    name="dob"
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Checkbox</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;label&gt;
+
+    &lt;input
+        type="checkbox"
+        name="skill"
+    &gt;
+
+    HTML
+
+&lt;/label&gt;</code></pre>
+
+            </div>
+
+            <div class="output-box">
+
+                <label>
+                    <input type="checkbox">
+                    HTML
+                </label>
+
+            </div>
+
+
+            <h2>Radio Buttons</h2>
+
+            <p>
+                Radio buttons with the same
+                <code>name</code>
+                belong to the same group.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="radioCode">&lt;label&gt;
+
+    &lt;input
+        type="radio"
+        name="gender"
+    &gt;
+
+    Male
+
+&lt;/label&gt;
+
+
+&lt;label&gt;
+
+    &lt;input
+        type="radio"
+        name="gender"
+    &gt;
+
+    Female
+
+&lt;/label&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('radioCode')">
+
+                Copy Code
+            </button>
+
+
+            <div class="output-box">
+
+                <label class="radio-demo">
+                    <input
+                        type="radio"
+                        name="demoGender">
+
+                    Male
+                </label>
+
+                <label class="radio-demo">
+                    <input
+                        type="radio"
+                        name="demoGender">
+
+                    Female
+                </label>
+
+            </div>
+
+
+            <h2>File Input</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="file"
+    name="document"
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Common Input Types</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Type</span>
+                    <span>Use</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>text</span>
+                    <span>Normal text</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>email</span>
+                    <span>Email address</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>password</span>
+                    <span>Password</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>number</span>
+                    <span>Numeric value</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>date</span>
+                    <span>Date</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>checkbox</span>
+                    <span>Multiple choices</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>radio</span>
+                    <span>One choice from a group</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>file</span>
+                    <span>Select a file</span>
+                </div>
+
+            </div>
+
+
+            <h2>Select</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;select name="course"&gt;
+
+    &lt;option&gt;
+        Web Technologies
+    &lt;/option&gt;
+
+    &lt;option&gt;
+        Software Engineering
+    &lt;/option&gt;
+
+&lt;/select&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Textarea</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;textarea
+    name="message"
+&gt;
+&lt;/textarea&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Button</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;button type="submit"&gt;
+    Submit
+&lt;/button&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Fieldset and Legend</h2>
+
+            <p>
+                Related form controls can be grouped using
+                <code>&lt;fieldset&gt;</code>
+                and
+                <code>&lt;legend&gt;</code>.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;fieldset&gt;
+
+    &lt;legend&gt;
+        Preferred Contact
+    &lt;/legend&gt;
+
+    &lt;label&gt;
+        &lt;input
+            type="radio"
+            name="contact"
+        &gt;
+        Email
+    &lt;/label&gt;
+
+    &lt;label&gt;
+        &lt;input
+            type="radio"
+            name="contact"
+        &gt;
+        Phone
+    &lt;/label&gt;
+
+&lt;/fieldset&gt;</code></pre>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-forms.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-validation.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Gradients - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()">
+
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Gradients</h1>
+
+            <p>
+                A gradient creates a smooth transition
+                between two or more colors.
+            </p>
+
+
+            <h2>Linear Gradient</h2>
+
+            <div class="lesson-code">
+
+<pre><code>background:
+    linear-gradient(
+        90deg,
+        #376fb4,
+        #48a9a6
+    );</code></pre>
+
+            </div>
+
+
+            <div class="linear-gradient-demo">
+                Linear Gradient
+            </div>
+
+
+            <h2>Gradient Directions</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Direction</span>
+                    <span>Meaning</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>90deg</span>
+                    <span>Left to right</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>180deg</span>
+                    <span>Top to bottom</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>45deg</span>
+                    <span>Diagonal</span>
+                </div>
+
+            </div>
+
+
+            <h2>Multiple Colors</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="multiGradientCode">background:
+    linear-gradient(
+        90deg,
+        #376fb4,
+        #48a9a6,
+        #8e6bbd
+    );</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('multiGradientCode')">
+
+                Copy Code
+            </button>
+
+
+            <div class="multi-gradient-demo">
+                Multiple Color Stops
+            </div>
+
+
+            <h2>Radial Gradient</h2>
+
+            <div class="lesson-code">
+
+<pre><code>background:
+    radial-gradient(
+        circle,
+        #ffffff,
+        #dceafa
+    );</code></pre>
+
+            </div>
+
+
+            <div class="radial-gradient-demo">
+                Radial Gradient
+            </div>
+
+
+            <h2>Gradient Overlay</h2>
+
+            <p>
+                A semi-transparent gradient can be combined
+                with an image to improve text readability.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>.hero {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.15)
+        ),
+        url("campus.jpg")
+        center / cover;
+
+    color: white;
+}</code></pre>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Remember:</strong>
+
+                <p>
+                    Gradients should support readability,
+                    not make the interface difficult to read.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="css-border-radius.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="css-shadows.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Combinators - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Combinators</h1>
+
+            <p>
+                Combinators describe relationships
+                between HTML elements.
+            </p>
+
+
+            <h2>Four Main Combinators</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Combinator</span>
+                    <span>Meaning</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Space</span>
+                    <span>Descendant</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&gt;</span>
+                    <span>Direct child</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>+</span>
+                    <span>Adjacent sibling</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>~</span>
+                    <span>General sibling</span>
+                </div>
+
+            </div>
+
+
+            <h2>1. Descendant</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.menu p {
+    color: blue;
+}</code></pre>
+
+            </div>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;div class="menu"&gt;
+
+    &lt;p&gt;Home&lt;/p&gt;
+
+    &lt;section&gt;
+        &lt;p&gt;Products&lt;/p&gt;
+    &lt;/section&gt;
+
+&lt;/div&gt;</code></pre>
+
+            </div>
+
+            <p>
+                Both paragraphs are descendants
+                of
+                <code>.menu</code>.
+            </p>
+
+
+            <h2>2. Child</h2>
+
+            <div class="lesson-code">
+
+<pre><code>div &gt; p {
+    color: blue;
+}</code></pre>
+
+            </div>
+
+            <p>
+                This selects only direct child paragraphs.
+            </p>
+
+
+            <h2>3. Adjacent Sibling</h2>
+
+            <div class="lesson-code">
+
+<pre><code>h2 + p {
+    color: green;
+}</code></pre>
+
+            </div>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;h2&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;First paragraph&lt;/p&gt;
+
+&lt;p&gt;Second paragraph&lt;/p&gt;</code></pre>
+
+            </div>
+
+            <p>
+                Only the first paragraph immediately
+                after the heading is selected.
+            </p>
+
+
+            <h2>4. General Sibling</h2>
+
+            <div class="lesson-code">
+
+<pre><code>h2 ~ p {
+    color: purple;
+}</code></pre>
+
+            </div>
+
+            <p>
+                This can select matching later siblings.
+            </p>
+
+
+            <h2>Complete Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="combinatorCode">/* Descendant */
+.box p {
+    color: blue;
+}
+
+/* Child */
+.box &gt; h2 {
+    color: navy;
+}
+
+/* Adjacent sibling */
+h2 + p {
+    font-weight: bold;
+}
+
+/* General sibling */
+h2 ~ p {
+    text-decoration: underline;
+}</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('combinatorCode')">
+                Copy Code
+            </button>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="css-selectors.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="css-pseudo-classes.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

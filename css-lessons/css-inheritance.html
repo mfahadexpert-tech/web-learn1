@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Inheritance - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Inheritance</h1>
+
+            <p>
+                Some CSS properties can be passed
+                from a parent element to its children.
+            </p>
+
+
+            <h2>Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="inheritanceCode">body {
+    color: navy;
+    font-family: Arial;
+}</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('inheritanceCode')">
+
+                Copy Code
+            </button>
+
+
+            <div class="lesson-code">
+
+<pre><code>&lt;div&gt;
+
+    &lt;p&gt;
+        Hello
+    &lt;/p&gt;
+
+&lt;/div&gt;</code></pre>
+
+            </div>
+
+            <p>
+                The paragraph can inherit
+                <code>color</code>
+                and
+                <code>font-family</code>
+                from the body.
+            </p>
+
+
+            <h2>Often Inherited</h2>
+
+            <ul class="lesson-list">
+
+                <li>color</li>
+                <li>font-family</li>
+                <li>font-size</li>
+                <li>line-height</li>
+                <li>text-align</li>
+
+            </ul>
+
+
+            <h2>Often Not Inherited</h2>
+
+            <ul class="lesson-list">
+
+                <li>margin</li>
+                <li>padding</li>
+                <li>border</li>
+                <li>width</li>
+                <li>height</li>
+
+            </ul>
+
+
+            <h2>Inheritance Keywords</h2>
+
+            <div class="lesson-code">
+
+<pre><code>color: inherit;
+
+color: initial;
+
+color: unset;
+
+color: revert;</code></pre>
+
+            </div>
+
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+
+                    <span>Keyword</span>
+                    <span>Meaning</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>inherit</span>
+                    <span>Use the parent's value</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>initial</span>
+                    <span>Use the property's initial value</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>unset</span>
+                    <span>Inherited if naturally inherited, otherwise initial</span>
+
+                </div>
+
+            </div>
+
+
+            <h2>Example with inherit</h2>
+
+            <div class="lesson-code">
+
+<pre><code>body {
+    color: navy;
+}
+
+.special {
+    color: inherit;
+}</code></pre>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Remember:</strong>
+
+                <p>
+                    Not every CSS property is inherited.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="css-specificity.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="css-colors.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

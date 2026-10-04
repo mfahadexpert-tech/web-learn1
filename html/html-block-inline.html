@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Block and Inline Elements - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>Block and Inline Elements</h1>
+
+            <p>
+                HTML elements can behave differently
+                in the document layout.
+            </p>
+
+
+            <h2>Block-Level Elements</h2>
+
+            <p>
+                Block elements normally start on a new line
+                and take the available width.
+            </p>
+
+            <p>
+                Examples include:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;div&gt;
+&lt;p&gt;
+&lt;h1&gt;
+&lt;ul&gt;
+&lt;table&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Block Example</h2>
+
+            <div class="output-box block-demo">
+
+                <div>First block</div>
+                <div>Second block</div>
+                <div>Third block</div>
+
+            </div>
+
+
+            <h2>Inline Elements</h2>
+
+            <p>
+                Inline elements do not normally start
+                on a new line.
+            </p>
+
+            <p>
+                They use only the space needed by their content.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;span&gt;
+&lt;a&gt;
+&lt;img&gt;
+&lt;strong&gt;
+&lt;em&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Inline Example</h2>
+
+            <div class="output-box">
+
+                Learn
+                <strong>HTML</strong>
+                and
+                <a href="#">CSS</a>
+                today.
+
+            </div>
+
+
+            <h2>Comparison</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Block</span>
+                    <span>Inline</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Starts on new line</span>
+                    <span>Stays in current line</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Uses available width</span>
+                    <span>Uses required width</span>
+                </div>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-tables.html"
+                    class="secondary-button">
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-div-span.html"
+                    class="primary-button">
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

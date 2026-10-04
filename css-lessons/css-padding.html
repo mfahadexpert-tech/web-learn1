@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Padding - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Padding</h1>
+
+            <p>
+                Padding creates space inside an element,
+                between the content and the border.
+            </p>
+
+
+            <h2>Basic Padding</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.box {
+    padding: 20px;
+}</code></pre>
+
+            </div>
+
+
+            <h2>Padding Shorthand</h2>
+
+            <div class="lesson-code">
+
+<pre><code>padding: 20px;</code></pre>
+
+            </div>
+
+            <p>
+                One value applies to all sides.
+            </p>
+
+
+            <div class="lesson-code">
+
+<pre><code>padding:
+    10px
+    20px
+    30px
+    40px;</code></pre>
+
+            </div>
+
+            <div class="info-box">
+
+                <strong>Order:</strong>
+
+                <p>
+                    Top → Right → Bottom → Left
+                </p>
+
+                <p>
+                    TRBL
+                </p>
+
+            </div>
+
+
+            <h2>Padding Demo</h2>
+
+            <div class="output-box">
+
+                <div class="padding-demo">
+
+                    Content with padding
+
+                </div>
+
+            </div>
+
+
+            <h2>Margin vs Padding</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Margin</span>
+                    <span>Padding</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Outside border</span>
+                    <span>Inside border</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Space between elements</span>
+                    <span>Space around content</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Can collapse vertically</span>
+                    <span>Does not collapse</span>
+                </div>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a href="css-margin.html" class="secondary-button">
+                    ← Previous
+                </a>
+
+                <a href="css-border.html" class="primary-button">
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Media - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Audio and Video</h1>
+
+            <p>
+                HTML5 supports audio and video directly
+                in a web page.
+            </p>
+
+
+            <h2>HTML Audio</h2>
+
+            <p>
+                Use the
+                <code>&lt;audio&gt;</code>
+                element for audio content.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="audioCode">&lt;audio controls&gt;
+
+    &lt;source
+        src="lecture.mp3"
+        type="audio/mpeg"
+    &gt;
+
+&lt;/audio&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('audioCode')">
+
+                Copy Code
+            </button>
+
+
+            <h2>HTML Video</h2>
+
+            <p>
+                Use the
+                <code>&lt;video&gt;</code>
+                element for video content.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="videoCode">&lt;video
+    controls
+    width="480"
+&gt;
+
+    &lt;source
+        src="demo.mp4"
+        type="video/mp4"
+    &gt;
+
+&lt;/video&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('videoCode')">
+
+                Copy Code
+            </button>
+
+
+            <h2>The controls Attribute</h2>
+
+            <p>
+                The controls attribute allows the browser
+                to display media controls such as play,
+                pause and volume controls.
+            </p>
+
+
+            <h2>Media Accessibility</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Captions or transcripts can make
+                    learning media more accessible.
+                </p>
+
+            </div>
+
+
+            <h2>Example File Location</h2>
+
+            <p>
+                You can later create a media folder if you
+                want to test real audio and video:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>assets/
+└── media/
+    ├── lecture.mp3
+    └── demo.mp4</code></pre>
+
+            </div>
+
+            <p>
+                Do not create it yet unless you have actual
+                audio or video files to use.
+            </p>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-images.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-lists.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

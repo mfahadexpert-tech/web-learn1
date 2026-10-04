@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Margin - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+            <a href="../index.html">Home</a>
+            <a href="../html/html-introduction.html">HTML</a>
+            <a href="css-introduction.html">CSS</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Margin</h1>
+
+            <p>
+                Margin creates space outside the border
+                of an element.
+            </p>
+
+
+            <h2>Basic Margin</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.box {
+    margin: 30px;
+}</code></pre>
+
+            </div>
+
+
+            <h2>Margin Shorthand</h2>
+
+            <div class="lesson-code">
+
+<pre><code>margin: 20px;</code></pre>
+
+            </div>
+
+            <p>
+                One value applies to all four sides.
+            </p>
+
+
+            <div class="lesson-code">
+
+<pre><code>margin: 10px 20px;</code></pre>
+
+            </div>
+
+            <p>
+                Two values:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>top / bottom = 10px
+left / right = 20px</code></pre>
+
+            </div>
+
+
+            <div class="lesson-code">
+
+<pre><code>margin:
+    10px
+    20px
+    30px
+    40px;</code></pre>
+
+            </div>
+
+            <p>
+                Four values follow:
+            </p>
+
+            <div class="info-box">
+
+                <strong>TRBL</strong>
+
+                <p>
+                    Top → Right → Bottom → Left
+                </p>
+
+            </div>
+
+
+            <h2>Margin Collapsing</h2>
+
+            <p>
+                Certain vertical margins can combine into
+                one margin instead of being added together.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>h2 {
+    margin-bottom: 30px;
+}
+
+p {
+    margin-top: 20px;
+}</code></pre>
+
+            </div>
+
+            <p>
+                Instead of:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>30px + 20px = 50px</code></pre>
+
+            </div>
+
+            <p>
+                The resulting vertical gap can become:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>max(30px, 20px)
+= 30px</code></pre>
+
+            </div>
+
+
+            <h2>Larger Vertical Margin</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.one {
+    margin-bottom: 40px;
+}
+
+.two {
+    margin-top: 60px;
+}</code></pre>
+
+            </div>
+
+            <p>
+                The collapsed margin becomes:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>60px</code></pre>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Important:</strong>
+
+                <p>
+                    Margin collapsing mainly affects vertical margins.
+                </p>
+
+                <p>
+                    Horizontal margins do not collapse in the same way.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a href="css-box-model.html" class="secondary-button">
+                    ← Previous
+                </a>
+
+                <a href="css-padding.html" class="primary-button">
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

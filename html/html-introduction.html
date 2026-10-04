@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Introduction - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+
+            <a href="html-introduction.html">
+                HTML
+            </a>
+
+            <a href="../css-lessons/css-introduction.html">
+                CSS
+            </a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">
+                HTML Introduction
+            </a>
+
+            <a href="html-structure.html">
+                HTML Structure
+            </a>
+
+            <a href="html-elements.html">
+                HTML Elements
+            </a>
+
+            <a href="html-attributes.html">
+                HTML Attributes
+            </a>
+
+            <a href="html-headings.html">
+                HTML Headings
+            </a>
+
+            <a href="html-formatting.html">
+                HTML Formatting
+            </a>
+
+            <a href="html-links.html">
+                HTML Links
+            </a>
+
+            <a href="html-images.html">
+                HTML Images
+            </a>
+
+            <a href="html-media.html">
+                HTML Media
+            </a>
+
+            <a href="html-lists.html">
+                HTML Lists
+            </a>
+
+            <a href="html-tables.html">
+                HTML Tables
+            </a>
+
+            <a href="html-block-inline.html">
+                Block & Inline
+            </a>
+
+            <a href="html-div-span.html">
+                Div & Span
+            </a>
+
+            <a href="html-semantic.html">
+                Semantic HTML
+            </a>
+
+            <a href="html-forms.html">
+                HTML Forms
+            </a>
+
+            <a href="html-inputs.html">
+                HTML Inputs
+            </a>
+
+            <a href="html-validation.html">
+                HTML Validation
+            </a>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <main class="lesson-content">
+
+            <h1>HTML Introduction</h1>
+
+            <p>
+                HTML stands for
+                <strong>HyperText Markup Language</strong>.
+            </p>
+
+            <p>
+                HTML is the basic building block of the Web.
+                It gives structure and meaning to the content
+                of a web page.
+            </p>
+
+
+            <h2>What Does HTML Do?</h2>
+
+            <p>
+                HTML tells the browser what each piece of
+                content represents.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;h1&gt;Web Technologies&lt;/h1&gt;
+
+&lt;p&gt;
+    HTML structures web content.
+&lt;/p&gt;</code></pre>
+
+            </div>
+
+
+            <h2>HTML, CSS and JavaScript</h2>
+
+            <p>
+                A web page can be understood using three
+                simple parts:
+            </p>
+
+            <div class="info-box">
+
+                <p>
+                    <strong>HTML</strong>
+                    = Structure
+                </p>
+
+                <p>
+                    <strong>CSS</strong>
+                    = Presentation
+                </p>
+
+                <p>
+                    <strong>JavaScript</strong>
+                    = Behavior
+                </p>
+
+            </div>
+
+
+            <h2>What is Markup?</h2>
+
+            <p>
+                Markup means using special tags to describe
+                and organize content.
+            </p>
+
+            <p>
+                HTML tags are normally written inside angle
+                brackets:
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;p&gt;Hello World&lt;/p&gt;</code></pre>
+
+            </div>
+
+            <p>
+                Here, the paragraph tags tell the browser
+                that the text is a paragraph.
+            </p>
+
+
+            <h2>HTML is Not a Programming Language</h2>
+
+            <p>
+                HTML does not perform calculations or logic
+                like programming languages.
+            </p>
+
+            <p>
+                It describes the meaning and structure of
+                web content.
+            </p>
+
+
+            <h2>Simple HTML Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="introCode">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;
+        My first web page.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('introCode')">
+
+                Copy Code
+
+            </button>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="../index.html"
+                    class="secondary-button">
+
+                    ← Home
+
+                </a>
+
+                <a
+                    href="html-structure.html"
+                    class="primary-button">
+
+                    Next →
+
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

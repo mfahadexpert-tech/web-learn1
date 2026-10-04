@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Elements - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">
+                HTML Introduction
+            </a>
+
+            <a href="html-structure.html">
+                HTML Structure
+            </a>
+
+            <a href="html-elements.html">
+                HTML Elements
+            </a>
+
+            <a href="html-attributes.html">
+                HTML Attributes
+            </a>
+
+            <a href="html-headings.html">
+                HTML Headings
+            </a>
+
+            <a href="html-formatting.html">
+                HTML Formatting
+            </a>
+
+            <a href="html-links.html">
+                HTML Links
+            </a>
+
+            <a href="html-images.html">
+                HTML Images
+            </a>
+
+            <a href="html-media.html">
+                HTML Media
+            </a>
+
+            <a href="html-lists.html">
+                HTML Lists
+            </a>
+
+            <a href="html-tables.html">
+                HTML Tables
+            </a>
+
+            <a href="html-block-inline.html">
+                Block & Inline
+            </a>
+
+            <a href="html-div-span.html">
+                Div & Span
+            </a>
+
+            <a href="html-semantic.html">
+                Semantic HTML
+            </a>
+
+            <a href="html-forms.html">
+                HTML Forms
+            </a>
+
+            <a href="html-inputs.html">
+                HTML Inputs
+            </a>
+
+            <a href="html-validation.html">
+                HTML Validation
+            </a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+
+            <h1>HTML Elements</h1>
+
+            <p>
+                An HTML element is a complete unit made
+                from HTML tags and content.
+            </p>
+
+
+            <h2>Tag vs Element</h2>
+
+            <p>
+                A tag is one part of HTML markup.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;p&gt;
+
+&lt;/p&gt;</code></pre>
+
+            </div>
+
+            <p>
+                A complete element includes the opening tag,
+                content and closing tag.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;p&gt;
+    Hello World
+&lt;/p&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Opening and Closing Tags</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+
+                    <span>Part</span>
+                    <span>Example</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>Opening Tag</span>
+
+                    <span>
+                        &lt;p&gt;
+                    </span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>Content</span>
+
+                    <span>
+                        Hello World
+                    </span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>Closing Tag</span>
+
+                    <span>
+                        &lt;/p&gt;
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <h2>Example Elements</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="elementCode">&lt;h1&gt;
+    Web Technologies
+&lt;/h1&gt;
+
+&lt;p&gt;
+    HTML structures web content.
+&lt;/p&gt;
+
+&lt;strong&gt;
+    Important
+&lt;/strong&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('elementCode')">
+
+                Copy Code
+
+            </button>
+
+
+            <h2>Elements Can Be Nested</h2>
+
+            <p>
+                An HTML element can contain another element.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;p&gt;
+
+    This is
+    &lt;strong&gt;
+        important
+    &lt;/strong&gt;
+
+&lt;/p&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Correct Nesting</h2>
+
+            <p>
+                When elements are nested, close the last
+                opened element first.
+            </p>
+
+            <div class="info-box">
+
+                <strong>Memory Rule:</strong>
+
+                <p>
+                    Last opened → first closed
+                </p>
+
+            </div>
+
+
+            <h2>Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;p&gt;
+
+    Learn
+    &lt;strong&gt;
+        HTML
+    &lt;/strong&gt;
+    today.
+
+&lt;/p&gt;</code></pre>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-structure.html"
+                    class="secondary-button">
+
+                    ← Previous
+
+                </a>
+
+                <a
+                    href="html-attributes.html"
+                    class="primary-button">
+
+                    Next →
+
+                </a>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

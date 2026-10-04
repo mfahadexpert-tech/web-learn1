@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Images - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Images</h1>
+
+            <p>
+                Images are added to a web page using the
+                <code>&lt;img&gt;</code>
+                element.
+            </p>
+
+
+            <h2>Basic Image Syntax</h2>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;img
+    src="student.jpg"
+    alt="Student studying"
+    width="400"
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Image Attributes</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+
+                    <span>Attribute</span>
+                    <span>Purpose</span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>src</span>
+
+                    <span>
+                        Defines where the image comes from.
+                    </span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>alt</span>
+
+                    <span>
+                        Provides a text alternative.
+                    </span>
+
+                </div>
+
+                <div class="simple-row">
+
+                    <span>width</span>
+
+                    <span>
+                        Controls the display width.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <h2>Why is alt Important?</h2>
+
+            <p>
+                The alt attribute provides a description
+                of an informative image.
+            </p>
+
+            <p>
+                It is useful for accessibility and can also
+                provide information when the image cannot
+                be displayed.
+            </p>
+
+
+            <h2>Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="imageCode">&lt;img
+    src="../assets/images/student.jpg"
+    alt="Student studying"
+    width="400"
+&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('imageCode')">
+
+                Copy Code
+            </button>
+
+
+            <div class="info-box">
+
+                <strong>Important:</strong>
+
+                <p>
+                    Later, if you add an image named
+                    <code>student.jpg</code>,
+                    put it inside:
+                </p>
+
+                <p>
+                    <code>assets/images/</code>
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-links.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-media.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

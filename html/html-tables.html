@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Tables - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Tables</h1>
+
+            <p>
+                HTML tables are used for data that has
+                relationships between rows and columns.
+            </p>
+
+
+            <h2>Basic Table</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="tableCode">&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Marks&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Ali&lt;/td&gt;
+        &lt;td&gt;85&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Sara&lt;/td&gt;
+        &lt;td&gt;91&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('tableCode')">
+                Copy Code
+            </button>
+
+
+            <h2>Output</h2>
+
+            <div class="output-box">
+
+                <table class="demo-table">
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Marks</th>
+                    </tr>
+
+                    <tr>
+                        <td>Ali</td>
+                        <td>85</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sara</td>
+                        <td>91</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <h2>Common Table Elements</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Element</span>
+                    <span>Purpose</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;table&gt;</span>
+                    <span>Creates the table</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;tr&gt;</span>
+                    <span>Creates a row</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;th&gt;</span>
+                    <span>Header cell</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>&lt;td&gt;</span>
+                    <span>Data cell</span>
+                </div>
+
+            </div>
+
+
+            <h2>Professional Table Structure</h2>
+
+            <p>
+                Tables can also use:
+            </p>
+
+            <ul class="lesson-list">
+
+                <li><code>&lt;caption&gt;</code></li>
+                <li><code>&lt;thead&gt;</code></li>
+                <li><code>&lt;tbody&gt;</code></li>
+                <li><code>&lt;tfoot&gt;</code></li>
+
+            </ul>
+
+
+            <div class="lesson-code">
+
+<pre><code>&lt;table&gt;
+
+    &lt;caption&gt;
+        Student Marks
+    &lt;/caption&gt;
+
+    &lt;thead&gt;
+
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Marks&lt;/th&gt;
+        &lt;/tr&gt;
+
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+
+        &lt;tr&gt;
+            &lt;td&gt;Ali&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+        &lt;/tr&gt;
+
+    &lt;/tbody&gt;
+
+&lt;/table&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Colspan</h2>
+
+            <p>
+                Colspan lets one cell cover multiple columns.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;td colspan="2"&gt;
+    Merged Column
+&lt;/td&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Rowspan</h2>
+
+            <p>
+                Rowspan lets one cell cover multiple rows.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;td rowspan="2"&gt;
+    Merged Row
+&lt;/td&gt;</code></pre>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Important:</strong>
+
+                <p>
+                    Tables should be used for tabular data,
+                    not for page layout.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-lists.html"
+                    class="secondary-button">
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-block-inline.html"
+                    class="primary-button">
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

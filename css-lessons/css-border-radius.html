@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Border Radius - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+
+            <a href="../html/html-introduction.html">
+                HTML
+            </a>
+
+            <a href="css-introduction.html">
+                CSS
+            </a>
+
+        </nav>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()">
+
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>CSS Tutorial</h3>
+
+            <a href="css-introduction.html">CSS Introduction</a>
+            <a href="css-syntax.html">CSS Syntax</a>
+            <a href="css-types.html">CSS Types</a>
+            <a href="css-selectors.html">CSS Selectors</a>
+            <a href="css-combinators.html">CSS Combinators</a>
+            <a href="css-pseudo-classes.html">Pseudo Classes</a>
+            <a href="css-pseudo-elements.html">Pseudo Elements</a>
+            <a href="css-cascade.html">CSS Cascade</a>
+            <a href="css-specificity.html">CSS Specificity</a>
+            <a href="css-inheritance.html">CSS Inheritance</a>
+            <a href="css-colors.html">CSS Colors</a>
+            <a href="css-fonts.html">CSS Fonts</a>
+            <a href="css-text.html">CSS Text</a>
+            <a href="css-background.html">CSS Background</a>
+            <a href="css-box-model.html">CSS Box Model</a>
+            <a href="css-margin.html">CSS Margin</a>
+            <a href="css-padding.html">CSS Padding</a>
+            <a href="css-border.html">CSS Border</a>
+            <a href="css-box-sizing.html">CSS Box Sizing</a>
+            <a href="css-display.html">CSS Display</a>
+            <a href="css-position.html">CSS Position</a>
+            <a href="css-z-index.html">CSS Z-index</a>
+            <a href="css-float.html">CSS Float</a>
+            <a href="css-border-radius.html">Border Radius</a>
+            <a href="css-gradients.html">CSS Gradients</a>
+            <a href="css-shadows.html">CSS Shadows</a>
+            <a href="css-opacity.html">CSS Opacity</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>CSS Border Radius</h1>
+
+            <p>
+                The
+                <code>border-radius</code>
+                property rounds the corners of an element.
+            </p>
+
+
+            <h2>Basic Rounded Corners</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.card {
+    border-radius: 16px;
+}</code></pre>
+
+            </div>
+
+
+            <h2>Rounded Card Demo</h2>
+
+            <div class="rounded-card-demo">
+
+                <h3>
+                    Web Technologies
+                </h3>
+
+                <p>
+                    Learn HTML and CSS.
+                </p>
+
+            </div>
+
+
+            <h2>Create a Circle</h2>
+
+            <p>
+                When width and height are equal,
+                <code>border-radius: 50%</code>
+                can create a circle.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>.avatar {
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+}</code></pre>
+
+            </div>
+
+
+            <div class="circle-demo">
+                50%
+            </div>
+
+
+            <h2>Different Corner Values</h2>
+
+            <div class="lesson-code">
+
+<pre><code>.box {
+    border-radius:
+        20px
+        5px
+        20px
+        5px;
+}</code></pre>
+
+            </div>
+
+            <p>
+                The order is:
+            </p>
+
+            <div class="info-box">
+
+                <p>1. Top-left</p>
+                <p>2. Top-right</p>
+                <p>3. Bottom-right</p>
+                <p>4. Bottom-left</p>
+
+            </div>
+
+
+            <h2>Pill-Shaped Button</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="pillCode">.btn {
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #376fb4;
+
+    color: white;
+}</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('pillCode')">
+
+                Copy Code
+            </button>
+
+
+            <div class="output-box">
+
+                <button
+                    class="pill-button-demo"
+                    type="button">
+
+                    Start Learning
+
+                </button>
+
+            </div>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="css-float.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="css-gradients.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

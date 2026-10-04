@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Formatting - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Text Formatting</h1>
+
+            <p>
+                HTML includes elements that give meaning
+                to different parts of text.
+            </p>
+
+
+            <h2>Important Text</h2>
+
+            <div class="lesson-code">
+<pre><code>&lt;strong&gt;Important&lt;/strong&gt;</code></pre>
+            </div>
+
+            <div class="output-box">
+                <strong>Important</strong>
+            </div>
+
+
+            <h2>Emphasized Text</h2>
+
+            <div class="lesson-code">
+<pre><code>&lt;em&gt;Emphasis&lt;/em&gt;</code></pre>
+            </div>
+
+            <div class="output-box">
+                <em>Emphasis</em>
+            </div>
+
+
+            <h2>Highlighted Text</h2>
+
+            <div class="lesson-code">
+<pre><code>&lt;mark&gt;Highlight&lt;/mark&gt;</code></pre>
+            </div>
+
+            <div class="output-box">
+                <mark>Highlight</mark>
+            </div>
+
+
+            <h2>Deleted and Inserted Text</h2>
+
+            <div class="lesson-code">
+<pre><code>&lt;del&gt;Old&lt;/del&gt;
+
+&lt;ins&gt;New&lt;/ins&gt;</code></pre>
+            </div>
+
+            <div class="output-box">
+
+                <del>Old</del>
+
+                <br>
+
+                <ins>New</ins>
+
+            </div>
+
+
+            <h2>Line Break</h2>
+
+            <div class="lesson-code">
+<pre><code>First line&lt;br&gt;
+Second line</code></pre>
+            </div>
+
+            <div class="output-box">
+
+                First line<br>
+                Second line
+
+            </div>
+
+
+            <h2>Horizontal Rule</h2>
+
+            <div class="lesson-code">
+<pre><code>&lt;hr&gt;</code></pre>
+            </div>
+
+            <div class="output-box">
+                <hr>
+            </div>
+
+
+            <h2>Complete Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="formatCode">&lt;p&gt;
+    &lt;strong&gt;HTML&lt;/strong&gt;
+    is very important.
+&lt;/p&gt;
+
+&lt;p&gt;
+    Learn with
+    &lt;em&gt;practice&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;mark&gt;
+    Remember this concept
+&lt;/mark&gt;
+
+&lt;hr&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('formatCode')">
+
+                Copy Code
+            </button>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-headings.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="html-links.html"
+                    class="primary-button">
+
+                    Next →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

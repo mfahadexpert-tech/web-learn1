@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebLearn - Learn HTML and CSS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <a href="index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="index.html">Home</a>
+
+            <a href="html/html-introduction.html">
+                HTML
+            </a>
+
+            <a href="css-lessons/css-introduction.html">
+                CSS
+            </a>
+
+            <a href="#examples">
+                Examples
+            </a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                WEB DEVELOPMENT LEARNING
+            </p>
+
+            <h1>
+                Learn HTML & CSS
+                <span>the Simple Way</span>
+            </h1>
+
+            <p class="hero-description">
+                Learn web development with simple explanations,
+                practical examples and copy-ready code.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="html/html-introduction.html"
+                    class="primary-button">
+
+                    Start HTML
+                </a>
+
+                <a
+                    href="css-lessons/css-introduction.html"
+                    class="secondary-button">
+
+                    Learn CSS
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-code">
+
+            <div class="code-header">
+
+                <span>example.html</span>
+
+            </div>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;
+        I am learning HTML.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CODE SHOWCASE PLAYGROUND ================= -->
+
+    <section class="code-showcase-section" id="code-playground">
+
+        <div class="section-heading">
+
+            <p>INTERACTIVE CODE PLAYGROUND</p>
+
+            <h2>
+                Interactive Signup Form Code
+            </h2>
+
+            <span>
+                Click the preview image below to reveal the code with an interactive draggable split-screen editor.
+            </span>
+
+        </div>
+
+        <div class="code-playground-container">
+
+            <div class="playground-card" id="playgroundCard">
+
+                <!-- Picture Overlay (Click to Reveal Code) -->
+                <div class="playground-overlay" id="playgroundOverlay" onclick="revealCodePlayground()" role="button" tabindex="0" aria-label="Click to reveal interactive code and dragger">
+
+                    <img
+                        src="assets/images/signup-preview.svg"
+                        alt="Signup Form Preview"
+                        class="playground-thumb-img">
+
+                    <div class="reveal-button-wrapper">
+                        <div class="reveal-button-pulse"></div>
+                        <button class="reveal-button" aria-label="Open Interactive Code" tabindex="-1">
+                            &lt;/&gt;
+                        </button>
+                    </div>
+
+                    <div class="playground-badge">
+                        <span>✨ Click image to inspect &amp; drag code</span>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Draggable Split-Pane Workspace -->
+                <div class="split-pane-workspace" id="splitWorkspace">
+
+                    <!-- Toolbar -->
+                    <div class="workspace-toolbar">
+                        <div class="toolbar-title">
+                            <span class="file-icon">&lt;/&gt;</span>
+                            <span>signup-form.html</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="tool-btn" onclick="copyCode('signupSourceCode')" title="Copy Code">
+                                📋 Copy Code
+                            </button>
+                            <button class="tool-btn" onclick="resetSplitter()" title="Reset Splitter Width">
+                                ⟲ Reset Width
+                            </button>
+                            <button class="tool-btn close-btn" onclick="hideCodePlayground()" title="Back to Picture">
+                                ✕ Close
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main Split Area -->
+                    <div class="split-container" id="splitContainer">
+
+                        <!-- Left Pane: Code View -->
+                        <div class="split-pane left-pane" id="leftPane">
+                            <div class="pane-header">
+                                <span>HTML &amp; CSS Source</span>
+                                <small>Editable / Selectable</small>
+                            </div>
+                            <div class="code-scroll-area">
+                                <pre><code id="signupSourceCode">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;form&lt;/title&gt;
+    &lt;style&gt;
+        input[type=email]:focus {
+            background-color: #ddd;
+            outline: none;
+
+        }
+
+        input[type=password],
+        input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background: #f1f1f1;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0px;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+            opacity: 1;
+            color: blue;
+        }
+
+        .cancelbtn, .signbtn {
+            padding: 14px 20px;
+            background-color: #550e06;
+            float: left;
+            width: 50%;
+        }
+        .form{
+            width: 100%;
+            height:100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .spa{
+            margin: 20px;
+            padding:5px;
+            width:50%;
+            
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="form"&gt;
+        &lt;form&gt;
+            &lt;fieldset class="spa"&gt;
+                &lt;h1&gt;Singn up&lt;/h1&gt;&lt;br&gt;
+                &lt;p&gt;Please fill this form&lt;/p&gt;
+                &lt;hr&gt;
+                &lt;label for="password"&gt;Password&lt;/label&gt;
+                &lt;input name="password" type="password" placeholder="Enter your password"&gt;&lt;br&gt;&lt;br&gt;
+                &lt;label for="email"&gt;Email&lt;/label&gt;
+                &lt;input name="email" type="email" placeholder="Enter your email"&gt;&lt;br&gt;&lt;br&gt;
+                &lt;label for="repeat password"&gt;Repeat password&lt;/label&gt;
+                &lt;input name="password" type="password" placeholder="Repeat your password"&gt;&lt;br&gt;&lt;br&gt;
+                &lt;label for="checkbox"&gt;Remember me&lt;/label&gt;
+                &lt;input name="checkbox" type="Checkbox"&gt;&lt;br&gt;&lt;br&gt;
+                &lt;p&gt;By pressing yes you agree to &lt;a href="#"&gt;term &amp; conditions&lt;/a&gt;&lt;/p&gt;
+                &lt;div&gt;
+                    &lt;button class="cancelbtn" type="cancel" style="background-color: green;"&gt;Cancel&lt;/button&gt;
+                    &lt;button class="signbtn" type="submit"&gt;Signup&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Dragger / Resizer Splitter -->
+                        <div class="split-dragger" id="splitDragger" title="Drag left or right to resize">
+                            <div class="dragger-handle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Pane: Live Output Preview -->
+                        <div class="split-pane right-pane" id="rightPane">
+                            <div class="pane-header">
+                                <span>Live Browser Output</span>
+                                <a href="examples/forms/registration-form.html" target="_blank" class="pane-link">Open Full Page ↗</a>
+                            </div>
+                            <div class="preview-frame-container">
+                                <iframe id="livePreviewFrame" src="examples/forms/registration-form.html" title="Live Signup Form Preview"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSE SECTION ================= -->
+
+    <section class="courses">
+
+        <div class="section-heading">
+
+            <p>START LEARNING</p>
+
+            <h2>
+                What do you want to learn?
+            </h2>
+
+            <span>
+                Start from the basics and move through the topics
+                from your Web Technologies course.
+            </span>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+            <!-- HTML CARD -->
+
+            <article class="course-card">
+
+                <div class="course-icon">
+                    HTML
+                </div>
+
+                <h3>
+                    HTML Tutorial
+                </h3>
+
+                <p>
+                    Learn how to structure web pages using HTML
+                    elements, headings, links, images, tables,
+                    forms and semantic elements.
+                </p>
+
+                <ul>
+
+                    <li>HTML Structure</li>
+                    <li>HTML Elements</li>
+                    <li>Links & Images</li>
+                    <li>Lists & Tables</li>
+                    <li>HTML Forms</li>
+
+                </ul>
+
+                <a
+                    href="html/html-introduction.html"
+                    class="card-button">
+
+                    Learn HTML →
+                </a>
+
+            </article>
+
+
+            <!-- CSS CARD -->
+
+            <article class="course-card">
+
+                <div class="course-icon">
+                    CSS
+                </div>
+
+                <h3>
+                    CSS Tutorial
+                </h3>
+
+                <p>
+                    Learn how CSS controls colors, fonts,
+                    spacing, selectors, layouts and visual
+                    effects.
+                </p>
+
+                <ul>
+
+                    <li>CSS Syntax</li>
+                    <li>CSS Selectors</li>
+                    <li>Colors & Fonts</li>
+                    <li>Box Model</li>
+                    <li>CSS Positioning</li>
+
+                </ul>
+
+                <a
+                    href="css-lessons/css-introduction.html"
+                    class="card-button">
+
+                    Learn CSS →
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= LEARNING METHOD ================= -->
+
+    <section class="learning-section">
+
+        <div class="section-heading">
+
+            <p>HOW IT WORKS</p>
+
+            <h2>
+                Learn → Example → Practice
+            </h2>
+
+        </div>
+
+
+        <div class="learning-grid">
+
+            <div class="learning-card">
+
+                <span>01</span>
+
+                <h3>Learn</h3>
+
+                <p>
+                    Read short and simple explanations
+                    of each HTML and CSS concept.
+                </p>
+
+            </div>
+
+
+            <div class="learning-card">
+
+                <span>02</span>
+
+                <h3>See Example</h3>
+
+                <p>
+                    Understand each topic with small
+                    practical code examples.
+                </p>
+
+            </div>
+
+
+            <div class="learning-card">
+
+                <span>03</span>
+
+                <h3>Copy Code</h3>
+
+                <p>
+                    Copy useful HTML and CSS code
+                    and use it in your own project.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EXAMPLES ================= -->
+
+    <section class="examples-section" id="examples">
+
+        <div class="section-heading">
+
+            <p>READY-MADE CODE</p>
+
+            <h2>
+                Useful Examples
+            </h2>
+
+            <span>
+                Learn the concept and then use a complete example.
+            </span>
+
+        </div>
+
+
+        <div class="example-grid">
+
+
+            <a
+                href="examples/forms/registration-form.html"
+                class="example-card">
+
+                <div class="example-preview form-preview">
+
+                    <input
+                        type="text"
+                        placeholder="Full Name">
+
+                    <input
+                        type="email"
+                        placeholder="Email">
+
+                    <button>
+                        Register
+                    </button>
+
+                </div>
+
+                <h3>
+                    Registration Form
+                </h3>
+
+                <p>
+                    HTML form with clean CSS styling.
+                </p>
+
+            </a>
+
+
+            <a
+                href="examples/tables/styled-table.html"
+                class="example-card">
+
+                <div class="example-preview table-preview">
+
+                    <div>
+                        Name
+                        <strong>Marks</strong>
+                    </div>
+
+                    <div>
+                        Ali
+                        <strong>85</strong>
+                    </div>
+
+                    <div>
+                        Sara
+                        <strong>91</strong>
+                    </div>
+
+                </div>
+
+                <h3>
+                    Styled Table
+                </h3>
+
+                <p>
+                    Simple HTML table with CSS styling.
+                </p>
+
+            </a>
+
+
+            <a
+                href="examples/cards/course-card.html"
+                class="example-card">
+
+                <div class="example-preview mini-card-preview">
+
+                    <strong>
+                        HTML Course
+                    </strong>
+
+                    <span>
+                        Learn web development
+                    </span>
+
+                    <button>
+                        Start
+                    </button>
+
+                </div>
+
+                <h3>
+                    Course Card
+                </h3>
+
+                <p>
+                    Card design using HTML and CSS.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta-section">
+
+        <div>
+
+            <p>
+                READY TO START?
+            </p>
+
+            <h2>
+                Build your first web page.
+            </h2>
+
+            <span>
+                Begin with HTML and learn one concept at a time.
+            </span>
+
+        </div>
+
+        <a
+            href="html/html-introduction.html"
+            class="cta-button">
+
+            Start Learning
+        </a>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            Web<span>Learn</span>
+
+        </div>
+
+        <p>
+            Simple HTML & CSS learning website.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="html/html-introduction.html">
+                HTML
+            </a>
+
+            <a href="css-lessons/css-introduction.html">
+                CSS
+            </a>
+
+        </div>
+
+        <small>
+            Web Technologies Learning Project
+        </small>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

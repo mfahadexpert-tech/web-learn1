@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Validation - WebLearn</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header class="top-header">
+
+        <a href="../index.html" class="logo">
+            Web<span>Learn</span>
+        </a>
+
+        <nav class="top-nav" id="topNav">
+
+            <a href="../index.html">Home</a>
+            <a href="html-introduction.html">HTML</a>
+            <a href="../css-lessons/css-introduction.html">CSS</a>
+
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <div class="lesson-container">
+
+        <aside class="lesson-sidebar">
+
+            <h3>HTML Tutorial</h3>
+
+            <a href="html-introduction.html">HTML Introduction</a>
+            <a href="html-structure.html">HTML Structure</a>
+            <a href="html-elements.html">HTML Elements</a>
+            <a href="html-attributes.html">HTML Attributes</a>
+            <a href="html-headings.html">HTML Headings</a>
+            <a href="html-formatting.html">HTML Formatting</a>
+            <a href="html-links.html">HTML Links</a>
+            <a href="html-images.html">HTML Images</a>
+            <a href="html-media.html">HTML Media</a>
+            <a href="html-lists.html">HTML Lists</a>
+            <a href="html-tables.html">HTML Tables</a>
+            <a href="html-block-inline.html">Block & Inline</a>
+            <a href="html-div-span.html">Div & Span</a>
+            <a href="html-semantic.html">Semantic HTML</a>
+            <a href="html-forms.html">HTML Forms</a>
+            <a href="html-inputs.html">HTML Inputs</a>
+            <a href="html-validation.html">HTML Validation</a>
+
+        </aside>
+
+
+        <main class="lesson-content">
+
+            <h1>HTML Form Validation</h1>
+
+            <p>
+                HTML5 provides attributes that can check
+                user input before a form is submitted.
+            </p>
+
+
+            <h2>required</h2>
+
+            <p>
+                The
+                <code>required</code>
+                attribute means that a field cannot be empty.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="email"
+    name="email"
+    required
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Try Required</h2>
+
+            <div class="output-box">
+
+                <form class="lesson-form">
+
+                    <label for="requiredEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="requiredEmail"
+                        required>
+
+                    <button type="submit">
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <h2>pattern</h2>
+
+            <p>
+                The
+                <code>pattern</code>
+                attribute lets an input follow a specific format.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code id="patternCode">&lt;input
+    name="reg"
+    pattern="SP[0-9]{2}-BSSE-[0-9]{3}"
+    required
+&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('patternCode')">
+
+                Copy Code
+            </button>
+
+
+            <h2>Accepted Example</h2>
+
+            <div class="example-good">
+
+                <strong>
+                    SP24-BSSE-001
+                </strong>
+
+            </div>
+
+
+            <h2>Rejected Examples</h2>
+
+            <div class="example-bad">
+
+                <p>
+                    SP24-BSSE-01
+                </p>
+
+                <p>
+                    SP24-BSCS-001
+                </p>
+
+            </div>
+
+
+            <h2>min and max</h2>
+
+            <p>
+                The
+                <code>min</code>
+                and
+                <code>max</code>
+                attributes define boundaries for numeric input.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="number"
+    min="0"
+    max="100"
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Try Min and Max</h2>
+
+            <div class="output-box">
+
+                <form class="lesson-form">
+
+                    <label for="marks">
+                        Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="marks"
+                        min="0"
+                        max="100"
+                        required>
+
+                    <button type="submit">
+                        Check
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <h2>Email Validation</h2>
+
+            <p>
+                Using
+                <code>type="email"</code>
+                lets the browser check whether the entered
+                value looks like an email address.
+            </p>
+
+            <div class="lesson-code">
+
+<pre><code>&lt;input
+    type="email"
+    name="email"
+    required
+&gt;</code></pre>
+
+            </div>
+
+
+            <h2>Client-Side vs Server-Side Validation</h2>
+
+            <div class="simple-table">
+
+                <div class="simple-row simple-heading">
+                    <span>Client</span>
+                    <span>Server</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>Fast feedback</span>
+                    <span>Re-validates input</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>required</span>
+                    <span>Security checks</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>pattern</span>
+                    <span>Business rules</span>
+                </div>
+
+                <div class="simple-row">
+                    <span>min / max</span>
+                    <span>Trusted data handling</span>
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <strong>Important:</strong>
+
+                <p>
+                    Client-side validation improves the
+                    user experience, but it does not replace
+                    server-side validation.
+                </p>
+
+            </div>
+
+
+            <h2>Complete Example</h2>
+
+            <div class="lesson-code">
+
+<pre><code id="validationForm">&lt;form&gt;
+
+    &lt;label for="email"&gt;
+        Email
+    &lt;/label&gt;
+
+    &lt;input
+        type="email"
+        id="email"
+        name="email"
+        required
+    &gt;
+
+
+    &lt;label for="marks"&gt;
+        Marks
+    &lt;/label&gt;
+
+    &lt;input
+        type="number"
+        id="marks"
+        name="marks"
+        min="0"
+        max="100"
+        required
+    &gt;
+
+
+    &lt;button type="submit"&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+
+            </div>
+
+            <button
+                class="copy-button"
+                onclick="copyCode('validationForm')">
+
+                Copy Code
+            </button>
+
+
+            <div class="lesson-navigation">
+
+                <a
+                    href="html-inputs.html"
+                    class="secondary-button">
+
+                    ← Previous
+                </a>
+
+                <a
+                    href="../css-lessons/css-introduction.html"
+                    class="primary-button">
+
+                    Start CSS →
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

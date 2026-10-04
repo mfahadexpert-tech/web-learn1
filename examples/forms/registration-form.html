@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        input[type=email]:focus {
+            background-color: #ddd;
+            outline: none;
+
+        }
+
+        input[type=password],
+        input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background: #f1f1f1;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0px;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+            opacity: 1;
+            color: blue;
+        }
+
+        .cancelbtn, .signbtn {
+            padding: 14px 20px;
+            background-color: #550e06;
+            float: left;
+            width: 50%;
+        }
+        .form{
+            width: 100%;
+            height:100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .spa{
+            margin: 20px;
+            padding:5px;
+            width:50%;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <form >
+<fieldset class="spa">
+            <h1>Singn up</h1><br>
+            <p>Please fill this form</p>
+            <hr>
+            <label for="password">Password</label>
+            <input name="password" type="password" placeholder="Enter your password"><br><br>
+            <label for="email">Email</label>
+            <input name="email" type="email" placeholder="Enter your email"><br><br>
+            <label for="repeat password">Repeat password</label>
+            <input name="password" type="password" placeholder="Repeat your password"><br><br>
+            <label for="checkbox">Remember me</label>
+            <input name="checkbox" type="Checkbox"><br><br>
+            <p>By pressing yes you agree to <a href="#">term & conditions</a></p>
+            <div>
+            <button class="cancelbtn" type="cancel" style="background-color: green;">Cancel</button>
+            <button class="signbtn" type="submit">Signup</button>
+            </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
