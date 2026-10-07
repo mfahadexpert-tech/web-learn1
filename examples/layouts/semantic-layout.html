@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Layout Example - WebLearn</title>
+
+    <!-- ================= INTERNAL CSS STYLING ================= -->
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Container Layout */
+        .layout-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Semantic Header */
+        header {
+            background-color: #16a34a;
+            color: #ffffff;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Semantic Navigation */
+        nav {
+            background-color: #111827;
+            padding: 12px 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #4ade80;
+        }
+
+        /* Main Content and Aside Wrapper */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            padding: 25px;
+        }
+
+        /* Semantic Article and Section */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        article {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        article h2 {
+            font-size: 20px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        article p {
+            color: #4b5563;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* Semantic Sidebar (Aside) */
+        aside {
+            background: #f0fdf4;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #bbf7d0;
+        }
+
+        aside h3 {
+            font-size: 17px;
+            color: #166534;
+            margin-bottom: 10px;
+        }
+
+        aside ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        aside li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #374151;
+            border-bottom: 1px solid #dcfce7;
+        }
+
+        aside li:last-child {
+            border-bottom: none;
+        }
+
+        /* Semantic Footer */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 18px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #4ade80;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Layout for Mobile */
+        @media (max-width: 700px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="layout-container">
+
+        <!-- Semantic Header -->
+        <header>
+            <h1>My Website Header</h1>
+            <p>Built using semantic HTML5 elements</p>
+        </header>
+
+        <!-- Semantic Navigation Bar -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Articles</a>
+            <a href="#">Tutorials</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <!-- Main Content Area with Sidebar -->
+        <div class="content-wrapper">
+
+            <!-- Primary Content -->
+            <main>
+                <!-- Article 1 -->
+                <article>
+                    <h2>Understanding Semantic HTML</h2>
+                    <p>Semantic HTML tags clearly describe their meaning to both the browser and the developer.</p>
+                    <p>Using semantic elements like header, nav, main, article, and footer improves accessibility and SEO.</p>
+                </article>
+
+                <!-- Article 2 -->
+                <article>
+                    <h2>Why Use Semantic Elements?</h2>
+                    <p>Semantic tags make your code cleaner, easier to read, and simpler to maintain over time.</p>
+                </article>
+            </main>
+
+            <!-- Sidebar -->
+            <aside>
+                <h3>Related Links</h3>
+                <ul>
+                    <li>HTML Introduction</li>
+                    <li>CSS Selectors</li>
+                    <li>Responsive Design</li>
+                    <li>Form Validation</li>
+                </ul>
+            </aside>
+
+        </div>
+
+        <!-- Semantic Footer -->
+        <footer>
+            <p>&copy; 2026 WebLearn Project. All rights reserved. | <a href="../../index.html">Back to Home</a></p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
