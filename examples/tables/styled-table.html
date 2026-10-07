@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styled Table Example - WebLearn</title>
+
+    <!-- ================= INTERNAL CSS STYLES ================= -->
     <style>
+        /* CSS Reset and Font Setup */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,6 +16,7 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        /* Page Background and Centering */
         body {
             background: #f9fafb;
             padding: 40px 20px;
@@ -23,6 +27,7 @@
             min-height: 100vh;
         }
 
+        /* White Card Container */
         .container {
             width: 100%;
             max-width: 650px;
@@ -32,6 +37,7 @@
             padding: 30px;
         }
 
+        /* Title and Subtitle */
         h1 {
             font-size: 24px;
             color: #111827;
@@ -44,6 +50,7 @@
             font-size: 15px;
         }
 
+        /* Table Structure & Borders */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -51,11 +58,13 @@
             border-radius: 8px;
         }
 
+        /* Table Header Row (Green Background) */
         thead {
             background-color: #16a34a;
             color: white;
         }
 
+        /* Cell Padding and Alignment */
         th, td {
             padding: 14px 18px;
             text-align: left;
@@ -67,19 +76,23 @@
             text-transform: uppercase;
         }
 
+        /* Row Dividers and Hover Animation */
         tbody tr {
             border-bottom: 1px solid #e5e7eb;
             transition: background-color 0.2s;
         }
 
+        /* Zebra Striping for Even Rows */
         tbody tr:nth-child(even) {
             background-color: #f9fafb;
         }
 
+        /* Highlight Row on Mouse Hover */
         tbody tr:hover {
             background-color: #f0fdf4;
         }
 
+        /* Back Link Navigation */
         .back-link {
             display: inline-block;
             margin-top: 25px;
@@ -96,11 +109,16 @@
 
 <body>
 
+    <!-- Main Container Card -->
     <div class="container">
+
+        <!-- Page Header -->
         <h1>Styled Table Example</h1>
         <p>A clean, responsive table styled with modern CSS.</p>
 
+        <!-- HTML Table -->
         <table>
+            <!-- Table Header -->
             <thead>
                 <tr>
                     <th>#</th>
@@ -109,6 +127,8 @@
                     <th>Marks</th>
                 </tr>
             </thead>
+
+            <!-- Table Body Rows -->
             <tbody>
                 <tr>
                     <td>1</td>
@@ -137,7 +157,9 @@
             </tbody>
         </table>
 
+        <!-- Navigation Link to Return Home -->
         <a href="../../index.html#examples" class="back-link">← Back to Examples</a>
+
     </div>
 
 </body>

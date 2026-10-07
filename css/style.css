@@ -477,19 +477,17 @@ input {
 
 
 /* =========================================
-   EXAMPLE CARDS
+   EXAMPLE CARDS & USEFUL EXAMPLES
 ========================================= */
 
+/* 3-column responsive grid layout for example cards */
 .example-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-
+/* Individual card container with border and hover transition */
 .example-card {
     border: 1px solid #e5e7eb;
     border-radius: 12px;
@@ -498,11 +496,13 @@ input {
     transition: 0.25s;
 }
 
+/* Card hover elevation effect */
 .example-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* Card top preview area styling */
 .example-preview {
     min-height: 220px;
     padding: 25px;
@@ -513,33 +513,65 @@ input {
     gap: 12px;
 }
 
+/* Card heading title */
 .example-card h3 {
     margin: 20px 20px 5px;
     color: #111827;
 }
 
+/* Card description paragraph */
 .example-card > p {
     margin: 0 20px 22px;
     color: #6b7280;
 }
 
 /* =========================================
-   FORM PREVIEW
+   INTERACTIVE FORM PREVIEW
 ========================================= */
 
-.form-preview input {
+/* Text, email, and dropdown input styles */
+.form-preview input[type="text"],
+.form-preview input[type="email"],
+.form-preview select {
     width: 100%;
-    padding: 11px;
+    padding: 10px 12px;
     border: 1px solid #d1d5db;
     border-radius: 7px;
     outline: none;
     background: white;
+    font-size: 14px;
 }
 
-.form-preview input:focus {
+/* Input focus glow highlight */
+.form-preview input:focus,
+.form-preview select:focus {
     border-color: #16a34a;
 }
 
+/* Gender radio buttons layout */
+.gender-selection {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Radio button label flex wrapper */
+.gender-selection label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+/* Green radio button accent color */
+.gender-selection input[type="radio"] {
+    accent-color: #16a34a;
+    cursor: pointer;
+}
+
+/* Register submit button styling */
 .form-preview button {
     padding: 11px;
     border: none;
@@ -551,28 +583,45 @@ input {
     transition: 0.2s;
 }
 
+/* Register button hover state */
 .form-preview button:hover {
     background: #15803d;
 }
 
 /* =========================================
-   TABLE PREVIEW
+   FORM OUTPUT TABLE PREVIEW
 ========================================= */
 
+/* Output table scrollable container */
 .table-preview {
     justify-content: flex-start;
     overflow-y: auto;
     max-height: 220px;
 }
 
+/* Key-value row layout */
 .table-preview div {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    padding: 10px 12px;
     background: white;
     border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
 }
 
+/* Attribute label color */
+.table-preview div span {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Attribute value bold styling */
+.table-preview div strong {
+    color: #111827;
+}
+
+/* Row hover highlight */
 .table-preview div:hover {
     background: #f0fdf4;
 }
@@ -2494,5 +2543,123 @@ body.resizing {
         display: none;
     }
 }
+
+
+/* ==========================================================================
+   FLOATING AI CHATBOT BUTTON (CSS FIXED POSITIONING DEMO)
+   Demonstrates 'position: fixed' to anchor a button to the bottom-right corner.
+   ========================================================================== */
+
+/* Fixed container placed at bottom-right corner */
+.chatbot-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Floating Action Button */
+.chatbot-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.35);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Hover elevation effect */
+.chatbot-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(22, 163, 74, 0.45);
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Text label */
+.chatbot-label {
+    letter-spacing: 0.3px;
+}
+
+/* Status indicator pulsing green dot */
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #4ade80;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: statusPulse 2s infinite ease-in-out;
+}
+
+/* CSS Keyframe Animation for pulsing status dot */
+@keyframes statusPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+}
+
+/* Tooltip message bubble shown on hover */
+.chatbot-tooltip {
+    background: #111827;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none;
+    position: relative;
+}
+
+.chatbot-tooltip strong {
+    display: block;
+    color: #4ade80;
+    font-size: 12px;
+}
+
+.chatbot-tooltip p {
+    color: #9ca3af;
+    font-size: 11px;
+    margin: 0;
+}
+
+/* Pointer arrow under tooltip */
+.chatbot-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #111827 transparent transparent transparent;
+}
+
+/* Reveal tooltip when user hovers over widget */
+.chatbot-widget:hover .chatbot-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
  

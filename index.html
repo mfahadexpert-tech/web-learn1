@@ -497,119 +497,124 @@
 
 
 
-    <!-- ================= EXAMPLES ================= -->
-
+    <!-- ================= USEFUL EXAMPLES SECTION ================= -->
+    <!-- Contains interactive mini-demos for forms, tables, and cards -->
     <section class="examples-section" id="examples">
 
+        <!-- Section Heading & Subtitle -->
         <div class="section-heading">
-
             <p>READY-MADE CODE</p>
-
-            <h2>
-                Useful Examples
-            </h2>
-
-            <span>
-                Learn the concept and then use a complete example.
-            </span>
-
+            <h2>Useful Examples</h2>
+            <span>Learn the concept and then use a complete example.</span>
         </div>
 
-
+        <!-- 3-Column Grid for Example Cards -->
         <div class="example-grid">
 
+            <!-- Card 1: Interactive Registration Form Input -->
             <div class="example-card">
 
+                <!-- Interactive Form: Submits input to update table on right -->
                 <form class="example-preview form-preview" onsubmit="registerUser(event)">
 
+                    <!-- Full Name Input Field -->
                     <input
                         type="text"
                         id="regName"
                         placeholder="Full Name"
                         required>
 
+                    <!-- Email Address Input Field -->
                     <input
-                        type="text"
+                        type="email"
                         id="regEmail"
                         placeholder="Email"
                         required>
 
+                    <!-- Gender Radio Selection Group -->
+                    <div class="gender-selection">
+                        <span>Gender:</span>
+                        <label>
+                            <input type="radio" name="gender" value="Male" checked> Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Female"> Female
+                        </label>
+                    </div>
+
+                    <!-- Course Dropdown Selection Box -->
+                    <select id="regCourse" required>
+                        <option value="Web Development">Web Development</option>
+                        <option value="HTML Basics">HTML Basics</option>
+                        <option value="CSS Styling">CSS Styling</option>
+                    </select>
+
+                    <!-- Submit Button -->
                     <button type="submit">
                         Register
                     </button>
 
                 </form>
 
-                <h3>
-                    Registration Form
-                </h3>
-
-                <p>
-                    HTML form with clean CSS styling.
-                </p>
+                <!-- Card 1 Info / Description -->
+                <h3>Registration Form</h3>
+                <p>HTML form with clean CSS styling.</p>
 
             </div>
 
 
+            <!-- Card 2: Form Output Display Table -->
             <div class="example-card">
 
+                <!-- Table Container: Displays the currently submitted form values -->
                 <div class="example-preview table-preview" id="tablePreview">
 
+                    <!-- Output Row: Full Name -->
                     <div>
-                        Name
-                        <strong>Email</strong>
+                        <span>Name</span>
+                        <strong id="outName">fahad</strong>
                     </div>
 
+                    <!-- Output Row: Email Address -->
                     <div>
-                        Ali
-                        <strong>ali@mail.com</strong>
+                        <span>Email</span>
+                        <strong id="outEmail">mfahadexpert@gmail.com</strong>
                     </div>
 
+                    <!-- Output Row: Selected Gender -->
                     <div>
-                        Sara
-                        <strong>sara@mail.com</strong>
+                        <span>Gender</span>
+                        <strong id="outGender">Male</strong>
+                    </div>
+
+                    <!-- Output Row: Selected Course -->
+                    <div>
+                        <span>Course</span>
+                        <strong id="outCourse">Web Development</strong>
                     </div>
 
                 </div>
 
-                <h3>
-                    Styled Table
-                </h3>
-
-                <p>
-                    Simple HTML table with CSS styling.
-                </p>
+                <!-- Card 2 Info / Description -->
+                <h3>Form Output Table</h3>
+                <p>Simple HTML table with CSS styling.</p>
 
             </div>
 
 
-            <a
-                href="examples/cards/course-card.html"
-                class="example-card">
+            <!-- Card 3: Mini Course Card Preview -->
+            <a href="examples/cards/course-card.html" class="example-card">
 
+                <!-- Mini Card Layout Preview -->
                 <div class="example-preview mini-card-preview">
-
-                    <strong>
-                        HTML Course
-                    </strong>
-
-                    <span>
-                        Learn web development
-                    </span>
-
-                    <button>
-                        Start
-                    </button>
-
+                    <strong>HTML Course</strong>
+                    <span>Learn web development</span>
+                    <button>Start</button>
                 </div>
 
-                <h3>
-                    Course Card
-                </h3>
-
-                <p>
-                    Card design using HTML and CSS.
-                </p>
+                <!-- Card 3 Info / Description -->
+                <h3>Course Card</h3>
+                <p>Card design using HTML and CSS.</p>
 
             </a>
 
@@ -685,6 +690,27 @@
         </small>
 
     </footer>
+
+
+    <!-- ================= FLOATING AI CHATBOT BUTTON ================= -->
+    <!-- Demonstrates CSS position: fixed to keep the element locked in bottom-right -->
+    <aside class="chatbot-widget" aria-label="AI Chatbot Assistant Demo">
+
+        <!-- Hover Tooltip Message Bubble -->
+        <div class="chatbot-tooltip">
+            <strong>WebLearn AI Assistant</strong>
+            <p>HTML &amp; CSS Fixed Position Demo</p>
+        </div>
+
+        <!-- Floating Action Button -->
+        <button class="chatbot-button" type="button" aria-label="AI Chatbot Demo">
+            <!-- Button Label -->
+            <span class="chatbot-label">AI Chat</span>
+            <!-- Pulsing Online Status Dot -->
+            <span class="status-indicator" title="Online"></span>
+        </button>
+
+    </aside>
 
 
     <script src="js/script.js"></script>
