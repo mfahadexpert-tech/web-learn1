@@ -518,26 +518,27 @@
 
         <div class="example-grid">
 
+            <div class="example-card">
 
-            <a
-                href="examples/forms/registration-form.html"
-                class="example-card">
-
-                <div class="example-preview form-preview">
+                <form class="example-preview form-preview" onsubmit="registerUser(event)">
 
                     <input
                         type="text"
-                        placeholder="Full Name">
+                        id="regName"
+                        placeholder="Full Name"
+                        required>
 
                     <input
-                        type="email"
-                        placeholder="Email">
+                        type="text"
+                        id="regEmail"
+                        placeholder="Email"
+                        required>
 
-                    <button>
+                    <button type="submit">
                         Register
                     </button>
 
-                </div>
+                </form>
 
                 <h3>
                     Registration Form
@@ -547,28 +548,26 @@
                     HTML form with clean CSS styling.
                 </p>
 
-            </a>
+            </div>
 
 
-            <a
-                href="examples/tables/styled-table.html"
-                class="example-card">
+            <div class="example-card">
 
-                <div class="example-preview table-preview">
+                <div class="example-preview table-preview" id="tablePreview">
 
                     <div>
                         Name
-                        <strong>Marks</strong>
+                        <strong>Email</strong>
                     </div>
 
                     <div>
                         Ali
-                        <strong>85</strong>
+                        <strong>ali@mail.com</strong>
                     </div>
 
                     <div>
                         Sara
-                        <strong>91</strong>
+                        <strong>sara@mail.com</strong>
                     </div>
 
                 </div>
@@ -581,7 +580,7 @@
                     Simple HTML table with CSS styling.
                 </p>
 
-            </a>
+            </div>
 
 
             <a

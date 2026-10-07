@@ -140,4 +140,21 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("mouseup", stopDrag);
         window.addEventListener("touchend", stopDrag);
     }
-});
+});
+
+
+
+// Add form info to table preview
+function registerUser(event) {
+    event.preventDefault();
+    const name = document.getElementById("regName").value;
+    const email = document.getElementById("regEmail").value;
+
+    if (name && email) {
+        document.getElementById("tablePreview").innerHTML += `<div>${name}<strong>${email}</strong></div>`;
+        document.getElementById("regName").value = "";
+        document.getElementById("regEmail").value = "";
+    }
+}
+
+

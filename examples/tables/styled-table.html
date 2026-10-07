@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table Example - WebLearn</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f9fafb;
+            padding: 40px 20px;
+            color: #1f2937;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #6b7280;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        thead {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        th {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e5e7eb;
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        tbody tr:hover {
+            background-color: #f0fdf4;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #16a34a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Styled Table Example</h1>
+        <p>A clean, responsive table styled with modern CSS.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ali Khan</td>
+                    <td>Web Technologies</td>
+                    <td><strong>85</strong></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sara Ahmed</td>
+                    <td>Database Systems</td>
+                    <td><strong>91</strong></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Usman Tariq</td>
+                    <td>Data Structures</td>
+                    <td><strong>78</strong></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Ayesha Noor</td>
+                    <td>Web Technologies</td>
+                    <td><strong>95</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="../../index.html#examples" class="back-link">← Back to Examples</a>
+    </div>
+
+</body>
+
+</html>
