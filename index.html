@@ -21,24 +21,13 @@
         </a>
 
         <nav class="top-nav" id="topNav">
-
             <a href="index.html">Home</a>
-
-            <a href="html/html-introduction.html">
-                HTML
-            </a>
-
-            <a href="css-lessons/css-introduction.html">
-                CSS
-            </a>
-
-            <a href="#examples">
-                Examples
-            </a>
-
+            <a href="#courses">HTML</a>
+            <a href="#courses">CSS</a>
+            <a href="#examples">Examples</a>
         </nav>
 
-        <button class="menu-button" onclick="toggleMenu()">
+        <button class="menu-button" id="menuButton" aria-label="Toggle navigation menu">
             ☰
         </button>
 
@@ -56,28 +45,22 @@
             </p>
 
             <h1>
-                Learn HTML & CSS
+                Learn HTML &amp; CSS
                 <span>the Simple Way</span>
             </h1>
 
             <p class="hero-description">
                 Learn web development with simple explanations,
-                practical examples and copy-ready code.
+                practical examples and clean starter code.
             </p>
 
             <div class="hero-buttons">
 
-                <a
-                    href="html/html-introduction.html"
-                    class="primary-button">
-
+                <a href="#courses" class="primary-button">
                     Start HTML
                 </a>
 
-                <a
-                    href="css-lessons/css-introduction.html"
-                    class="secondary-button">
-
+                <a href="#courses" class="secondary-button">
                     Learn CSS
                 </a>
 
@@ -89,249 +72,36 @@
         <div class="hero-code">
 
             <div class="code-header">
-
                 <span>example.html</span>
-
             </div>
 
-            <pre><code><!DOCTYPE html>
-<html>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
 
-<head>
-    <title>My Website</title>
-</head>
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
 
-<body>
+&lt;body&gt;
 
-    <h1>Hello World</h1>
+    &lt;h1&gt;Hello World&lt;/h1&gt;
 
-    <p>
+    &lt;p&gt;
         I am learning HTML.
-    </p>
+    &lt;/p&gt;
 
-</body>
+&lt;/body&gt;
 
-</html></code></pre>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CODE SHOWCASE PLAYGROUND ================= -->
-
-    <section class="code-showcase-section" id="code-playground">
-
-        <div class="section-heading">
-
-            <p>INTERACTIVE CODE PLAYGROUND</p>
-
-            <h2>
-                Interactive Signup Form Code
-            </h2>
-
-            <span>
-                Click the preview image below to reveal the code with an interactive draggable split-screen editor.
-            </span>
-
-        </div>
-
-        <div class="code-playground-container">
-
-            <div class="playground-card" id="playgroundCard">
-
-                <!-- Picture Overlay (Click to Reveal Code) -->
-                <div class="playground-overlay" id="playgroundOverlay" onclick="revealCodePlayground()" role="button" tabindex="0" aria-label="Click to reveal interactive code and dragger">
-
-                    <img
-                        src="assets/images/signup-preview.svg"
-                        alt="Signup Form Preview"
-                        class="playground-thumb-img">
-
-                    <div class="reveal-button-wrapper">
-                        <div class="reveal-button-pulse"></div>
-                        <button class="reveal-button" aria-label="Open Interactive Code" tabindex="-1">
-                            </>
-                        </button>
-                    </div>
-
-                    <div class="playground-badge">
-                        <span>✨ Click image to inspect & drag code</span>
-                    </div>
-
-                </div>
-
-                <!-- Interactive Draggable Split-Pane Workspace -->
-                <div class="split-pane-workspace" id="splitWorkspace">
-
-                    <!-- Toolbar -->
-                    <div class="workspace-toolbar">
-                        <div class="toolbar-title">
-                            <span class="file-icon"></></span>
-                            <span>signup-form.html</span>
-                        </div>
-                        <div class="toolbar-actions">
-                            <button class="tool-btn" onclick="copyCode('signupSourceCode')" title="Copy Code">
-                                📋 Copy Code
-                            </button>
-                            <button class="tool-btn" onclick="resetSplitter()" title="Reset Splitter Width">
-                                ⟲ Reset Width
-                            </button>
-                            <button class="tool-btn close-btn" onclick="hideCodePlayground()" title="Back to Picture">
-                                ✕ Close
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Main Split Area -->
-                    <div class="split-container" id="splitContainer">
-
-                        <!-- Left Pane: Code View -->
-                        <div class="split-pane left-pane" id="leftPane">
-                            <div class="pane-header">
-                                <span>HTML & CSS Source</span>
-                                <small>Editable / Selectable</small>
-                            </div>
-                            <div class="code-scroll-area">
-                                <pre><code id="signupSourceCode"><!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
-    <style>
-        input[type=email]:focus {
-            background-color: #ddd;
-            outline: none;
-
-        }
-
-        input[type=password],
-        input[type=email] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            background: #f1f1f1;
-        }
-
-        * {
-            box-sizing: border-box;
-            padding: 0px;
-            margin: 1px;
-        }
-
-        hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-        }
-
-        button {
-            background-color: red;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0px;
-            border: none;
-            cursor: pointer;
-            width: 50%;
-            opacity: 0.9;
-        }
-
-        button:hover {
-            opacity: 1;
-            color: blue;
-        }
-
-        .cancelbtn, .signbtn {
-            padding: 14px 20px;
-            background-color: #550e06;
-            float: left;
-            width: 50%;
-        }
-        .form{
-            width: 100%;
-            height:100%;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-        .spa{
-            margin: 20px;
-            padding:5px;
-            width:50%;
-            
-
-        }
-    </style>
-</head>
-
-<body>
-    <div class="form">
-        <form>
-            <fieldset class="spa">
-                <h1>Singn up</h1><br>
-                <p>Please fill this form</p>
-                <hr>
-                <label for="password">Password</label>
-                <input name="password" type="password" placeholder="Enter your password"><br><br>
-                <label for="email">Email</label>
-                <input name="email" type="email" placeholder="Enter your email"><br><br>
-                <label for="repeat password">Repeat password</label>
-                <input name="password" type="password" placeholder="Repeat your password"><br><br>
-                <label for="checkbox">Remember me</label>
-                <input name="checkbox" type="Checkbox"><br><br>
-                <p>By pressing yes you agree to <a href="#">term & conditions</a></p>
-                <div>
-                    <button class="cancelbtn" type="cancel" style="background-color: green;">Cancel</button>
-                    <button class="signbtn" type="submit">Signup</button>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-</body>
-
-</html></code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Dragger / Resizer Splitter -->
-                        <div class="split-dragger" id="splitDragger" title="Drag left or right to resize">
-                            <div class="dragger-handle">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-
-                        <!-- Right Pane: Live Output Preview -->
-                        <div class="split-pane right-pane" id="rightPane">
-                            <div class="pane-header">
-                                <span>Live Browser Output</span>
-                                <a href="examples/forms/registration-form.html" target="_blank" class="pane-link">Open Full Page ↗</a>
-                            </div>
-                            <div class="preview-frame-container">
-                                <iframe id="livePreviewFrame" src="examples/forms/registration-form.html" title="Live Signup Form Preview"></iframe>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+&lt;/html&gt;</code></pre>
 
         </div>
 
     </section>
 
 
-    <!-- ================= COURSE SECTION ================= -->
+    <!-- ================= COURSE / TOPICS SECTION ================= -->
 
-    <section class="courses">
+    <section class="courses" id="courses">
 
         <div class="section-heading">
 
@@ -351,9 +121,7 @@
 
         <div class="course-grid">
 
-
             <!-- HTML CARD -->
-
             <article class="course-card">
 
                 <div class="course-icon">
@@ -371,27 +139,21 @@
                 </p>
 
                 <ul>
-
                     <li>HTML Structure</li>
                     <li>HTML Elements</li>
-                    <li>Links & Images</li>
-                    <li>Lists & Tables</li>
+                    <li>Links &amp; Images</li>
+                    <li>Lists &amp; Tables</li>
                     <li>HTML Forms</li>
-
                 </ul>
 
-                <a
-                    href="html/html-introduction.html"
-                    class="card-button">
-
-                    Learn HTML →
+                <a href="#courses" class="card-button">
+                    Learn HTML &rarr;
                 </a>
 
             </article>
 
 
             <!-- CSS CARD -->
-
             <article class="course-card">
 
                 <div class="course-icon">
@@ -409,20 +171,15 @@
                 </p>
 
                 <ul>
-
                     <li>CSS Syntax</li>
                     <li>CSS Selectors</li>
-                    <li>Colors & Fonts</li>
+                    <li>Colors &amp; Fonts</li>
                     <li>Box Model</li>
                     <li>CSS Positioning</li>
-
                 </ul>
 
-                <a
-                    href="css-lessons/css-introduction.html"
-                    class="card-button">
-
-                    Learn CSS →
+                <a href="#courses" class="card-button">
+                    Learn CSS &rarr;
                 </a>
 
             </article>
@@ -430,7 +187,6 @@
         </div>
 
     </section>
-
 
 
     <!-- ================= LEARNING METHOD ================= -->
@@ -442,7 +198,7 @@
             <p>HOW IT WORKS</p>
 
             <h2>
-                Learn → Example → Practice
+                Learn &rarr; Example &rarr; Practice
             </h2>
 
         </div>
@@ -451,44 +207,30 @@
         <div class="learning-grid">
 
             <div class="learning-card">
-
                 <span>01</span>
-
                 <h3>Learn</h3>
-
                 <p>
                     Read short and simple explanations
                     of each HTML and CSS concept.
                 </p>
-
             </div>
 
-
             <div class="learning-card">
-
                 <span>02</span>
-
                 <h3>See Example</h3>
-
                 <p>
                     Understand each topic with small
                     practical code examples.
                 </p>
-
             </div>
 
-
             <div class="learning-card">
-
                 <span>03</span>
-
                 <h3>Copy Code</h3>
-
                 <p>
                     Copy useful HTML and CSS code
                     and use it in your own project.
                 </p>
-
             </div>
 
         </div>
@@ -496,42 +238,26 @@
     </section>
 
 
-
     <!-- ================= USEFUL EXAMPLES SECTION ================= -->
-    <!-- Contains interactive mini-demos for forms, tables, and cards -->
+
     <section class="examples-section" id="examples">
 
-        <!-- Section Heading & Subtitle -->
         <div class="section-heading">
             <p>READY-MADE CODE</p>
             <h2>Useful Examples</h2>
             <span>Learn the concept and then use a complete example.</span>
         </div>
 
-        <!-- 3-Column Grid for Example Cards -->
         <div class="example-grid">
 
-            <!-- Card 1: Interactive Registration Form Input -->
+            <!-- Example 1: Form Preview -->
             <div class="example-card">
 
-                <!-- Interactive Form: Submits input to update table on right -->
-                <form class="example-preview form-preview" onsubmit="registerUser(event)">
+                <form class="example-preview form-preview">
 
-                    <!-- Full Name Input Field -->
-                    <input
-                        type="text"
-                        id="regName"
-                        placeholder="Full Name"
-                        required>
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
 
-                    <!-- Email Address Input Field -->
-                    <input
-                        type="email"
-                        id="regEmail"
-                        placeholder="Email"
-                        required>
-
-                    <!-- Gender Radio Selection Group -->
                     <div class="gender-selection">
                         <span>Gender:</span>
                         <label>
@@ -542,86 +268,74 @@
                         </label>
                     </div>
 
-                    <!-- Course Dropdown Selection Box -->
-                    <select id="regCourse" required>
+                    <select>
                         <option value="Web Development">Web Development</option>
                         <option value="HTML Basics">HTML Basics</option>
                         <option value="CSS Styling">CSS Styling</option>
                     </select>
 
-                    <!-- Submit Button -->
-                    <button type="submit">
+                    <button type="button">
                         Register
                     </button>
 
                 </form>
 
-                <!-- Card 1 Info / Description -->
                 <h3>Registration Form</h3>
                 <p>HTML form with clean CSS styling.</p>
 
             </div>
 
 
-            <!-- Card 2: Form Output Display Table -->
+            <!-- Example 2: Table Preview -->
             <div class="example-card">
 
-                <!-- Table Container: Displays the currently submitted form values -->
-                <div class="example-preview table-preview" id="tablePreview">
+                <div class="example-preview table-preview">
 
-                    <!-- Output Row: Full Name -->
                     <div>
                         <span>Name</span>
-                        <strong id="outName">fahad</strong>
+                        <strong>Student</strong>
                     </div>
 
-                    <!-- Output Row: Email Address -->
                     <div>
                         <span>Email</span>
-                        <strong id="outEmail">mfahadexpert@gmail.com</strong>
+                        <strong>student@example.com</strong>
                     </div>
 
-                    <!-- Output Row: Selected Gender -->
                     <div>
                         <span>Gender</span>
-                        <strong id="outGender">Male</strong>
+                        <strong>Male</strong>
                     </div>
 
-                    <!-- Output Row: Selected Course -->
                     <div>
                         <span>Course</span>
-                        <strong id="outCourse">Web Development</strong>
+                        <strong>Web Development</strong>
                     </div>
 
                 </div>
 
-                <!-- Card 2 Info / Description -->
                 <h3>Form Output Table</h3>
                 <p>Simple HTML table with CSS styling.</p>
 
             </div>
 
 
-            <!-- Card 3: Mini Course Card Preview -->
-            <a href="examples/cards/course-card.html" class="example-card">
+            <!-- Example 3: Course Card Preview -->
+            <div class="example-card">
 
-                <!-- Mini Card Layout Preview -->
                 <div class="example-preview mini-card-preview">
                     <strong>HTML Course</strong>
                     <span>Learn web development</span>
-                    <button>Start</button>
+                    <button type="button">Start</button>
                 </div>
 
-                <!-- Card 3 Info / Description -->
                 <h3>Course Card</h3>
                 <p>Card design using HTML and CSS.</p>
 
-            </a>
+            </div>
 
         </div>
 
     </section>
-
 
 
     <!-- ================= CTA ================= -->
@@ -644,15 +358,11 @@
 
         </div>
 
-        <a
-            href="html/html-introduction.html"
-            class="cta-button">
-
+        <a href="#courses" class="cta-button">
             Start Learning
         </a>
 
     </section>
-
 
 
     <!-- ================= FOOTER ================= -->
@@ -660,29 +370,17 @@
     <footer>
 
         <div class="footer-logo">
-
             Web<span>Learn</span>
-
         </div>
 
         <p>
-            Simple HTML & CSS learning website.
+            Simple HTML &amp; CSS learning website.
         </p>
 
         <div class="footer-links">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="html/html-introduction.html">
-                HTML
-            </a>
-
-            <a href="css-lessons/css-introduction.html">
-                CSS
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="#courses">HTML</a>
+            <a href="#courses">CSS</a>
         </div>
 
         <small>
@@ -690,28 +388,6 @@
         </small>
 
     </footer>
-
-
-    <!-- ================= FLOATING AI CHATBOT BUTTON ================= -->
-    <!-- Demonstrates CSS position: fixed to keep the element locked in bottom-right -->
-    <aside class="chatbot-widget" aria-label="AI Chatbot Assistant Demo">
-
-        <!-- Hover Tooltip Message Bubble -->
-        <div class="chatbot-tooltip">
-            <strong>WebLearn AI Assistant</strong>
-            <p>HTML & CSS Fixed Position Demo</p>
-        </div>
-
-        <!-- Floating Action Button -->
-        <button class="chatbot-button" type="button" aria-label="AI Chatbot Demo">
-            <!-- Button Label -->
-            <span class="chatbot-label">AI Chat</span>
-            <!-- Pulsing Online Status Dot -->
-            <span class="status-indicator" title="Online"></span>
-        </button>
-
-    </aside>
-
 
     <script src="js/script.js"></script>
 
