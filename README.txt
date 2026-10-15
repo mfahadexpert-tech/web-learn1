@@ -1,7 +1,8 @@
 WebLearn - Web Technologies Learning Platform
 ==============================================
-University Lab Assignment 1
-Pure HTML5 & CSS3 (Zero JavaScript)
+Author: Muhammad Fahad (FA24-BSE-067)
+Discipline: Software Engineering
+Course: Web Technologies
 
-All files have been built matching Figure 1 and the university 8-lecture syllabus.
-See README.md for full instructions on running locally, taking screenshots, and submitting your PDF report.
+A modern educational learning hub covering university lectures 1 through 8.
+See README.md for full platform documentation and local usage instructions.

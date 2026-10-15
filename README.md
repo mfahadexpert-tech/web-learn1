@@ -1,37 +1,53 @@
 # WebLearn — Web Technologies Learning Platform
 
-> **University Lab Assignment 1**  
+> **Author:** Muhammad Fahad  
+> **Registration Number:** FA24-BSE-067  
+> **Discipline:** Software Engineering  
 > **Course:** Web Technologies  
-> **Technology Stack:** Pure HTML5 and CSS3 (100% Static, Zero JavaScript)  
-> **Compliance:** Matches **Figure 1 Sample Output** and the university 8-lecture syllabus.
 
 ---
 
-## 📖 Project Overview
+## 📖 About WebLearn
 
-**WebLearn** is a comprehensive, modern, beginner-friendly educational website created from scratch for university students learning Web Technologies. It faithfully implements the layout demonstrated in **Figure 1**:
-- **Homepage:** Features the student profile banner (**Ali Khan | FA21-BCS-001** / customizable to your details) and a styled, responsive table listing all **8 lectures** with functional links.
-- **Eight Dedicated Lecture Pages:** Each lecture contains a summary, syllabus topics tree, copyable code block, live browser output rendering, in-depth theoretical notes, common mistakes, viva questions, and sequential navigation.
-- **Learning Hub Support Pages:** Additional pages for **Code Examples**, **Reusable Components**, **Viva Voce Preparation**, and **Practice Lab Tasks**.
+**WebLearn** is an educational learning website designed to help students and beginners master front-end web development. The curriculum is structured around eight foundational lectures, progressing systematically from internet fundamentals to HTML5 semantic structure, modern CSS layouts, responsive design, and client-side behavior concepts.
 
 ---
 
-## 📁 Project Folder Structure
+## 🌟 Key Features
+
+- **Course Overview Table:** Structured table providing sequential access to all eight course lectures.
+- **Eight Comprehensive Lecture Modules:**
+  - **Lecture 1:** Introduction to Web Technologies (Internet vs. Web, Client-Server, HTTP/HTTPS, DNS)
+  - **Lecture 2:** HTML Basics (Document Structure, Headings, Paragraphs, Lists, Links, Images)
+  - **Lecture 3:** HTML Forms and Media (Forms, Inputs, Tables with Colspan/Rowspan, Semantic Layout)
+  - **Lecture 4:** Introduction to CSS (Syntax, Selectors, Color Models, Typography, Backgrounds)
+  - **Lecture 5:** CSS Selectors (Combinators, Pseudo-Classes, Pseudo-Elements, Cascade & Specificity)
+  - **Lecture 6:** CSS Box Model & Layout (Padding, Borders, Margins, Box-Sizing, Display Properties)
+  - **Lecture 7:** Responsive Web Design (Positioning Schemes, Z-Index, Floats, Media Queries)
+  - **Lecture 8:** Introduction to JavaScript (Front-End Triad, DOM Concepts, CSS Animations)
+- **Code Examples Library:** Ready-to-use snippets of semantic HTML tables, forms, and CSS animations.
+- **Reusable Component Library:** Responsive UI elements including button variants, cards, and accordions.
+- **Viva Voce Preparation:** Frequently asked technical evaluation questions with verified model answers.
+- **Practice Exercises:** Practical challenges with requirements, hints, and reference solutions.
+
+---
+
+## 📁 Repository Structure
 
 ```text
 WebLearn/
 │
-├── index.html                  # Homepage (Figure 1 card with 8-lecture table)
-├── about.html                  # About project & assignment submission guide
-├── examples.html               # Dedicated code examples library
-├── components.html             # Reusable UI component library (pure HTML/CSS)
-├── viva.html                   # University viva voce preparation guide
-├── practice.html               # Practice lab tasks with model solutions
+├── index.html                  # Homepage with lecture navigation table & course overview
+├── about.html                  # Platform mission and author profile
+├── examples.html               # Working code examples library
+├── components.html             # Reusable UI component library
+├── viva.html                   # Oral exam & viva voce preparation guide
+├── practice.html               # Practical lab exercises and solutions
 │
 ├── css/
-│   ├── style.css               # Core styling, typography, Figure 1 card & table
-│   ├── components.css          # Reusable buttons, forms, cards, alerts, accordions
-│   └── responsive.css          # Media queries for tablet & mobile responsiveness
+│   ├── style.css               # Core layout and typography styles
+│   ├── components.css          # Reusable component styles
+│   └── responsive.css          # Media queries for tablet and mobile screens
 │
 ├── lectures/
 │   ├── lecture1.html           # Introduction to Web Technologies
@@ -43,56 +59,17 @@ WebLearn/
 │   ├── lecture7.html           # Responsive Web Design
 │   └── lecture8.html           # Introduction to JavaScript & Advanced Effects
 │
-└── README.md                   # Complete documentation & submission instructions
+└── README.md                   # Project documentation
 ```
 
 ---
 
-## 🚀 How to Run the Project Locally
+## 🚀 Getting Started
 
-### Method 1: Using VS Code Live Server (Recommended)
-1. Open Visual Studio Code.
-2. Open the `WebLearn` folder via **File &rarr; Open Folder...**.
-3. Install the **Live Server** extension (by *Ritwick Dey*) if not already installed.
-4. Right-click on `index.html` and click **"Open with Live Server"**.
-5. The website will automatically launch at `http://127.0.0.1:5500/index.html`.
+### Option 1: Live Server in VS Code
+1. Open this repository folder in **Visual Studio Code**.
+2. Right-click `index.html` and choose **"Open with Live Server"**.
+3. The platform will open at `http://127.0.0.1:5500/index.html`.
 
-### Method 2: Direct File Opening
-1. Open File Explorer and navigate to `c:\Users\M Dawood\Desktop\web-technologies-lab\WebLearn`.
-2. Double-click `index.html` to open it directly in Google Chrome, Microsoft Edge, or Mozilla Firefox.
-
----
-
-## ✏️ How to Customize Your Student Name & Registration Number
-
-To update the name and registration number shown in the top header of the Figure 1 card:
-1. Open `index.html` in your text editor.
-2. Locate lines 35–45:
-   ```html
-   <div class="fig1-header-block">
-       <h1 class="fig1-main-title">Web Technologies</h1>
-       <p class="fig1-student-meta">Ali Khan | FA21-BCS-001</p>
-   </div>
-   ```
-3. Change `Ali Khan | FA21-BCS-001` to your name and registration number (e.g. `Muhammad Dawood | FA21-BCS-XXX`).
-4. Save the file and refresh your browser.
-
----
-
-## 📸 Preparing Your Assignment PDF Report
-
-Your assignment requires submitting a PDF report with your GitHub repository link and screenshots of the website output:
-
-1. **GitHub Link:** Push your commits to your GitHub repository and include the repository URL on the title page of your report.
-2. **Screenshot 1 (Homepage):** Capture the `index.html` page showing the **Web Technologies** blue header card, your name/reg number, and the styled 8-lecture table.
-3. **Screenshot 2 (Lecture Page):** Open `lectures/lecture1.html` and capture the top header, summary, nested topics tree, example code block, and rendered output preview (exactly matching Figure 1).
-4. **Screenshot 3 (Components / Viva):** Optionally capture `components.html` or `viva.html` to showcase your complete project scope.
-5. Export your document as a **PDF** and submit it to your university portal.
-
----
-
-## 🛡️ Strict University Compliance
-- **No JavaScript:** The entire platform functions strictly on static HTML5 and CSS3.
-- **No External Frameworks:** Zero Bootstrap, Tailwind, or third-party libraries.
-- **Valid Semantic HTML5:** Clean code, properly nested tags, accessible heading hierarchy.
-- **Human-Written Code:** Neatly formatted, modular, and easy to explain during your viva exam.
+### Option 2: Direct Browser Opening
+1. Double-click `index.html` to open directly in Google Chrome, Microsoft Edge, or Mozilla Firefox.
