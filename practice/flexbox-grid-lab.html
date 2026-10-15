@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox &amp; CSS Grid Complete Practice Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 30px 20px;
+        }
+
+        .lab-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .lab-header {
+            text-align: center;
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            padding: 32px 20px;
+            border-radius: 14px;
+            border-top: 4px solid #3b82f6;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .lab-header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .lab-header h1 span {
+            color: #60a5fa;
+        }
+
+        .lab-header p {
+            color: #94a3b8;
+            font-size: 14px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .task-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .task-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .task-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .task-badge.grid {
+            background: #fdf2f8;
+            color: #db2777;
+        }
+
+        .task-badge.compare {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .task-desc {
+            font-size: 13.5px;
+            color: #475569;
+            margin-bottom: 16px;
+        }
+
+        .demo-box {
+            background: #f8fafc;
+            border: 1.5px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+
+        .expl-note {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #166534;
+            margin-top: 10px;
+        }
+
+        /* ----------------------------------------------------
+           Task 1: Flex Container Navbar
+           ---------------------------------------------------- */
+        .flex-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0f172a;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: #ffffff;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .nav-btn {
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* ----------------------------------------------------
+           Task 2: Flex Items (4 colored cards)
+           ---------------------------------------------------- */
+        .items-container {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .flex-card {
+            flex: 1 1 200px;
+            padding: 20px;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+
+        .card-c1 { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .card-c2 { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .card-c3 { background: linear-gradient(135deg, #10b981, #059669); }
+        .card-c4 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+        /* ----------------------------------------------------
+           Task 3: Main vs Cross Axis
+           ---------------------------------------------------- */
+        .axis-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .axis-box-row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            background: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            min-height: 90px;
+            align-items: center;
+        }
+
+        .axis-box-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            min-height: 140px;
+        }
+
+        .axis-item {
+            background: #2563eb;
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* ----------------------------------------------------
+           Task 4: Flex Direction Dashboard
+           ---------------------------------------------------- */
+        .dashboard-nav-demo {
+            display: flex;
+            gap: 10px;
+            background: #1e293b;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .dash-item {
+            background: #334155;
+            color: #f1f5f9;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 13.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ----------------------------------------------------
+           Task 5: Justify Content Demo
+           ---------------------------------------------------- */
+        .jc-container {
+            display: flex;
+            background: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .jc-btn {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ----------------------------------------------------
+           Task 6: Align Items Demo
+           ---------------------------------------------------- */
+        .ai-container {
+            display: flex;
+            background: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            height: 150px;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .ai-box-1 { height: 50px; background: #ea580c; }
+        .ai-box-2 { height: 110px; background: #0284c7; }
+        .ai-box-3 { height: 80px; background: #16a34a; }
+
+        .ai-box {
+            width: 100px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+
+        /* ----------------------------------------------------
+           Task 7: Flex Wrap Gallery (8 cards)
+           ---------------------------------------------------- */
+        .gallery-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .gallery-card {
+            flex: 1 1 calc(25% - 12px);
+            min-width: 120px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 14px 10px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+        }
+
+        .gallery-card i {
+            font-size: 22px;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .gallery-card h4 {
+            font-size: 13px;
+            color: #1e293b;
+        }
+
+        /* ----------------------------------------------------
+           Task 8, 9, 10: Grow, Shrink, Basis
+           ---------------------------------------------------- */
+        .grow-container, .shrink-container, .basis-container {
+            display: flex;
+            gap: 10px;
+            background: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .gsb-item {
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* ----------------------------------------------------
+           Task 11: Grid Container & Areas
+           ---------------------------------------------------- */
+        .grid-areas-layout {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            grid-template-columns: 180px 1fr;
+            grid-template-rows: 50px 130px 40px;
+            gap: 8px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .area-header { grid-area: header; background: #1e293b; color: white; display: flex; align-items: center; padding: 0 16px; font-weight: bold; font-size: 13px; }
+        .area-sidebar { grid-area: sidebar; background: #334155; color: #cbd5e1; padding: 14px; font-size: 13px; font-weight: 600; }
+        .area-main { grid-area: main; background: #ffffff; border: 1px solid #cbd5e1; padding: 14px; font-size: 13px; color: #334155; }
+        .area-footer { grid-area: footer; background: #0f172a; color: #94a3b8; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
+        /* ----------------------------------------------------
+           Task 12: Grid Rows & Columns
+           ---------------------------------------------------- */
+        .dashboard-grid-3x2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 75px 75px;
+            gap: 10px;
+        }
+
+        .dash-tile {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 13px;
+            color: #1e293b;
+        }
+
+        /* ----------------------------------------------------
+           Task 13: Fractional Units (1fr and 3fr)
+           ---------------------------------------------------- */
+        .fr-layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 12px;
+            max-width: 800px;
+        }
+
+        .fr-sidebar {
+            background: #2563eb;
+            color: white;
+            padding: 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .fr-main {
+            background: #0f172a;
+            color: white;
+            padding: 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* ----------------------------------------------------
+           Task 14: Grid Line Placement & Spanning
+           ---------------------------------------------------- */
+        .grid-spanning-demo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 50px 70px 70px;
+            gap: 8px;
+        }
+
+        .span-heading {
+            grid-column: 1 / 4;
+            background: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 14px;
+            font-weight: bold;
+            font-size: 13px;
+            border-radius: 4px;
+        }
+
+        .span-card-2row {
+            grid-column: 4;
+            grid-row: 1 / 3;
+            background: #8b5cf6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .span-regular {
+            background: #e2e8f0;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        /* ----------------------------------------------------
+           Task 15: Flexbox vs Grid Integration
+           ---------------------------------------------------- */
+        .flex-vs-grid-card {
+            border: 2px solid #3b82f6;
+            border-radius: 10px;
+            padding: 16px;
+            background: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .axis-wrapper { grid-template-columns: 1fr; }
+            .grid-areas-layout { grid-template-columns: 1fr; grid-template-areas: "header" "sidebar" "main" "footer"; }
+            .dashboard-grid-3x2 { grid-template-columns: 1fr 1fr; }
+            .fr-layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lab-container">
+        <header class="lab-header">
+            <h1>Flexbox &amp; CSS Grid <span>Mastery Lab</span></h1>
+            <p>15 interactive, modular implementations demonstrating 1D component alignment, flex sizing mechanics, and 2D spatial CSS Grid architectures.</p>
+        </header>
+
+        <!-- Task 1: Flex Container -->
+        <article class="task-card" id="task-1">
+            <div class="task-title">
+                <span class="task-badge">Task 1</span>
+                <span>Flex Container: Single-Row Navigation Bar</span>
+            </div>
+            <p class="task-desc">Website logo, four navigation links, and a login button aligned horizontally on a single row using <code>display: flex</code>, <code>justify-content: space-between</code>, and <code>align-items: center</code>.</p>
+            <nav class="flex-navbar">
+                <div class="nav-logo"><i class="fa-solid fa-code"></i> WebTech<span>Lab</span></div>
+                <ul class="nav-links">
+                    <li><a href="#task-1">Home</a></li>
+                    <li><a href="#task-7">Products</a></li>
+                    <li><a href="#task-11">Dashboard</a></li>
+                    <li><a href="#task-15">Docs</a></li>
+                </ul>
+                <button type="button" class="nav-btn"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+            </nav>
+        </article>
+
+        <!-- Task 2: Flex Items -->
+        <article class="task-card" id="task-2">
+            <div class="task-title">
+                <span class="task-badge">Task 2</span>
+                <span>Flex Items: Four Distinct Colored Cards</span>
+            </div>
+            <p class="task-desc">Four colored cards arranged inside a flex container. The direct children (<code>.flex-card</code>) automatically become flex items, allowing flexible distribution.</p>
+            <div class="items-container">
+                <div class="flex-card card-c1"><i class="fa-solid fa-fire"></i> Crimson Card</div>
+                <div class="flex-card card-c2"><i class="fa-solid fa-bolt"></i> Azure Card</div>
+                <div class="flex-card card-c3"><i class="fa-solid fa-leaf"></i> Emerald Card</div>
+                <div class="flex-card card-c4"><i class="fa-solid fa-gem"></i> Amethyst Card</div>
+            </div>
+            <div class="expl-note">
+                <strong>Explanation:</strong> The 4 <code>.flex-card</code> elements are the <em>flex items</em> because they are direct children of <code>.items-container</code> (which has <code>display: flex</code>). Grandchildren or outer parents are not flex items.
+            </div>
+        </article>
+
+        <!-- Task 3: Main Axis vs Cross Axis -->
+        <article class="task-card" id="task-3">
+            <div class="task-title">
+                <span class="task-badge">Task 3</span>
+                <span>Main Axis vs. Cross Axis Dynamics</span>
+            </div>
+            <p class="task-desc">When <code>flex-direction</code> changes from <code>row</code> to <code>column</code>, the main axis rotates by 90 degrees from horizontal to vertical, swapping axis alignment rules.</p>
+            <div class="axis-wrapper">
+                <div>
+                    <h4 style="font-size: 13px; margin-bottom: 6px; color: #1e293b;">1. <code>flex-direction: row</code> (Default)</h4>
+                    <div class="axis-box-row">
+                        <div class="axis-item">Box A</div>
+                        <div class="axis-item">Box B</div>
+                        <div class="axis-item">Box C</div>
+                    </div>
+                    <p style="font-size: 12px; color: #64748b; margin-top: 5px;"><strong>Main Axis:</strong> Horizontal (X) &bull; <strong>Cross Axis:</strong> Vertical (Y)</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 13px; margin-bottom: 6px; color: #1e293b;">2. <code>flex-direction: column</code></h4>
+                    <div class="axis-box-col">
+                        <div class="axis-item">Box A</div>
+                        <div class="axis-item">Box B</div>
+                        <div class="axis-item">Box C</div>
+                    </div>
+                    <p style="font-size: 12px; color: #64748b; margin-top: 5px;"><strong>Main Axis:</strong> Vertical (Y) &bull; <strong>Cross Axis:</strong> Horizontal (X)</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Task 4: Flex Direction -->
+        <article class="task-card" id="task-4">
+            <div class="task-title">
+                <span class="task-badge">Task 4</span>
+                <span>Flex Direction: Student Dashboard Navigation</span>
+            </div>
+            <p class="task-desc">Student dashboard navigation displaying three key views: Overview, Assignments, and Grades.</p>
+            <div class="dashboard-nav-demo">
+                <div class="dash-item"><i class="fa-solid fa-chart-pie"></i> Overview</div>
+                <div class="dash-item"><i class="fa-solid fa-list-check"></i> Assignments</div>
+                <div class="dash-item"><i class="fa-solid fa-graduation-cap"></i> Grades</div>
+            </div>
+            <div class="expl-note">
+                <strong>Responsive Note:</strong> Switching between <code>flex-direction: column</code> on mobile sidebar navigation and <code>flex-direction: row</code> on wide screens is the foundation of responsive menus.
+            </div>
+        </article>
+
+        <!-- Task 5: Justify Content -->
+        <article class="task-card" id="task-5">
+            <div class="task-title">
+                <span class="task-badge">Task 5</span>
+                <span>Justify Content: Distributing Main-Axis Space</span>
+            </div>
+            <p class="task-desc">Five buttons inside a flex container aligned using various <code>justify-content</code> values:</p>
+            <div style="font-size: 12px; font-weight: bold; margin-bottom: 4px;">justify-content: flex-start</div>
+            <div class="jc-container" style="justify-content: flex-start; gap: 8px;">
+                <button class="jc-btn">Btn 1</button><button class="jc-btn">Btn 2</button><button class="jc-btn">Btn 3</button><button class="jc-btn">Btn 4</button><button class="jc-btn">Btn 5</button>
+            </div>
+            <div style="font-size: 12px; font-weight: bold; margin-bottom: 4px;">justify-content: center</div>
+            <div class="jc-container" style="justify-content: center; gap: 8px;">
+                <button class="jc-btn">Btn 1</button><button class="jc-btn">Btn 2</button><button class="jc-btn">Btn 3</button><button class="jc-btn">Btn 4</button><button class="jc-btn">Btn 5</button>
+            </div>
+            <div style="font-size: 12px; font-weight: bold; margin-bottom: 4px;">justify-content: space-between</div>
+            <div class="jc-container" style="justify-content: space-between;">
+                <button class="jc-btn">Btn 1</button><button class="jc-btn">Btn 2</button><button class="jc-btn">Btn 3</button><button class="jc-btn">Btn 4</button><button class="jc-btn">Btn 5</button>
+            </div>
+            <div style="font-size: 12px; font-weight: bold; margin-bottom: 4px;">justify-content: space-around</div>
+            <div class="jc-container" style="justify-content: space-around;">
+                <button class="jc-btn">Btn 1</button><button class="jc-btn">Btn 2</button><button class="jc-btn">Btn 3</button><button class="jc-btn">Btn 4</button><button class="jc-btn">Btn 5</button>
+            </div>
+        </article>
+
+        <!-- Task 6: Align Items -->
+        <article class="task-card" id="task-6">
+            <div class="task-title">
+                <span class="task-badge">Task 6</span>
+                <span>Align Items: Cross-Axis Alignment of Different Heights</span>
+            </div>
+            <p class="task-desc">Three boxes of varying heights (50px, 110px, 80px) aligned across a 150px-tall flex container:</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <div>
+                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 4px;">align-items: flex-start</div>
+                    <div class="ai-container" style="align-items: flex-start;">
+                        <div class="ai-box ai-box-1">50px</div>
+                        <div class="ai-box ai-box-2">110px</div>
+                        <div class="ai-box ai-box-3">80px</div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 4px;">align-items: center</div>
+                    <div class="ai-container" style="align-items: center;">
+                        <div class="ai-box ai-box-1">50px</div>
+                        <div class="ai-box ai-box-2">110px</div>
+                        <div class="ai-box ai-box-3">80px</div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 4px;">align-items: flex-end</div>
+                    <div class="ai-container" style="align-items: flex-end;">
+                        <div class="ai-box ai-box-1">50px</div>
+                        <div class="ai-box ai-box-2">110px</div>
+                        <div class="ai-box ai-box-3">80px</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Task 7: Flex Wrap -->
+        <article class="task-card" id="task-7">
+            <div class="task-title">
+                <span class="task-badge">Task 7</span>
+                <span>Flex Wrap: Responsive Product Gallery (8 Cards)</span>
+            </div>
+            <p class="task-desc">An 8-card responsive product gallery utilizing <code>flex-wrap: wrap</code>. Shrink the browser window to see items fluidly wrap to the next line.</p>
+            <div class="gallery-wrap">
+                <div class="gallery-card"><i class="fa-solid fa-laptop"></i><h4>Pro Laptop</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-mobile-screen"></i><h4>Smartphone</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-headphones"></i><h4>Headphones</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-camera"></i><h4>4K Camera</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-keyboard"></i><h4>Keyboards</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-mouse"></i><h4>Mouse</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-display"></i><h4>Monitors</h4></div>
+                <div class="gallery-card"><i class="fa-solid fa-hard-drive"></i><h4>NVMe SSD</h4></div>
+            </div>
+        </article>
+
+        <!-- Task 8: Flex Grow -->
+        <article class="task-card" id="task-8">
+            <div class="task-title">
+                <span class="task-badge">Task 8</span>
+                <span>Flex Grow: Proportionate Free Space Distribution (1 : 2 : 1)</span>
+            </div>
+            <p class="task-desc">Three flex items with <code>flex-grow: 1</code>, <code>flex-grow: 2</code>, and <code>flex-grow: 1</code>.</p>
+            <div class="grow-container">
+                <div class="gsb-item" style="flex-grow: 1;">Item 1 (grow: 1)</div>
+                <div class="gsb-item" style="flex-grow: 2; background: #1d4ed8;">Item 2 (grow: 2)</div>
+                <div class="gsb-item" style="flex-grow: 1;">Item 3 (grow: 1)</div>
+            </div>
+            <div class="expl-note">
+                <strong>Math Calculation:</strong> Total grow units = 1 + 2 + 1 = 4. Available positive free space is divided into 4 parts. Item 2 receives 2/4 (50%) of all extra space, while Item 1 and Item 3 each receive 1/4 (25%).
+            </div>
+        </article>
+
+        <!-- Task 9: Flex Shrink -->
+        <article class="task-card" id="task-9">
+            <div class="task-title">
+                <span class="task-badge">Task 9</span>
+                <span>Flex Shrink: Negative Free Space Absorption</span>
+            </div>
+            <p class="task-desc">Three 300px items inside a 600px container (overflow deficit = 300px). Item 2 has <code>flex-shrink: 2</code> while Items 1 &amp; 3 have <code>flex-shrink: 1</code>.</p>
+            <div class="shrink-container" style="max-width: 600px;">
+                <div class="gsb-item" style="width: 300px; flex-shrink: 1;">300px (shrink: 1)</div>
+                <div class="gsb-item" style="width: 300px; flex-shrink: 2; background: #dc2626;">300px (shrink: 2)</div>
+                <div class="gsb-item" style="width: 300px; flex-shrink: 1;">300px (shrink: 1)</div>
+            </div>
+            <div class="expl-note">
+                <strong>Deficit Handling:</strong> The browser calculates negative space (900px &minus; 600px = 300px deficit). Item 2 with shrink: 2 sheds twice as many pixels as the other two items, compressing further to maintain layout integrity.
+            </div>
+        </article>
+
+        <!-- Task 10: Flex Basis -->
+        <article class="task-card" id="task-10">
+            <div class="task-title">
+                <span class="task-badge">Task 10</span>
+                <span>Flex Basis: Initial Main Sizes (150px, 250px, 350px)</span>
+            </div>
+            <p class="task-desc">Items with explicit <code>flex-basis</code> values before positive or negative space calculations are performed.</p>
+            <div class="basis-container">
+                <div class="gsb-item" style="flex-basis: 150px; flex-grow: 0; flex-shrink: 0;">basis: 150px</div>
+                <div class="gsb-item" style="flex-basis: 250px; flex-grow: 0; flex-shrink: 0; background: #0284c7;">basis: 250px</div>
+                <div class="gsb-item" style="flex-basis: 350px; flex-grow: 0; flex-shrink: 0; background: #0f172a;">basis: 350px</div>
+            </div>
+            <div class="expl-note">
+                <strong>Explanation:</strong> <code>flex-basis</code> dictates the hypothetical starting main-axis size before any growth or shrinkage occurs, taking precedence over <code>width</code> along the main axis.
+            </div>
+        </article>
+
+        <!-- Task 11: Grid Container & Areas -->
+        <article class="task-card" id="task-11">
+            <div class="task-title">
+                <span class="task-badge grid">Task 11</span>
+                <span>CSS Grid: <code>grid-template-areas</code> Layout</span>
+            </div>
+            <p class="task-desc">A semantic page structure mapping Header, Sidebar, Main Content, and Footer via named grid areas.</p>
+            <div class="grid-areas-layout">
+                <header class="area-header"><i class="fa-solid fa-compass" style="margin-right: 8px;"></i> Header Area (grid-area: header)</header>
+                <aside class="area-sidebar"><i class="fa-solid fa-folder-tree"></i> Sidebar Navigation</aside>
+                <main class="area-main"><strong>Main Content Area:</strong> Renders primary dynamic views alongside the fixed sidebar.</main>
+                <footer class="area-footer">&copy; 2026 Grid Template Areas Footer</footer>
+            </div>
+        </article>
+
+        <!-- Task 12: Grid Rows & Columns -->
+        <article class="task-card" id="task-12">
+            <div class="task-title">
+                <span class="task-badge grid">Task 12</span>
+                <span>CSS Grid: 3 Columns &times; 2 Rows Dashboard</span>
+            </div>
+            <p class="task-desc">Dashboard defined using <code>grid-template-columns: repeat(3, 1fr)</code> and <code>grid-template-rows: 75px 75px</code>.</p>
+            <div class="dashboard-grid-3x2">
+                <div class="dash-tile"><i class="fa-solid fa-users" style="color: #2563eb;"></i> 2,420 Users</div>
+                <div class="dash-tile"><i class="fa-solid fa-wallet" style="color: #16a34a;"></i> $18,450 Revenue</div>
+                <div class="dash-tile"><i class="fa-solid fa-server" style="color: #f59e0b;"></i> 99.9% Uptime</div>
+                <div class="dash-tile"><i class="fa-solid fa-bell" style="color: #ef4444;"></i> 14 Alerts</div>
+                <div class="dash-tile"><i class="fa-solid fa-cloud-arrow-up" style="color: #8b5cf6;"></i> 580 Uploads</div>
+                <div class="dash-tile"><i class="fa-solid fa-shield-halved" style="color: #06b6d4;"></i> Secured</div>
+            </div>
+        </article>
+
+        <!-- Task 13: Fractional Units (fr) -->
+        <article class="task-card" id="task-13">
+            <div class="task-title">
+                <span class="task-badge grid">Task 13</span>
+                <span>Fractional Units (fr): 1fr Sidebar &amp; 3fr Main Area</span>
+            </div>
+            <p class="task-desc">A 2-column layout in an 800px grid width container where sidebar occupies <code>1fr</code> and main content occupies <code>3fr</code>.</p>
+            <div class="fr-layout">
+                <div class="fr-sidebar">Sidebar (1fr = 200px / 25%)</div>
+                <div class="fr-main">Main Content Area (3fr = 600px / 75%)</div>
+            </div>
+            <div class="expl-note">
+                <strong>Exact Math Calculation:</strong> Available width = 800px. Total fr units = 1fr + 3fr = 4fr. One fraction unit = 800px / 4 = 200px. Sidebar (1fr) = 200px. Main Content (3fr) = 3 &times; 200px = 600px.
+            </div>
+        </article>
+
+        <!-- Task 14: Grid Line Placement & Spanning -->
+        <article class="task-card" id="task-14">
+            <div class="task-title">
+                <span class="task-badge grid">Task 14</span>
+                <span>Grid Line Placement: Spanning Columns and Rows</span>
+            </div>
+            <p class="task-desc">4-column grid where the heading spans columns 1 to 4 (<code>grid-column: 1 / 4</code>) and a feature card spans 2 rows (<code>grid-row: 1 / 3</code>).</p>
+            <div class="grid-spanning-demo">
+                <div class="span-heading">Banner Heading (grid-column: 1 / 4 &bull; Spans 3 cols)</div>
+                <div class="span-card-2row">Featured Card<br>(grid-row: 1 / 3 &bull; Spans 2 rows)</div>
+                <div class="span-regular">Cell (2, 1)</div>
+                <div class="span-regular">Cell (2, 2)</div>
+                <div class="span-regular">Cell (2, 3)</div>
+                <div class="span-regular">Cell (3, 1)</div>
+                <div class="span-regular">Cell (3, 2)</div>
+                <div class="span-regular">Cell (3, 3)</div>
+                <div class="span-regular">Cell (3, 4)</div>
+            </div>
+        </article>
+
+        <!-- Task 15: Flexbox vs Grid Comparison -->
+        <article class="task-card" id="task-15">
+            <div class="task-title">
+                <span class="task-badge compare">Task 15</span>
+                <span>Flexbox vs. CSS Grid Architectural Comparison</span>
+            </div>
+            <p class="task-desc">An integrated web interface demonstrating when to select Flexbox (1D linear flow) versus CSS Grid (2D tabular matrix).</p>
+            <div class="flex-vs-grid-card">
+                <!-- Flexbox Header -->
+                <div style="margin-bottom: 15px;">
+                    <span style="font-size: 11px; font-weight: bold; color: #2563eb; text-transform: uppercase;">1D Component &bull; Flexbox Navigation</span>
+                    <nav class="flex-navbar" style="margin-top: 6px;">
+                        <div class="nav-logo">Dashboard<span>Pro</span></div>
+                        <div style="display: flex; gap: 15px; font-size: 13px;">
+                            <span style="color: #94a3b8;">Analytics</span>
+                            <span style="color: #94a3b8;">Reports</span>
+                            <span style="color: #94a3b8;">Settings</span>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Grid Body -->
+                <div>
+                    <span style="font-size: 11px; font-weight: bold; color: #db2777; text-transform: uppercase;">2D Layout &bull; CSS Grid Matrix</span>
+                    <div class="dashboard-grid-3x2" style="margin-top: 6px;">
+                        <div class="dash-tile" style="background: #f8fafc;">Grid Cell (1,1)</div>
+                        <div class="dash-tile" style="background: #f8fafc;">Grid Cell (1,2)</div>
+                        <div class="dash-tile" style="background: #f8fafc;">Grid Cell (1,3)</div>
+                        <div class="dash-tile" style="background: #f8fafc;">Grid Cell (2,1)</div>
+                        <div class="dash-tile" style="background: #f8fafc;">Grid Cell (2,2)</div>
+                        <div class="dash-tile" style="background: #f8fafc;">Grid Cell (2,3)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="expl-note" style="margin-top: 15px;">
+                <strong>Architectural Justification:</strong>
+                <ul style="margin: 6px 0 0 16px; line-height: 1.6;">
+                    <li><strong>Flexbox (1-Dimensional):</strong> Chosen for the navigation bar because items flow along a single axis (row), dynamically adjusting to content length and spacing without rigid cell constraints.</li>
+                    <li><strong>CSS Grid (2-Dimensional):</strong> Chosen for the dashboard because items must strictly align along both horizontal rows AND vertical columns simultaneously, creating a cohesive visual matrix.</li>
+                </ul>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+</html>
