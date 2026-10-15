@@ -1,0 +1,97 @@
+/* ==========================================================================
+   WebLearn — Responsive Design Stylesheet (css/responsive.css)
+   Pure HTML5 & CSS3 — Zero JavaScript Dependency
+   ========================================================================== */
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 900px) {
+    .header-container {
+        height: auto;
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .platform-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .fig1-card-container {
+        margin: 0 10px 30px 10px;
+    }
+
+    .lecture-page-card {
+        padding: 24px 20px;
+        margin: 0 10px 30px 10px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .site-logo {
+        font-size: 1.25rem;
+    }
+
+    .site-nav {
+        gap: 6px;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 9px;
+    }
+
+    .platform-hero {
+        padding: 28px 16px;
+    }
+
+    .platform-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .platform-hero p.tagline {
+        font-size: 0.98rem;
+    }
+
+    .fig1-main-title {
+        font-size: 1.45rem;
+    }
+
+    .fig1-student-meta {
+        font-size: 0.92rem;
+    }
+
+    .fig1-card-body {
+        padding: 16px 12px;
+    }
+
+    .lecture-table th,
+    .lecture-table td {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+    }
+
+    .lecture-table th:first-child {
+        width: 100px;
+    }
+
+    .lecture-main-heading {
+        font-size: 1.35rem;
+    }
+
+    .code-box {
+        font-size: 0.82rem;
+        padding: 10px 12px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

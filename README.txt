@@ -1,5 +1,7 @@
-WebLearn
-========
-Beginner-friendly HTML and CSS learning website based only on the provided course lectures.
+WebLearn - Web Technologies Learning Platform
+==============================================
+University Lab Assignment 1
+Pure HTML5 & CSS3 (Zero JavaScript)
 
-Next step: add the main website design and navigation to index.html, css/style.css and js/script.js.
+All files have been built matching Figure 1 and the university 8-lecture syllabus.
+See README.md for full instructions on running locally, taking screenshots, and submitting your PDF report.

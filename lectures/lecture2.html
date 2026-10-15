@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 2: HTML Basics - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture2.html" class="nav-link active">Lecture 2</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 2: HTML Basics</h1>
+                <p class="lecture-sub-italic">Foundations of HTML document structure, text formatting, hyperlinks, and lists</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                HTML (HyperText Markup Language) is the standard markup language used to structure web pages and their content. This lecture explores fundamental document structure, tags versus elements, attributes, headings from h1 to h6, paragraphs, inline text formatting, ordered and unordered lists, hyperlinks, and image embedding.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>HTML Core Foundations
+                    <ul>
+                        <li>HTML Definition &amp; Role of Markup</li>
+                        <li>Tags, Elements, and Attributes Syntax</li>
+                        <li>Parent and Child Nesting &amp; The Document Object Model (DOM)</li>
+                    </ul>
+                </li>
+                <li>Document Structure
+                    <ul>
+                        <li>&lt;!DOCTYPE html&gt; Declaration</li>
+                        <li>&lt;html&gt;, &lt;head&gt;, &lt;title&gt;, &lt;body&gt;, and &lt;meta&gt; Tags</li>
+                    </ul>
+                </li>
+                <li>Text Formatting &amp; Typography
+                    <ul>
+                        <li>Headings (&lt;h1&gt; through &lt;h6&gt;)</li>
+                        <li>Paragraphs (&lt;p&gt;), Line Breaks (&lt;br&gt;), Horizontal Rules (&lt;hr&gt;)</li>
+                        <li>Semantic Text: &lt;strong&gt;, &lt;em&gt;, &lt;mark&gt;, &lt;del&gt;, &lt;ins&gt;</li>
+                    </ul>
+                </li>
+                <li>Hyperlinks &amp; Media
+                    <ul>
+                        <li>Anchor Tag (&lt;a&gt;) with href (Absolute vs. Relative vs. Fragment Links)</li>
+                        <li>Images (&lt;img&gt;) with src, alt, width, and height</li>
+                        <li>Lists: Ordered (&lt;ol&gt;), Unordered (&lt;ul&gt;), and Description (&lt;dl&gt;)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Getting Started with HTML&lt;/h1&gt;
+    &lt;p&gt;HTML uses &lt;strong&gt;tags&lt;/strong&gt; to describe the structure of web pages.&lt;/p&gt;
+    
+    &lt;h2&gt;Core Web Languages&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;HTML:&lt;/strong&gt; Content and Structure&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;CSS:&lt;/strong&gt; Presentation and Styling&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;JavaScript:&lt;/strong&gt; Interactivity and Logic&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Visit &lt;a href="../index.html"&gt;WebLearn Homepage&lt;/a&gt; for more lectures.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <h1 style="font-size: 1.5rem; color: #1f2937; margin-bottom: 8px;">Getting Started with HTML</h1>
+                <p style="margin-bottom: 12px; color: #4b5563;">HTML uses <strong>tags</strong> to describe the structure of web pages.</p>
+                <h2 style="font-size: 1.2rem; color: #1f2937; margin-bottom: 8px;">Core Web Languages</h2>
+                <ul style="margin-left: 24px; color: #374151; margin-bottom: 12px;">
+                    <li><strong>HTML:</strong> Content and Structure</li>
+                    <li><strong>CSS:</strong> Presentation and Styling</li>
+                    <li><strong>JavaScript:</strong> Interactivity and Logic</li>
+                </ul>
+                <p style="color: #4b5563;">Visit <a href="../index.html" style="color: #2b5b9c; text-decoration: underline;">WebLearn Homepage</a> for more lectures.</p>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. Anatomy of an HTML Element</h4>
+                <p class="lecture-paragraph">
+                    An element comprises the opening tag, attributes, enclosed content, and the closing tag:
+                </p>
+                <p style="text-align: center; font-family: monospace; font-size: 1.1rem; background: #eef2f8; padding: 10px; border-radius: 4px;">
+                    &lt;p class="highlight"&gt; Hello Web &lt;/p&gt;
+                </p>
+                <ul style="margin-left: 20px; line-height: 1.7; color: var(--text-main);">
+                    <li><strong>Opening Tag:</strong> <code>&lt;p&gt;</code> marks where the element begins.</li>
+                    <li><strong>Attribute:</strong> <code>class="highlight"</code> gives metadata/styling hooks to the element.</li>
+                    <li><strong>Content:</strong> <code>Hello Web</code> is the text node rendered in the browser.</li>
+                    <li><strong>Closing Tag:</strong> <code>&lt;/p&gt;</code> marks where the element ends.</li>
+                    <li><strong>Void (Self-Closing) Elements:</strong> Elements that have no content or closing tag, such as <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, and <code>&lt;input&gt;</code>.</li>
+                </ul>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. Heading Hierarchy Best Practices</h4>
+                <p class="lecture-paragraph">
+                    HTML provides six levels of headings:
+                </p>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Importance</th>
+                            <th>Standard Usage Guideline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>&lt;h1&gt;</code></td><td>Highest</td><td>Main page topic. Exactly one <code>&lt;h1&gt;</code> should be used per web page for SEO.</td></tr>
+                        <tr><td><code>&lt;h2&gt;</code></td><td>Secondary</td><td>Major section headers.</td></tr>
+                        <tr><td><code>&lt;h3&gt;</code></td><td>Sub-section</td><td>Sub-topics nested under an <code>&lt;h2&gt;</code>.</td></tr>
+                        <tr><td><code>&lt;h4&gt;–&lt;h6&gt;</code></td><td>Lower levels</td><td>Detailed category headings and sub-groupings.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. Types of URLs in Hyperlinks</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Link Type</th>
+                            <th>Syntax Example</th>
+                            <th>When to Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Absolute URL</strong></td>
+                            <td><code>https://www.w3.org</code></td>
+                            <td>Linking to external websites on different domains. Includes full protocol and domain.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Relative URL</strong></td>
+                            <td><code>lecture3.html</code> or <code>../css/style.css</code></td>
+                            <td>Linking to files located within your own local project folder structure.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fragment Identifier</strong></td>
+                            <td><code>#summary</code></td>
+                            <td>Jumps directly to an element with <code>id="summary"</code> on the same page.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Skipping the <code>alt</code> attribute on <code>&lt;img&gt;</code> tags, which breaks accessibility for screen-readers and displays nothing if the image file fails to load.</li>
+                        <li>Nesting tags incorrectly: e.g. writing <code>&lt;strong&gt;&lt;em&gt;Text&lt;/strong&gt;&lt;/em&gt;</code> instead of closing tags in reverse order of opening (<code>&lt;strong&gt;&lt;em&gt;Text&lt;/em&gt;&lt;/strong&gt;</code>).</li>
+                        <li>Using multiple <code>&lt;h1&gt;</code> tags simply to make text bigger instead of using CSS for sizing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 2 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What is the purpose of the &lt;!DOCTYPE html&gt; declaration?</strong><br>
+                <em>Answer:</em> It informs the browser that the document is written in modern HTML5, ensuring the browser renders the page in "standards mode" rather than legacy "quirks mode".</p>
+                <p style="margin-top: 10px;"><strong>Q2: What is the difference between an HTML tag and an HTML element?</strong><br>
+                <em>Answer:</em> A tag is the opening or closing bracket marker (e.g. <code>&lt;p&gt;</code> or <code>&lt;/p&gt;</code>). An element consists of the entire unit from start tag through the attributes, content, and end tag.</p>
+                <p style="margin-top: 10px;"><strong>Q3: Explain the three types of HTML lists.</strong><br>
+                <em>Answer:</em> 1. Ordered List (<code>&lt;ol&gt;</code>) for numbered sequences. 2. Unordered List (<code>&lt;ul&gt;</code>) for bulleted items. 3. Description List (<code>&lt;dl&gt;</code>) with terms (<code>&lt;dt&gt;</code>) and descriptions (<code>&lt;dd&gt;</code>).</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 2</h4>
+                <p>Create a personal student biography page named <code>profile.html</code>. Include a top <code>&lt;h1&gt;</code> with your full name, an image with valid <code>alt</code> text, an unordered list of your hobbies, and an anchor link pointing back to <code>index.html</code>.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture1.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture3.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture1.html">Lecture 1: Web Intro</a></li>
+                    <li><a href="lecture2.html">Lecture 2: HTML Basics</a></li>
+                    <li><a href="lecture3.html">Lecture 3: Forms &amp; Media</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

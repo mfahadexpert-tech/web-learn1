@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 1: Introduction to Web Technologies - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture1.html" class="nav-link active">Lecture 1</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 1: Introduction to Web Technologies</h1>
+                <p class="lecture-sub-italic">Overview of web technologies and core concepts</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                This lecture covers the basics of the internet, web browsers, web servers, and core technologies like HTML, CSS, and JavaScript. It establishes the foundational client-server communication model, URLs, DNS, HTTP/HTTPS protocols, web standards, and multi-tier web application architecture.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>Introduction to Web Technologies
+                    <ul>
+                        <li>Internet Basics
+                            <ul>
+                                <li>What is The Internet (Global network of interconnected computers)</li>
+                                <li>World Wide Web (Information system accessed via HTTP)</li>
+                                <li>Websites vs. Webpages</li>
+                                <li>Local Development vs. Published Websites</li>
+                            </ul>
+                        </li>
+                        <li>Web Components &amp; Architecture
+                            <ul>
+                                <li>Web Browser (Client rendering engine)</li>
+                                <li>Web Server (Hardware &amp; HTTP daemon software)</li>
+                                <li>Client-Server Request-Response Model</li>
+                                <li>One-Tier, Two-Tier, and Three-Tier Web Architecture</li>
+                            </ul>
+                        </li>
+                        <li>Core Web Standards &amp; Protocols
+                            <ul>
+                                <li>Uniform Resource Identifiers (URI) and Locators (URL)</li>
+                                <li>Domain Name System (DNS) Resolution Process</li>
+                                <li>HTTP vs. HTTPS (TLS/SSL Security)</li>
+                                <li>HTTP Methods (GET, POST, PUT, DELETE) &amp; Status Codes (200, 404, 500)</li>
+                                <li>Standards Organizations (W3C, WHATWG, ECMA, IETF)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>&lt;h1&gt;Welcome to Web Technologies&lt;/h1&gt;
+&lt;p&gt;This is a simple HTML example.&lt;/p&gt;</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <h1>Welcome to Web Technologies</h1>
+                <p>This is a simple HTML example.</p>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. Internet vs. World Wide Web (WWW)</h4>
+                <p class="lecture-paragraph">
+                    A common beginner mistake is confusing the Internet with the World Wide Web:
+                </p>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Definition</th>
+                            <th>Example Services</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>The Internet</strong></td>
+                            <td>The massive physical infrastructure of interconnected computer networks worldwide.</td>
+                            <td>Email (SMTP), File Transfer (FTP), Web (HTTP), Streaming.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>World Wide Web</strong></td>
+                            <td>A high-level service operating on top of the Internet using HTTP and hyperlinks to share documents.</td>
+                            <td>Websites, HTML web pages, web applications.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. The Client-Server Request-Response Flow</h4>
+                <p class="lecture-paragraph">
+                    Every web interaction operates through this structured lifecycle:
+                </p>
+                <p class="lecture-paragraph" style="text-align: center; font-weight: 600; color: var(--primary-blue);">
+                    Client (Browser) &rarr; HTTP Request &rarr; Internet &amp; DNS &rarr; Web Server &rarr; HTTP Response (HTML/CSS) &rarr; Browser Rendering
+                </p>
+                <ul style="margin-left: 20px; line-height: 1.7; color: var(--text-main);">
+                    <li><strong>Client (Browser):</strong> Submits user requests and parses HTML/CSS for presentation.</li>
+                    <li><strong>Web Server:</strong> Listens for incoming HTTP requests on port 80 (HTTP) or 443 (HTTPS) and returns requested assets.</li>
+                </ul>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. URL Anatomy Breakdown</h4>
+                <p class="lecture-paragraph">
+                    Given the standard course example address: <code>https://www.example.com:443/courses/web?id=101#html</code>
+                </p>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Part</th>
+                            <th>Value</th>
+                            <th>Role &amp; Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Scheme (Protocol)</td><td><code>https://</code></td><td>Indicates the secure encrypted protocol used.</td></tr>
+                        <tr><td>Subdomain</td><td><code>www</code></td><td>Sub-division under the registered domain name.</td></tr>
+                        <tr><td>Domain Name</td><td><code>example.com</code></td><td>Human-readable name mapped to a server's IP address.</td></tr>
+                        <tr><td>Port</td><td><code>:443</code></td><td>Network port on the host (443 is default for HTTPS).</td></tr>
+                        <tr><td>Path</td><td><code>/courses/web</code></td><td>Location of the resource on the server directory structure.</td></tr>
+                        <tr><td>Query String</td><td><code>?id=101</code></td><td>Key-value pairs sending data to the server.</td></tr>
+                        <tr><td>Fragment ID</td><td><code>#html</code></td><td>Anchor pointing directly to an element within the page.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>4. HTTP Status Code Categories</h4>
+                <p class="lecture-paragraph">
+                    HTTP responses return a 3-digit status code informing the client of the outcome:
+                </p>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Category</th>
+                            <th>Key Examination Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>1xx</strong></td><td>Informational</td><td><code>100 Continue</code></td></tr>
+                        <tr><td><strong>2xx</strong></td><td>Success</td><td><code>200 OK</code> — Request succeeded normally.</td></tr>
+                        <tr><td><strong>3xx</strong></td><td>Redirection</td><td><code>301 Moved Permanently</code></td></tr>
+                        <tr><td><strong>4xx</strong></td><td>Client Error</td><td><code>404 Not Found</code> — URL does not exist on server.</td></tr>
+                        <tr><td><strong>5xx</strong></td><td>Server Error</td><td><code>500 Internal Server Error</code> — Server encountered an unexpected fault.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Writing file paths with backslashes (<code>\</code>) instead of forward slashes (<code>/</code>) in web URLs.</li>
+                        <li>Assuming a website saved locally on <code>C:\</code> is publicly accessible on the Internet.</li>
+                        <li>Confusing <strong>HTTP GET</strong> (data passed visibly in URL query string) with <strong>HTTP POST</strong> (data passed securely in request body).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 1 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What is DNS and what analogy describes it best?</strong><br>
+                <em>Answer:</em> The Domain Name System (DNS) translates human-friendly domain names (e.g., <code>google.com</code>) into computer-routable IP addresses (e.g., <code>142.250.190.46</code>). It operates exactly like a phonebook contact list.</p>
+                <p style="margin-top: 10px;"><strong>Q2: What is the difference between a static website and a dynamic website?</strong><br>
+                <em>Answer:</em> A static website delivers pre-written, identical HTML/CSS files to all visitors. A dynamic website generates HTML in real-time on the server using database queries and application logic.</p>
+                <p style="margin-top: 10px;"><strong>Q3: Name the three tiers in standard 3-tier web architecture.</strong><br>
+                <em>Answer:</em> 1. Presentation Tier (UI / HTML &amp; CSS), 2. Application Logic Tier (Business processing), 3. Data Tier (Database management system).</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 1</h4>
+                <p>Open a plain text editor (e.g. Notepad) or VS Code. Type the example code block shown above, save it with the exact file extension <code>.html</code>, and double-click to open and verify it in your web browser.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture2.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture1.html">Lecture 1: Web Intro</a></li>
+                    <li><a href="lecture2.html">Lecture 2: HTML Basics</a></li>
+                    <li><a href="../viva.html">Viva Preparation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 4: Introduction to CSS - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture4.html" class="nav-link active">Lecture 4</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 4: Introduction to CSS</h1>
+                <p class="lecture-sub-italic">Styling web pages with CSS syntax, color models, typography, and background properties</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                Cascading Style Sheets (CSS) separate content structure from visual presentation. This lecture introduces CSS syntax rules (selectors, properties, values), the three implementation methods (inline, internal, external), color representations (Hex, RGB, RGBA), typography properties, text formatting, and background styling.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>CSS Fundamentals
+                    <ul>
+                        <li>Purpose of CSS &amp; Separation of Concerns</li>
+                        <li>CSS Rule Syntax: Selector, Property, Value, Declaration</li>
+                    </ul>
+                </li>
+                <li>Three Methods of Applying CSS
+                    <ul>
+                        <li>Inline Styles: style attribute directly on HTML elements</li>
+                        <li>Internal Styles: &lt;style&gt; block inside &lt;head&gt;</li>
+                        <li>External Stylesheets: &lt;link rel="stylesheet" href="style.css"&gt;</li>
+                    </ul>
+                </li>
+                <li>Colors &amp; Units
+                    <ul>
+                        <li>Named Colors, Hexadecimal (#RRGGBB)</li>
+                        <li>RGB and RGBA (Alpha channel transparency)</li>
+                    </ul>
+                </li>
+                <li>Typography &amp; Text Styling
+                    <ul>
+                        <li>font-family, font-size, font-weight, font-style</li>
+                        <li>Generic Font Families: Serif, Sans-Serif, Monospace</li>
+                        <li>text-align, text-decoration, text-transform, line-height</li>
+                    </ul>
+                </li>
+                <li>CSS Backgrounds
+                    <ul>
+                        <li>background-color, background-image, background-repeat, background-size</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>/* External CSS file: style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+.course-box {
+    background-color: #ffffff;
+    border: 2px solid #2b5b9c;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+}
+
+.course-box h2 {
+    color: #2b5b9c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <div style="background-color: #ffffff; border: 2px solid #2b5b9c; border-radius: 6px; padding: 16px; text-align: center; max-width: 450px; margin: 0 auto;">
+                    <h2 style="color: #2b5b9c; text-transform: uppercase; letter-spacing: 1px; font-size: 1.25rem; margin-bottom: 6px;">Web Technologies</h2>
+                    <p style="color: #4b5563; font-size: 0.95rem;">Clean styling applied using CSS properties and selectors.</p>
+                </div>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. Three Ways to Insert CSS</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Syntax Example</th>
+                            <th>Advantages</th>
+                            <th>Disadvantages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Inline CSS</strong></td>
+                            <td><code>&lt;h1 style="color: blue;"&gt;</code></td>
+                            <td>Applies quick isolated styles; highest specificity in normal cascade.</td>
+                            <td>Cannot be reused; pollutes HTML; very difficult to maintain.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internal CSS</strong></td>
+                            <td><code>&lt;head&gt;&lt;style&gt; p { color: red; } &lt;/style&gt;</code></td>
+                            <td>Styles an entire single webpage in one document.</td>
+                            <td>Cannot style multiple HTML pages across a multi-page website.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>External CSS</strong></td>
+                            <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td>
+                            <td>Industry standard. Reusable across 100s of pages; browser caches file for speed.</td>
+                            <td>Requires an additional HTTP request (cached subsequently).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. CSS Color Models Comparison</h4>
+                <ul style="margin-left: 20px; line-height: 1.7; color: var(--text-main);">
+                    <li><strong>Named Colors:</strong> Standard keywords like <code>red</code>, <code>blue</code>, <code>green</code> (140 standard CSS names).</li>
+                    <li><strong>Hexadecimal:</strong> 6-character hex code representing Red, Green, Blue from <code>#000000</code> (black) to <code>#ffffff</code> (white). Example: <code>#2b5b9c</code>.</li>
+                    <li><strong>RGB:</strong> <code>rgb(red, green, blue)</code> with values from 0 to 255. Example: <code>rgb(43, 91, 156)</code>.</li>
+                    <li><strong>RGBA:</strong> Adds the Alpha parameter for opacity from <code>0.0</code> (fully transparent) to <code>1.0</code> (fully opaque). Example: <code>rgba(43, 91, 156, 0.5)</code>.</li>
+                </ul>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. Typography: Generic Font Families</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Generic Family</th>
+                            <th>Visual Characteristics</th>
+                            <th>Common Font Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Sans-serif</strong></td><td>Clean strokes with no decorative feet; modern and highly readable on digital screens.</td><td>Arial, Helvetica, Segoe UI, Roboto</td></tr>
+                        <tr><td><strong>Serif</strong></td><td>Features decorative serifs (feet/tails) on letter edges; formal and traditional for print.</td><td>Times New Roman, Georgia, Garamond</td></tr>
+                        <tr><td><strong>Monospace</strong></td><td>Every character occupies the exact same fixed width; essential for programming code.</td><td>Courier New, Consolas, Monaco</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Forgetting the semicolon (<code>;</code>) at the end of each CSS declaration, which invalidates all following rules in the block.</li>
+                        <li>Omitting the <code>#</code> symbol before hexadecimal color codes (e.g. writing <code>color: ffffff;</code> instead of <code>#ffffff;</code>).</li>
+                        <li>Over-relying on Inline CSS instead of maintaining clean separation with External stylesheets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 4 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What are the main components of a CSS rule?</strong><br>
+                <em>Answer:</em> A CSS rule consists of a <strong>Selector</strong> (pointing to the HTML element to style) and a <strong>Declaration Block</strong> containing one or more declarations. Each declaration has a <strong>Property</strong>, a colon, and a <strong>Value</strong> followed by a semicolon.</p>
+                <p style="margin-top: 10px;"><strong>Q2: Why is External CSS considered best practice over Inline CSS?</strong><br>
+                <em>Answer:</em> External CSS cleanly separates structure from presentation, allows one stylesheet to control hundreds of web pages simultaneously, reduces file sizes, and is cached by browsers for faster loading.</p>
+                <p style="margin-top: 10px;"><strong>Q3: What is the difference between RGB and RGBA?</strong><br>
+                <em>Answer:</em> RGB specifies color channels (Red, Green, Blue) from 0 to 255. RGBA includes a 4th parameter, <strong>Alpha</strong> (ranging from 0.0 to 1.0), which dictates the transparency of that specific color without altering the opacity of child text.</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 4</h4>
+                <p>Create an external stylesheet named <code>mystyle.css</code>. Link it to an HTML page using the <code>&lt;link&gt;</code> element in the <code>&lt;head&gt;</code>. Style the <code>body</code> with a light background color, set the primary heading to uppercase, and format a paragraph with <code>line-height: 1.8</code>.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture3.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture5.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture3.html">Lecture 3: Forms &amp; Media</a></li>
+                    <li><a href="lecture4.html">Lecture 4: Intro to CSS</a></li>
+                    <li><a href="lecture5.html">Lecture 5: CSS Selectors</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

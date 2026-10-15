@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 7: Responsive Web Design - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture7.html" class="nav-link active">Lecture 7</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 7: Responsive Web Design</h1>
+                <p class="lecture-sub-italic">Positioning schemes, z-index stacking, floats, clearfixes, and media queries</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                Responsive web design ensures web pages adapt seamlessly across desktop monitors, tablets, and smartphones. This lecture explores the five CSS positioning schemes (static, relative, absolute, fixed, sticky), z-index stacking context, traditional floats and clearfixes, the viewport meta tag, and CSS media queries.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>CSS Positioning Schemes
+                    <ul>
+                        <li>position: static (default document flow)</li>
+                        <li>position: relative (offset relative to normal position)</li>
+                        <li>position: absolute (positioned relative to closest positioned ancestor)</li>
+                        <li>position: fixed (locked relative to browser viewport)</li>
+                        <li>position: sticky (hybrid scroll-toggled positioning)</li>
+                        <li>Offset Properties: top, right, bottom, left, inset</li>
+                    </ul>
+                </li>
+                <li>Stacking Order &amp; Floats
+                    <ul>
+                        <li>z-index &amp; 3D Stacking Contexts</li>
+                        <li>float: left / float: right and text-wrapping</li>
+                        <li>clear: both, parent collapse, and the clearfix hack</li>
+                    </ul>
+                </li>
+                <li>Responsive Principles
+                    <ul>
+                        <li>Viewport Meta Tag (&lt;meta name="viewport" ...&gt;)</li>
+                        <li>CSS Media Queries (@media (max-width: ...))</li>
+                        <li>Fluid percentage widths and flexible layouts</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>/* Parent Relative Container & Absolute Badge */
+.card-container {
+    position: relative;
+    width: 280px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.badge-featured {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: #2b5b9c;
+    color: #ffffff;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 600px) {
+    .card-container {
+        width: 100%;
+    }
+}</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <div style="position: relative; width: 280px; margin: 20px auto; padding: 20px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: left;">
+                    <span style="position: absolute; top: -10px; right: 15px; background: #2b5b9c; color: #ffffff; padding: 3px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 12px;">FEATURED</span>
+                    <h3 style="font-size: 1.1rem; color: #1f2937; margin-bottom: 6px;">Web Technologies</h3>
+                    <p style="font-size: 0.88rem; color: #4b5563;">Demonstrating absolute badge positioning inside a relative card container.</p>
+                </div>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. The Five CSS Positioning Types Compared</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Position Value</th>
+                            <th>In Normal Flow?</th>
+                            <th>Offset Reference Point</th>
+                            <th>Typical Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><code>static</code> (Default)</strong></td>
+                            <td>Yes</td>
+                            <td>Offsets (top/left) are ignored.</td>
+                            <td>Standard elements flowing naturally down the page.</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>relative</code></strong></td>
+                            <td>Yes</td>
+                            <td>Its own normal position. Preserves its original footprint.</td>
+                            <td>Subtle shifting; serving as reference parent for absolute children.</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>absolute</code></strong></td>
+                            <td>No (Removed)</td>
+                            <td>Nearest ancestor with position other than static (or <code>&lt;html&gt;</code>).</td>
+                            <td>Modal overlays, badges, tooltips, dropdown menus.</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>fixed</code></strong></td>
+                            <td>No (Removed)</td>
+                            <td>The browser viewport. Stays in place during scrolling.</td>
+                            <td>Sticky headers, back-to-top buttons, floating navbars.</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>sticky</code></strong></td>
+                            <td>Hybrid</td>
+                            <td>Acts static until scroll threshold reaches specified offset, then locks.</td>
+                            <td>Sticky table headers, category sidebar headings.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. Floats, Parent Collapse, and Clearfix</h4>
+                <p class="lecture-paragraph">
+                    When child elements are floated with <code>float: left</code> or <code>float: right</code>, they are taken out of normal flow. If all children inside a parent are floated, the parent loses its height and collapses to 0 pixels.
+                </p>
+                <p class="lecture-paragraph">
+                    <strong>The Micro-Clearfix Solution:</strong>
+                </p>
+                <pre class="code-box"><code>.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}</code></pre>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. The Viewport Meta Tag</h4>
+                <p class="lecture-paragraph">
+                    Without this essential tag in the <code>&lt;head&gt;</code>, mobile browsers assume a desktop viewport of 980px and zoom out, rendering microscopic text:
+                </p>
+                <p style="text-align: center; font-family: monospace; font-size: 0.95rem; background: #eef2f8; padding: 10px; border-radius: 4px;">
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                </p>
+                <ul style="margin-left: 20px; line-height: 1.7; color: var(--text-main);">
+                    <li><code>width=device-width</code>: Sets page width to match screen width of device.</li>
+                    <li><code>initial-scale=1.0</code>: Sets initial zoom level to 100% when loaded.</li>
+                </ul>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Using <code>position: absolute</code> without making the parent container <code>position: relative</code>, which causes the element to fly to the very corner of the page.</li>
+                        <li>Using extremely high <code>z-index: 999999</code> without giving the element a <code>position</code> (z-index only applies to positioned elements).</li>
+                        <li>Forgetting to clear floats, causing subsequent layout sections to overlap and break.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 7 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What is the containing block for an element with <code>position: absolute</code>?</strong><br>
+                <em>Answer:</em> It is the nearest ancestor element whose <code>position</code> is set to anything other than <code>static</code> (such as <code>relative</code>, <code>absolute</code>, or <code>fixed</code>). If no such ancestor exists, it positions relative to the initial containing block (the <code>&lt;html&gt;</code> root).</p>
+                <p style="margin-top: 10px;"><strong>Q2: Why does <code>z-index</code> sometimes fail to work?</strong><br>
+                <em>Answer:</em> <code>z-index</code> only functions on positioned elements (elements with <code>position: relative, absolute, fixed, or sticky</code>). On elements with default <code>position: static</code>, <code>z-index</code> is ignored completely.</p>
+                <p style="margin-top: 10px;"><strong>Q3: What is a CSS Media Query?</strong><br>
+                <em>Answer:</em> A media query (e.g. <code>@media (max-width: 768px)</code>) applies specific CSS rules conditionally based on the user device characteristics, such as screen width or screen resolution.</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 7</h4>
+                <p>Build a navigation bar that sticks to the top of the browser viewport using <code>position: sticky; top: 0;</code>. Inside the hero card, position an avatar image at the bottom-right corner using <code>position: absolute</code> with <code>bottom: 10px; right: 10px;</code>.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture6.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture8.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture6.html">Lecture 6: Box Model</a></li>
+                    <li><a href="lecture7.html">Lecture 7: Responsive Design</a></li>
+                    <li><a href="lecture8.html">Lecture 8: Intro to JS &amp; Effects</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

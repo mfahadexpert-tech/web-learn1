@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva Voce &amp; Exam Preparation - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#lectures-table" class="nav-link">Lectures</a>
+                <a href="examples.html" class="nav-link">Code Examples</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="viva.html" class="nav-link active">Viva Prep</a>
+                <a href="practice.html" class="nav-link">Practice</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <div class="lecture-top-header" style="margin-top: 15px;">
+            <h1 class="lecture-main-heading">University Viva Voce &amp; Oral Exam Preparation</h1>
+            <p class="lecture-sub-italic">Comprehensive question-and-answer guide categorized across university Lectures 1 through 8</p>
+            <hr class="lecture-divider">
+        </div>
+
+        <!-- Module 1 Viva -->
+        <section class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Module 1: Web Fundamentals (Lectures 1 &amp; 2)</h2>
+
+            <div class="viva-callout">
+                <h4>Q1: What is the exact difference between the Internet and the World Wide Web?</h4>
+                <p><strong>Answer:</strong> The Internet is the global physical infrastructure of interconnected hardware networks, routers, and cables. The World Wide Web (WWW) is an information-sharing service that runs on top of the Internet, utilizing HTTP and hyperlinks to navigate between HTML documents.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q2: How does DNS work, and what real-world analogy describes it?</h4>
+                <p><strong>Answer:</strong> The Domain Name System (DNS) is the internet's phonebook. Computers communicate using numeric IP addresses (e.g. <code>142.250.190.46</code>), but humans remember domain names (e.g. <code>google.com</code>). When you type a URL, the browser queries DNS servers to resolve the domain into its corresponding IP address.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q3: Differentiate between HTTP and HTTPS. What does the "S" represent?</h4>
+                <p><strong>Answer:</strong> HTTP sends data across the network in plaintext, making it vulnerable to packet interception. HTTPS (HyperText Transfer Protocol Secure) encrypts all communication using TLS/SSL (Transport Layer Security), safeguarding passwords, payment data, and sensitive inputs.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q4: Compare Multi-Page Applications (MPA) and Single-Page Applications (SPA).</h4>
+                <p><strong>Answer:</strong> In an MPA, every link click requests a brand-new HTML page from the web server, triggering a full browser refresh. In an SPA, the browser loads a single shell HTML page once, dynamically updating view sections via JavaScript API calls without reloading the page.</p>
+            </div>
+        </section>
+
+        <!-- Module 2 Viva -->
+        <section class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Module 2: HTML &amp; HTML5 (Lectures 3 &amp; 4)</h2>
+
+            <div class="viva-callout">
+                <h4>Q5: What is the difference between an HTML tag and an HTML element?</h4>
+                <p><strong>Answer:</strong> A tag is the markup indicator bounded by angle brackets (such as <code>&lt;p&gt;</code> or <code>&lt;/p&gt;</code>). An element consists of the entire construct: opening tag, attributes, enclosed content, and the closing tag.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q6: Why is Semantic HTML critical for modern web development?</h4>
+                <p><strong>Answer:</strong> Semantic HTML tags (such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>) convey programmatic meaning to web browsers, screen-readers, and search engines. They dramatically improve SEO rankings, code readability, and accessibility for disabled individuals.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q7: What is the fundamental difference between Block and Inline elements?</h4>
+                <p><strong>Answer:</strong> Block elements (e.g., <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>) always start on a fresh line, expand across the full available container width, and respect height and width. Inline elements (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>) flow seamlessly within surrounding text and ignore explicit width and height properties.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q8: When should a developer use form method="POST" instead of method="GET"?</h4>
+                <p><strong>Answer:</strong> Use POST for passwords, personal data, and large file uploads because POST submits data inside the request body rather than visibly appending it to the browser URL address bar. Use GET for non-sensitive, bookmarkable search queries.</p>
+            </div>
+        </section>
+
+        <!-- Module 3 Viva -->
+        <section class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Module 3: CSS Fundamentals (Lectures 5 &amp; 6)</h2>
+
+            <div class="viva-callout">
+                <h4>Q9: Explain the CSS Specificity hierarchy and how conflicts are resolved.</h4>
+                <p><strong>Answer:</strong> Specificity is a four-tier calculation: Inline styles (1000) &gt; ID selectors (100) &gt; Class, Attribute, and Pseudo-classes (10) &gt; Element tags and Pseudo-elements (1). If two conflicting rules have identical specificity, the rule written lowest in source order wins (cascade rule).</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q10: What is the CSS Box Model, and why is `box-sizing: border-box` universally favored?</h4>
+                <p><strong>Answer:</strong> The box model consists of Content, Padding, Border, and Margin. Under the default <code>content-box</code>, adding padding or borders expands the element beyond its defined <code>width</code>. Under <code>border-box</code>, the padding and border are absorbed inside the defined width, preventing layout breakage.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q11: Differentiate between `display: none` and `visibility: hidden`.</h4>
+                <p><strong>Answer:</strong> <code>display: none</code> removes the element entirely from the layout flow, collapsing its space as though it never existed. <code>visibility: hidden</code> hides the element visually, but preserves its exact physical dimensions as empty blank space.</p>
+            </div>
+        </section>
+
+        <!-- Module 4 Viva -->
+        <section class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Module 4: Advanced CSS &amp; JavaScript (Lectures 7 &amp; 8)</h2>
+
+            <div class="viva-callout">
+                <h4>Q12: Detail the five CSS positioning values.</h4>
+                <p><strong>Answer:</strong> 
+                1. <strong>static:</strong> Normal document flow; offsets are ignored.
+                2. <strong>relative:</strong> Offsets relative to its normal position while preserving its original space footprint.
+                3. <strong>absolute:</strong> Removed from flow and positioned relative to its closest non-static ancestor.
+                4. <strong>fixed:</strong> Removed from flow and anchored relative to the viewport; stays locked during scroll.
+                5. <strong>sticky:</strong> Hybrid that acts static until a scroll threshold is met, then pins like fixed.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q13: Why does `z-index` sometimes fail to stack an element on top?</h4>
+                <p><strong>Answer:</strong> <code>z-index</code> only works on positioned elements (those with <code>position: relative, absolute, fixed, or sticky</code>). On elements with default <code>position: static</code>, <code>z-index</code> has no effect.</p>
+            </div>
+
+            <div class="viva-callout">
+                <h4>Q14: What is the Front-End Web Triad?</h4>
+                <p><strong>Answer:</strong> HTML provides the <strong>Structure</strong> (the skeleton), CSS provides the <strong>Presentation</strong> (visual styling and skin), and JavaScript provides the <strong>Behavior</strong> (interactivity, event handling, and logic).</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="examples.html">Code Examples</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="viva.html">Viva Prep</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>University Syllabus</h4>
+                <ul>
+                    <li><a href="lectures/lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lectures/lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lectures/lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lectures/lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform &bull; Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 6: CSS Box Model &amp; Layout - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture6.html" class="nav-link active">Lecture 6</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 6: CSS Box Model &amp; Layout</h1>
+                <p class="lecture-sub-italic">Mastering element geometry, padding, borders, margins, box-sizing, and display behaviors</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                Every element on a web page is treated by the browser as a rectangular box. This lecture demystifies the four layers of the CSS Box Model (Content, Padding, Border, Margin), dimensional calculations, the impact of box-sizing (content-box vs. border-box), margin collapse, overflow management, and the fundamental display property values.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>The Four Box Model Layers
+                    <ul>
+                        <li>Content Area: text, images, or child elements</li>
+                        <li>Padding: transparent spacing clearing area inside the border</li>
+                        <li>Border: decorative edge wrapping content and padding</li>
+                        <li>Margin: transparent spacing clearing area outside the border</li>
+                    </ul>
+                </li>
+                <li>Box Sizing Calculations
+                    <ul>
+                        <li>content-box (default W3C standard: width = content only)</li>
+                        <li>border-box (modern standard: width includes content + padding + border)</li>
+                        <li>Margin Collapsing behavior between adjacent vertical blocks</li>
+                    </ul>
+                </li>
+                <li>Dimensions &amp; Overflow Management
+                    <ul>
+                        <li>width, height, min-width, max-width</li>
+                        <li>overflow: visible, hidden, scroll, auto</li>
+                    </ul>
+                </li>
+                <li>The Display Property
+                    <ul>
+                        <li>display: block, display: inline, display: inline-block</li>
+                        <li>display: none vs. visibility: hidden</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>/* Modern Box-Sizing Reset & Card Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box-card {
+    width: 300px;
+    padding: 20px;
+    border: 3px solid #2b5b9c;
+    margin: 25px auto;
+    background-color: #eaf1fa;
+    text-align: center;
+}</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <div style="box-sizing: border-box; width: 300px; padding: 20px; border: 3px solid #2b5b9c; margin: 15px auto; background-color: #eaf1fa; text-align: center; border-radius: 4px;">
+                    <strong style="color: #1b3e6d; display: block; margin-bottom: 6px;">Box Model Demonstration</strong>
+                    <p style="font-size: 0.88rem; color: #4b5563;">Content (254px) + Padding (40px) + Border (6px) = Exactly 300px total width.</p>
+                </div>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. Box Sizing Comparison: content-box vs. border-box</h4>
+                <p class="lecture-paragraph">
+                    Consider an element styled with <code>width: 300px; padding: 20px; border: 5px solid black;</code>:
+                </p>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Property Value</th>
+                            <th>Total Rendered Width Formula</th>
+                            <th>Final Screen Width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><code>box-sizing: content-box</code> (Default)</strong></td>
+                            <td>Width (300) + Left/Right Padding (40) + Left/Right Border (10)</td>
+                            <td><strong>350px</strong> (Box expands unexpectedly, often breaking multi-column layouts).</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>box-sizing: border-box</code> (Modern Best Practice)</strong></td>
+                            <td>Total Width locked at 300px. Padding and border subtract from content space.</td>
+                            <td><strong>300px</strong> (Box strictly maintains intended dimension).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. Display Property Comparison</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Display Value</th>
+                            <th>Line Break Behavior</th>
+                            <th>Width / Height Support</th>
+                            <th>Padding / Margin Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>block</code></td>
+                            <td>Forces a new line before and after.</td>
+                            <td>Supports explicit width and height.</td>
+                            <td>All 4 sides (top, right, bottom, left) push surrounding elements.</td>
+                        </tr>
+                        <tr>
+                            <td><code>inline</code></td>
+                            <td>Flows horizontally alongside text.</td>
+                            <td>Ignores width and height properties.</td>
+                            <td>Vertical margins and padding do not push neighboring lines.</td>
+                        </tr>
+                        <tr>
+                            <td><code>inline-block</code></td>
+                            <td>Flows inline like text on the same line.</td>
+                            <td>Supports explicit width and height.</td>
+                            <td>All 4 sides cleanly push surrounding elements.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. display: none vs. visibility: hidden</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>CSS Rule</th>
+                            <th>Visibility on Screen</th>
+                            <th>DOM Layout Space</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>display: none;</code></td>
+                            <td>Completely hidden.</td>
+                            <td><strong>Removes the space entirely.</strong> Adjacent elements collapse as if the element does not exist.</td>
+                        </tr>
+                        <tr>
+                            <td><code>visibility: hidden;</code></td>
+                            <td>Completely hidden.</td>
+                            <td><strong>Preserves empty blank space.</strong> Element remains in layout flow like an invisible footprint.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Forgetting that vertical margins collapse (e.g. if one element has <code>margin-bottom: 20px</code> and the next has <code>margin-top: 30px</code>, the resulting gap is 30px, not 50px).</li>
+                        <li>Attempting to assign <code>width</code> or <code>height</code> to inline elements (such as <code>&lt;span&gt;</code> or <code>&lt;a&gt;</code>) without first changing their display to <code>inline-block</code> or <code>block</code>.</li>
+                        <li>Failing to apply the universal <code>* { box-sizing: border-box; }</code> reset, causing padding to accidentally overflow parent containers.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 6 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What is the CSS Box Model? Name its four components from inside out.</strong><br>
+                <em>Answer:</em> The box model is the rectangular wrapping around every HTML element. From the center outwards: 1. Content, 2. Padding, 3. Border, and 4. Margin.</p>
+                <p style="margin-top: 10px;"><strong>Q2: What is margin collapsing?</strong><br>
+                <em>Answer:</em> When the vertical top and bottom margins of two adjacent block elements touch, they combine into a single margin whose size equals the larger of the two margins, rather than their sum.</p>
+                <p style="margin-top: 10px;"><strong>Q3: How does <code>overflow: auto</code> differ from <code>overflow: scroll</code>?</strong><br>
+                <em>Answer:</em> <code>scroll</code> forces permanent scrollbars even when content fits inside the box. <code>auto</code> adds scrollbars dynamically only when the content actually exceeds the container dimensions.</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 6</h4>
+                <p>Create two boxes: one with <code>box-sizing: content-box</code> and the second with <code>box-sizing: border-box</code>. Give both <code>width: 200px</code>, <code>padding: 20px</code>, and <code>border: 5px solid blue</code>. Measure and document the total rendered width difference in your lab report.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture5.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture7.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture5.html">Lecture 5: CSS Selectors</a></li>
+                    <li><a href="lecture6.html">Lecture 6: Box Model</a></li>
+                    <li><a href="lecture7.html">Lecture 7: Responsive Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

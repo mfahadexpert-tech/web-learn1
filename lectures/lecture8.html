@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 8: Introduction to JavaScript - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture8.html" class="nav-link active">Lecture 8</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 8: Introduction to JavaScript</h1>
+                <p class="lecture-sub-italic">Bridging the Web triad: JavaScript behavior, DOM concepts, and modern CSS visual effects</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                Completing the core web triad (HTML structure, CSS presentation, JavaScript behavior), this lecture introduces JavaScript's role in client-side interactivity, DOM manipulation principles, and event handling. Additionally, it explores advanced pure CSS3 visual capabilities: border-radius, gradients, box-shadows, 2D transforms, smooth transitions, and keyframe animations.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>JavaScript Fundamentals in Web Technologies
+                    <ul>
+                        <li>The Web Triad: Structure (HTML) vs. Presentation (CSS) vs. Behavior (JavaScript)</li>
+                        <li>Client-Side Scripting &amp; Browser Execution Engine</li>
+                        <li>The Document Object Model (DOM) Tree Concept</li>
+                        <li>Methods of Adding Scripts: Inline, Internal (&lt;script&gt;), and External (.js files)</li>
+                        <li>Event-Driven Programming Concepts (Clicks, Form submissions)</li>
+                    </ul>
+                </li>
+                <li>Advanced CSS3 Visual Effects
+                    <ul>
+                        <li>Rounded Corners (border-radius, circular avatars, pill buttons)</li>
+                        <li>Gradients: linear-gradient() and radial-gradient() with color stops</li>
+                        <li>Drop Shadows: box-shadow (offset, blur, spread) and text-shadow</li>
+                        <li>Transparency: opacity vs. RGBA color alpha channels</li>
+                    </ul>
+                </li>
+                <li>CSS Motion &amp; Animation
+                    <ul>
+                        <li>2D Transforms: translate(), rotate(), scale(), skew()</li>
+                        <li>CSS Transitions: transition property, duration, timing-function</li>
+                        <li>CSS Keyframe Animations: @keyframes, from/to, percentages, iteration</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>/* Pure CSS Animated Interactive Card */
+.animated-card {
+    background: linear-gradient(135deg, #2b5b9c, #0d9488);
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(43, 91, 156, 0.25);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 28px rgba(43, 91, 156, 0.35);
+}</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <div style="background: linear-gradient(135deg, #2b5b9c, #0d9488); color: #ffffff; padding: 22px; border-radius: 12px; box-shadow: 0 8px 20px rgba(43, 91, 156, 0.25); text-align: center; max-width: 380px; margin: 0 auto; cursor: pointer;">
+                    <div class="css-spinner" style="margin-bottom: 12px; border-top-color: #ffffff;"></div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px;">CSS3 Keyframe &amp; Gradient Demo</h3>
+                    <p style="font-size: 0.88rem; opacity: 0.9;">Pure CSS animation, rounded corners, and linear-gradient styling.</p>
+                </div>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. The Three Layers of Front-End Web Development</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>Technology</th>
+                            <th>Primary Responsibility</th>
+                            <th>Human Anatomy Analogy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Structure</strong></td>
+                            <td>HTML5</td>
+                            <td>Defines the elements, content hierarchy, text, images, and tables.</td>
+                            <td>The Skeleton</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Presentation</strong></td>
+                            <td>CSS3</td>
+                            <td>Controls visual styling, colors, fonts, layouts, animations, and responsive grids.</td>
+                            <td>The Skin &amp; Clothing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Behavior</strong></td>
+                            <td>JavaScript</td>
+                            <td>Manages user interactivity, input validation, dynamic DOM updates, and events.</td>
+                            <td>The Muscles &amp; Brain</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. The Document Object Model (DOM) Concept</h4>
+                <p class="lecture-paragraph">
+                    When an HTML page is loaded, the browser automatically creates a <strong>Document Object Model (DOM)</strong> of the page. The DOM represents the document as a logical tree structure where every HTML element, attribute, and text block is an accessible <strong>node</strong> (e.g., <code>document.getElementById()</code>).
+                </p>
+                <p class="lecture-paragraph" style="text-align: center; font-weight: 600; color: var(--primary-blue);">
+                    Document Root &rarr; &lt;html&gt; &rarr; &lt;head&gt; / &lt;body&gt; &rarr; &lt;header&gt; / &lt;main&gt; / &lt;footer&gt;
+                </p>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. CSS Transitions vs. Keyframe Animations</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>CSS Transitions</th>
+                            <th>CSS @keyframes Animations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Trigger Requirement</strong></td>
+                            <td>Requires a state change trigger (e.g., <code>:hover</code> or <code>:focus</code>).</td>
+                            <td>Runs automatically on page load without requiring user interaction.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Control Points</strong></td>
+                            <td>Only 2 states: start and end.</td>
+                            <td>Unlimited intermediate states (using percentages: 0%, 25%, 50%, 100%).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Repetition</strong></td>
+                            <td>Executes once per trigger.</td>
+                            <td>Can loop infinitely with <code>animation-iteration-count: infinite</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Confusing <strong>CSS <code>opacity</code></strong> with <strong><code>rgba()</code> transparency</strong>: <code>opacity</code> turns the element AND all its child text transparent, while <code>rgba()</code> only turns the background color transparent.</li>
+                        <li>Forgetting to define a <code>transition-duration</code> (e.g. <code>0.3s</code>), causing hover effects to jump instantaneously without smoothing.</li>
+                        <li>Placing heavy JavaScript logic on pages where pure CSS transitions can achieve the same animation with significantly higher performance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 8 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What is the Document Object Model (DOM)?</strong><br>
+                <em>Answer:</em> The DOM is an object-oriented tree representation of the web page constructed by the browser. It allows scripts to dynamically access, inspect, and update HTML elements, styles, and attributes.</p>
+                <p style="margin-top: 10px;"><strong>Q2: What is the difference between CSS <code>opacity: 0.5</code> and <code>background-color: rgba(0,0,0,0.5)</code>?</strong><br>
+                <em>Answer:</em> <code>opacity: 0.5</code> makes the entire element and all of its nested children/text semi-transparent. <code>rgba(0,0,0,0.5)</code> applies transparency strictly to the background color, keeping child text 100% crisp and readable.</p>
+                <p style="margin-top: 10px;"><strong>Q3: Name four sub-properties of the CSS <code>animation</code> shorthand.</strong><br>
+                <em>Answer:</em> 1. <code>animation-name</code>, 2. <code>animation-duration</code>, 3. <code>animation-timing-function</code>, and 4. <code>animation-iteration-count</code>.</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 8</h4>
+                <p>Build a pure CSS loading spinner using a circular <code>&lt;div&gt;</code> with <code>border-radius: 50%</code>, a colored top border, and an <code>@keyframes spin</code> rule that rotates from 0deg to 360deg infinitely.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture7.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture6.html">Lecture 6: Box Model</a></li>
+                    <li><a href="lecture7.html">Lecture 7: Responsive Design</a></li>
+                    <li><a href="lecture8.html">Lecture 8: Intro to JS &amp; Effects</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

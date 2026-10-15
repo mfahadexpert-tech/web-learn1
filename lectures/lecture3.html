@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 3: HTML Forms and Media - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture3.html" class="nav-link active">Lecture 3</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 3: HTML Forms and Media</h1>
+                <p class="lecture-sub-italic">Interactive user inputs, native multimedia embedding, tables, and semantic layouts</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                This lecture explores user data collection through HTML5 forms, native audio and video multimedia embedding, structured data presentation with tables, and modern semantic page layout elements. It teaches input controls, form methods (GET vs. POST), validation attributes, merged table cells, and block versus inline formatting.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>HTML Forms &amp; User Inputs
+                    <ul>
+                        <li>Form Structure: &lt;form&gt;, action, and method (GET vs. POST)</li>
+                        <li>Input Controls: text, email, password, number, date, radio, checkbox</li>
+                        <li>Dropdowns (&lt;select&gt;, &lt;option&gt;) &amp; Multiline Text (&lt;textarea&gt;)</li>
+                        <li>HTML5 Validation Attributes: required, placeholder, pattern, min, max</li>
+                    </ul>
+                </li>
+                <li>HTML5 Native Multimedia
+                    <ul>
+                        <li>Audio Embedding: &lt;audio controls&gt; and &lt;source&gt;</li>
+                        <li>Video Embedding: &lt;video controls width="..."&gt; and formats (MP4, WebM)</li>
+                    </ul>
+                </li>
+                <li>HTML Tables
+                    <ul>
+                        <li>Table Grid: &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;, &lt;caption&gt;</li>
+                        <li>Semantic Table Sections: &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</li>
+                        <li>Cell Merging: colspan (column span) and rowspan (row span)</li>
+                    </ul>
+                </li>
+                <li>Block vs. Inline &amp; Semantic HTML
+                    <ul>
+                        <li>Block-level (&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;) vs. Inline (&lt;span&gt;, &lt;a&gt;, &lt;strong&gt;)</li>
+                        <li>Semantic Landmarks: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>&lt;!-- Student Registration Form Example --&gt;
+&lt;form action="#" method="POST"&gt;
+    &lt;div&gt;
+        &lt;label for="username"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="username" name="username" placeholder="John Doe" required&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="useremail"&gt;Email Address:&lt;/label&gt;
+        &lt;input type="email" id="useremail" name="useremail" placeholder="john@example.com" required&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="course"&gt;Select Course:&lt;/label&gt;
+        &lt;select id="course" name="course"&gt;
+            &lt;option value="web"&gt;Web Technologies&lt;/option&gt;
+            &lt;option value="db"&gt;Database Systems&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Submit Registration&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <form action="#" method="GET" style="max-width: 440px; margin: 0 auto; text-align: left;">
+                    <div style="margin-bottom: 10px;">
+                        <label for="out-username" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px;">Full Name:</label>
+                        <input type="text" id="out-username" placeholder="John Doe" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label for="out-useremail" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px;">Email Address:</label>
+                        <input type="email" id="out-useremail" placeholder="john@example.com" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 14px;">
+                        <label for="out-course" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px;">Select Course:</label>
+                        <select id="out-course" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white;">
+                            <option value="web">Web Technologies</option>
+                            <option value="db">Database Systems</option>
+                        </select>
+                    </div>
+                    <button type="button" style="background: #2b5b9c; color: white; padding: 9px 18px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer;">Submit Registration</button>
+                </form>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. Form Submission Methods: GET vs. POST</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>HTTP GET Method</th>
+                            <th>HTTP POST Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Data Transmission</strong></td>
+                            <td>Appends data directly to the URL in query strings (e.g. <code>?user=ali&amp;id=1</code>).</td>
+                            <td>Sends data in the HTTP request body; invisible in browser address bar.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td>Insecure for sensitive data (passwords appear in URL, browser history, and server logs).</td>
+                            <td>Secure for credentials and sensitive inputs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Length</strong></td>
+                            <td>Limited by URL character limits (~2048 chars).</td>
+                            <td>No arbitrary size limits (suitable for file uploads).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best Use Case</strong></td>
+                            <td>Search queries, filtering, bookmarkable pages.</td>
+                            <td>Registration forms, logins, transactions, file uploads.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. Merging Table Cells: Colspan and Rowspan</h4>
+                <p class="lecture-paragraph">
+                    In university exams, cell-merging is frequently tested:
+                </p>
+                <ul style="margin-left: 20px; line-height: 1.7; color: var(--text-main);">
+                    <li><strong><code>colspan="N"</code>:</strong> Merges <em>N</em> horizontal columns into a single cell. (Example: <code>&lt;th colspan="2"&gt;Student Name&lt;/th&gt;</code>)</li>
+                    <li><strong><code>rowspan="N"</code>:</strong> Merges <em>N</em> vertical rows across multiple lines into a single cell.</li>
+                </ul>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>3. Block vs. Inline Comparison</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Line Behavior</th>
+                            <th>Width &amp; Height Dimensions</th>
+                            <th>Common Elements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Block Elements</strong></td>
+                            <td>Always starts on a new line and stretches across the full available width.</td>
+                            <td>Accepts width, height, margin-top, and margin-bottom.</td>
+                            <td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;–&lt;h6&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;table&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inline Elements</strong></td>
+                            <td>Does not start on a new line; flows inline with adjacent text.</td>
+                            <td>Ignores width and height; vertical padding/margin do not affect document flow.</td>
+                            <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;label&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Missing the <code>name</code> attribute on input tags: if an input lacks <code>name</code>, its value will NOT be submitted when the form sends data to the server.</li>
+                        <li>Failing to associate <code>&lt;label for="id"&gt;</code> with the matching <code>&lt;input id="id"&gt;</code>, which ruins accessibility and makes it impossible to click the text to focus the field.</li>
+                        <li>Placing content directly inside <code>&lt;table&gt;</code> without enclosing it in a <code>&lt;tr&gt;</code> row.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 3 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: Why is Semantic HTML important for websites?</strong><br>
+                <em>Answer:</em> Semantic elements (like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>) clearly describe their meaning to both the browser and screen-readers. They significantly improve search engine optimization (SEO), code maintainability, and accessibility for disabled users.</p>
+                <p style="margin-top: 10px;"><strong>Q2: What is the purpose of the <code>required</code> attribute in HTML5 inputs?</strong><br>
+                <em>Answer:</em> It activates native browser-level client-side validation, preventing form submission if the user leaves the input field blank.</p>
+                <p style="margin-top: 10px;"><strong>Q3: How do you embed a native video file with user playback controls?</strong><br>
+                <em>Answer:</em> Using <code>&lt;video controls width="600"&gt;&lt;source src="video.mp4" type="video/mp4"&gt;Your browser does not support HTML5 video.&lt;/video&gt;</code>.</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 3</h4>
+                <p>Construct a class timetable table featuring at least 5 days (Monday to Friday) and 4 class periods. Utilize <code>colspan</code> to indicate a lunch break spanning all 4 columns, and use <code>th</code> for all days and time slots.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture2.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture4.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture2.html">Lecture 2: HTML Basics</a></li>
+                    <li><a href="lecture3.html">Lecture 3: Forms &amp; Media</a></li>
+                    <li><a href="lecture4.html">Lecture 4: Intro to CSS</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

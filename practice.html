@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Lab Tasks - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#lectures-table" class="nav-link">Lectures</a>
+                <a href="examples.html" class="nav-link">Code Examples</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="viva.html" class="nav-link">Viva Prep</a>
+                <a href="practice.html" class="nav-link active">Practice</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <div class="lecture-top-header" style="margin-top: 15px;">
+            <h1 class="lecture-main-heading">Laboratory Practice Exercises</h1>
+            <p class="lecture-sub-italic">Hands-on university laboratory exam preparation tasks with objectives, requirements, hints, and model solutions</p>
+            <hr class="lecture-divider">
+        </div>
+
+        <!-- Task 1 -->
+        <article class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Lab Task 1: Semantic Document Structure &amp; Text Hierarchy</h2>
+            <div class="practice-callout">
+                <h4>Objective &amp; Requirements</h4>
+                <p>Construct a standalone HTML5 page named <code>about-me.html</code> that includes a valid DOCTYPE, language attribute, title, exactly one <code>&lt;h1&gt;</code>, two <code>&lt;h2&gt;</code> sub-headings, an unordered list of technical skills, and an external hyperlink.</p>
+                <p style="margin-top: 8px;"><strong>Hint:</strong> Remember that closing tags must nest properly in reverse order of opening.</p>
+            </div>
+
+            <details class="comp-accordion">
+                <summary>Click to Reveal Model Solution Code</summary>
+                <div class="comp-accordion-content">
+                    <pre class="code-box"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;About Me - Web Technologies&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Muhammad Dawood&lt;/h1&gt;
+    &lt;p&gt;Student of Computer Science enrolled in Web Technologies.&lt;/p&gt;
+
+    &lt;h2&gt;Technical Skills&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;HTML5 Semantic Markup&lt;/li&gt;
+        &lt;li&gt;CSS3 Layouts &amp; Box Model&lt;/li&gt;
+        &lt;li&gt;Client-Server Communication Concepts&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;h2&gt;Useful Links&lt;/h2&gt;
+    &lt;p&gt;Visit the &lt;a href="https://www.w3.org" target="_blank"&gt;W3C Standards Website&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </details>
+        </article>
+
+        <!-- Task 2 -->
+        <article class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Lab Task 2: Academic Timetable with Colspan &amp; Rowspan</h2>
+            <div class="practice-callout">
+                <h4>Objective &amp; Requirements</h4>
+                <p>Create a weekly course timetable using <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, and <code>&lt;tbody&gt;</code>. Span a single lunch break across all 5 days using <code>colspan</code>, and merge a 2-hour lab slot using <code>rowspan</code>.</p>
+                <p style="margin-top: 8px;"><strong>Hint:</strong> When using <code>rowspan="2"</code>, omit the corresponding <code>&lt;td&gt;</code> on the row immediately beneath it.</p>
+            </div>
+
+            <details class="comp-accordion">
+                <summary>Click to Reveal Model Solution Code</summary>
+                <div class="comp-accordion-content">
+                    <pre class="code-box"><code>&lt;table border="1" style="border-collapse: collapse; width: 100%; text-align: center;"&gt;
+    &lt;thead&gt;
+        &lt;tr style="background: #2b5b9c; color: white;"&gt;
+            &lt;th&gt;Day&lt;/th&gt;
+            &lt;th&gt;09:00 - 10:00&lt;/th&gt;
+            &lt;th&gt;10:00 - 11:00&lt;/th&gt;
+            &lt;th&gt;11:00 - 12:00&lt;/th&gt;
+            &lt;th&gt;12:00 - 01:00&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;strong&gt;Monday&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;Web Tech Lecture&lt;/td&gt;
+            &lt;td&gt;Database Systems&lt;/td&gt;
+            &lt;td colspan="2" style="background: #f1f5f9; font-weight: bold;"&gt;Web Technologies Lab (2 Hours)&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;strong&gt;Tuesday&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;Data Structures&lt;/td&gt;
+            &lt;td&gt;Algorithms&lt;/td&gt;
+            &lt;td&gt;Discrete Math&lt;/td&gt;
+            &lt;td&gt;Study Period&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </details>
+        </article>
+
+        <!-- Task 3 -->
+        <article class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">Lab Task 3: CSS Card with Absolute Badge and Box Model</h2>
+            <div class="practice-callout">
+                <h4>Objective &amp; Requirements</h4>
+                <p>Build a course offering card using <code>box-sizing: border-box</code>. Set <code>position: relative</code> on the parent card, and position an absolute "NEW" badge at <code>top: -8px</code> and <code>right: 12px</code> with <code>border-radius: 12px</code>.</p>
+            </div>
+
+            <details class="comp-accordion">
+                <summary>Click to Reveal Model Solution Code</summary>
+                <div class="comp-accordion-content">
+                    <pre class="code-box"><code>&lt;!-- HTML --&gt;
+&lt;div class="lab-card"&gt;
+    &lt;span class="lab-badge"&gt;NEW&lt;/span&gt;
+    &lt;h3&gt;Web Technologies&lt;/h3&gt;
+    &lt;p&gt;Learn HTML5 and CSS3 modern web development.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+&lt;style&gt;
+.lab-card {
+    position: relative;
+    width: 260px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.lab-badge {
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    background: #0d9488;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+&lt;/style&gt;</code></pre>
+                </div>
+            </details>
+        </article>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="examples.html">Code Examples</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="practice.html">Practice Lab Tasks</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>University Syllabus</h4>
+                <ul>
+                    <li><a href="lectures/lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lectures/lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lectures/lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lectures/lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform &bull; Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

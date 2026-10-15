@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Examples Library - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#lectures-table" class="nav-link">Lectures</a>
+                <a href="examples.html" class="nav-link active">Code Examples</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="viva.html" class="nav-link">Viva Prep</a>
+                <a href="practice.html" class="nav-link">Practice</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <div class="lecture-top-header" style="margin-top: 15px;">
+            <h1 class="lecture-main-heading">Code Examples Library</h1>
+            <p class="lecture-sub-italic">Working, copyable HTML5 &amp; CSS3 code snippets with rendered browser outputs</p>
+            <hr class="lecture-divider">
+        </div>
+
+        <!-- Example 1: HTML Semantic Table with Merged Cells -->
+        <article class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">1. Student Academic Marks Table with Colspan</h2>
+            <p class="lecture-paragraph">Demonstrates semantic table tags (<code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>) and horizontal cell merging using <code>colspan</code>.</p>
+            
+            <div class="code-box-label">HTML Code:</div>
+            <pre class="code-box"><code>&lt;table class="lecture-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Roll Number&lt;/th&gt;
+            &lt;th&gt;Student Name&lt;/th&gt;
+            &lt;th&gt;Subject&lt;/th&gt;
+            &lt;th&gt;Marks / 100&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;FA21-BCS-001&lt;/td&gt;
+            &lt;td&gt;Ali Khan&lt;/td&gt;
+            &lt;td&gt;Web Technologies&lt;/td&gt;
+            &lt;td&gt;94&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;FA21-BCS-002&lt;/td&gt;
+            &lt;td&gt;Sara Ahmed&lt;/td&gt;
+            &lt;td&gt;Web Technologies&lt;/td&gt;
+            &lt;td&gt;91&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3" style="text-align: right; font-weight: bold;"&gt;Average Class Score:&lt;/td&gt;
+            &lt;td style="font-weight: bold;"&gt;92.5&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+            <div class="output-box-label">Expected Browser Output:</div>
+            <div class="output-preview-box">
+                <table class="lecture-table" style="margin: 0;">
+                    <thead>
+                        <tr>
+                            <th>Roll Number</th>
+                            <th>Student Name</th>
+                            <th>Subject</th>
+                            <th>Marks / 100</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FA21-BCS-001</td>
+                            <td>Ali Khan</td>
+                            <td>Web Technologies</td>
+                            <td>94</td>
+                        </tr>
+                        <tr>
+                            <td>FA21-BCS-002</td>
+                            <td>Sara Ahmed</td>
+                            <td>Web Technologies</td>
+                            <td>91</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right; font-weight: bold; background: #f8fafc;">Average Class Score:</td>
+                            <td style="font-weight: bold; background: #f8fafc;">92.5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </article>
+
+        <!-- Example 2: HTML5 Validated Form -->
+        <article class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">2. Student Course Enrollment Form</h2>
+            <p class="lecture-paragraph">Illustrates native HTML5 validation using <code>required</code>, <code>placeholder</code>, radio buttons, and dropdown selection.</p>
+
+            <div class="code-box-label">HTML Code:</div>
+            <pre class="code-box"><code>&lt;form action="#" method="POST" class="comp-form-card"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="st-name"&gt;Student Name:&lt;/label&gt;
+        &lt;input type="text" id="st-name" name="st-name" placeholder="Muhammad Dawood" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="st-email"&gt;University Email:&lt;/label&gt;
+        &lt;input type="email" id="st-email" name="st-email" placeholder="dawood@university.edu" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;Study Program:&lt;/label&gt;
+        &lt;div class="form-radio-group"&gt;
+            &lt;label&gt;&lt;input type="radio" name="program" value="cs" checked&gt; BS Computer Science&lt;/label&gt;
+            &lt;label&gt;&lt;input type="radio" name="program" value="se"&gt; BS Software Eng&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit" class="comp-btn comp-btn-primary" style="width: 100%;"&gt;Enroll Now&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <div class="output-box-label">Expected Browser Output:</div>
+            <div class="output-preview-box">
+                <form action="#" method="GET" class="comp-form-card" style="margin: 0 auto;">
+                    <div class="form-group">
+                        <label for="ex-name">Student Name:</label>
+                        <input type="text" id="ex-name" placeholder="Muhammad Dawood" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ex-email">University Email:</label>
+                        <input type="email" id="ex-email" placeholder="dawood@university.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Study Program:</label>
+                        <div class="form-radio-group">
+                            <label><input type="radio" name="ex-prog" checked> BS Computer Science</label>
+                            <label><input type="radio" name="ex-prog"> BS Software Eng</label>
+                        </div>
+                    </div>
+                    <button type="button" class="comp-btn comp-btn-primary" style="width: 100%;">Enroll Now</button>
+                </form>
+            </div>
+        </article>
+
+        <!-- Example 3: CSS Keyframe Loading Spinner -->
+        <article class="lecture-page-card" style="margin-bottom: 30px;">
+            <h2 class="lecture-section-title">3. Pure CSS Keyframe Animation Loader</h2>
+            <p class="lecture-paragraph">Demonstrates pure CSS3 <code>@keyframes</code>, circular <code>border-radius: 50%</code>, and infinite linear rotation.</p>
+
+            <div class="code-box-label">CSS Code:</div>
+            <pre class="code-box"><code>.loader-ring {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #2b5b9c;
+    border-radius: 50%;
+    animation: rotateLoop 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes rotateLoop {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}</code></pre>
+
+            <div class="output-box-label">Expected Browser Output:</div>
+            <div class="output-preview-box" style="text-align: center;">
+                <div class="css-spinner" style="width: 44px; height: 44px; border-width: 4px;"></div>
+                <p style="font-size: 0.9rem; color: #4b5563; margin-top: 8px;">Pure CSS Animated Spinner</p>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="examples.html">Code Examples</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="viva.html">Viva Prep</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>University Syllabus</h4>
+                <ul>
+                    <li><a href="lectures/lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lectures/lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lectures/lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lectures/lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform &bull; Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

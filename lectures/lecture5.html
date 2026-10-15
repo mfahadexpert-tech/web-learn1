@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 5: CSS Selectors - WebLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="lecture5.html" class="nav-link active">Lecture 5</a>
+                <a href="../examples.html" class="nav-link">Code Examples</a>
+                <a href="../components.html" class="nav-link">Components</a>
+                <a href="../viva.html" class="nav-link">Viva Prep</a>
+                <a href="../practice.html" class="nav-link">Practice</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+        <!-- Figure 1 Lecture Page Card -->
+        <div class="lecture-page-card">
+
+            <!-- Lecture Top Header -->
+            <div class="lecture-top-header">
+                <h1 class="lecture-main-heading">Lecture 5: CSS Selectors</h1>
+                <p class="lecture-sub-italic">Targeting elements with combinators, pseudo-classes, pseudo-elements, and specificity rules</p>
+                <hr class="lecture-divider">
+            </div>
+
+            <!-- Summary Section -->
+            <h2 class="lecture-section-title">Summary</h2>
+            <p class="lecture-paragraph">
+                CSS Selectors define which HTML elements are targeted by CSS declarations. This lecture examines basic selectors, combinator relationships (child, adjacent, sibling), pseudo-classes for interactive states, pseudo-elements for virtual content, and the mathematical rules governing CSS Cascade, Specificity, and Property Inheritance.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="lecture-section-title">Topics Covered:</h2>
+            <ul class="topics-tree">
+                <li>Core Selectors
+                    <ul>
+                        <li>Element, Class (.class), ID (#id)</li>
+                        <li>Universal (*) and Grouping (h1, h2, h3)</li>
+                        <li>Attribute Selectors: [type="email"], [href^="https"]</li>
+                    </ul>
+                </li>
+                <li>CSS Combinators
+                    <ul>
+                        <li>Descendant Selector (space): targets any nested descendant</li>
+                        <li>Child Selector (&gt;): targets direct immediate children only</li>
+                        <li>Adjacent Sibling (+): targets the very next sibling element</li>
+                        <li>General Sibling (~): targets all following sibling elements</li>
+                    </ul>
+                </li>
+                <li>Pseudo-Classes &amp; Pseudo-Elements
+                    <ul>
+                        <li>Interactive Pseudo-classes: :hover, :active, :focus, :visited</li>
+                        <li>Structural Pseudo-classes: :first-child, :last-child, :nth-child(even/odd)</li>
+                        <li>Pseudo-Elements: ::before, ::after, ::first-letter, ::placeholder</li>
+                    </ul>
+                </li>
+                <li>Cascade, Specificity &amp; Inheritance
+                    <ul>
+                        <li>Specificity Weight: Inline (1000) &gt; ID (100) &gt; Class (10) &gt; Element (1)</li>
+                        <li>Source Order Priority &amp; Property Inheritance (inherit, initial, unset)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code -->
+            <div class="code-box-label">Example Code:</div>
+            <pre class="code-box"><code>/* Combinator & Pseudo-Class Examples */
+ul.menu &gt; li {
+    list-style: none;
+    padding: 8px 12px;
+}
+
+ul.menu &gt; li:hover {
+    background-color: #eaf1fa;
+    color: #2b5b9c;
+    cursor: pointer;
+}
+
+ul.menu &gt; li:first-child {
+    font-weight: bold;
+    border-bottom: 2px solid #2b5b9c;
+}
+
+button:focus {
+    outline: 2px solid #2b5b9c;
+}</code></pre>
+
+            <!-- Output Preview -->
+            <div class="output-box-label">Output:</div>
+            <div class="output-preview-box">
+                <ul style="list-style: none; max-width: 320px; margin: 0 auto; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0; background: white;">
+                    <li style="padding: 10px 16px; font-weight: bold; border-bottom: 2px solid #2b5b9c; color: #1e293b;">Navigation Header</li>
+                    <li style="padding: 10px 16px; border-bottom: 1px solid #f1f5f9; color: #475569;">HTML Fundamentals</li>
+                    <li style="padding: 10px 16px; border-bottom: 1px solid #f1f5f9; color: #475569;">CSS Selectors</li>
+                    <li style="padding: 10px 16px; color: #475569;">Responsive Design</li>
+                </ul>
+            </div>
+
+            <!-- In-Depth Syllabus Content -->
+            <h2 class="lecture-section-title">Detailed Theoretical Concepts</h2>
+
+            <div class="edu-content-block">
+                <h4>1. The Four CSS Combinators</h4>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Combinator Name</th>
+                            <th>Syntax</th>
+                            <th>Exact Matching Condition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Descendant Selector</strong></td>
+                            <td><code>div p</code></td>
+                            <td>Matches any <code>&lt;p&gt;</code> that is anywhere inside a <code>&lt;div&gt;</code>, regardless of nesting depth.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Child Selector</strong></td>
+                            <td><code>div &gt; p</code></td>
+                            <td>Matches only <code>&lt;p&gt;</code> elements that are direct immediate children of a <code>&lt;div&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adjacent Sibling</strong></td>
+                            <td><code>h2 + p</code></td>
+                            <td>Matches the single <code>&lt;p&gt;</code> immediately following an <code>&lt;h2&gt;</code> with the same parent.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>General Sibling</strong></td>
+                            <td><code>h2 ~ p</code></td>
+                            <td>Matches every <code>&lt;p&gt;</code> that shares the same parent and follows an <code>&lt;h2&gt;</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-content-block">
+                <h4>2. CSS Specificity Hierarchy</h4>
+                <p class="lecture-paragraph">
+                    When conflicting CSS rules target the same element, the browser calculates specificity to decide the winner:
+                </p>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Selector Level</th>
+                            <th>Weight Value</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Inline Style</strong></td><td>1, 0, 0, 0 (Highest)</td><td><code>style="color: red;"</code></td></tr>
+                        <tr><td><strong>ID Selector</strong></td><td>0, 1, 0, 0</td><td><code>#main-header</code></td></tr>
+                        <tr><td><strong>Class / Attribute / Pseudo-class</strong></td><td>0, 0, 1, 0</td><td><code>.nav-link</code>, <code>[type="text"]</code>, <code>:hover</code></td></tr>
+                        <tr><td><strong>Element / Pseudo-element</strong></td><td>0, 0, 0, 1</td><td><code>p</code>, <code>h1</code>, <code>::before</code></td></tr>
+                        <tr><td><strong>Universal / Combinator</strong></td><td>0, 0, 0, 0 (Zero)</td><td><code>*</code>, <code>&gt;</code>, <code>+</code>, <code>~</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="comp-alert comp-alert-warning">
+                <div>
+                    <strong>Common Student Mistakes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 6px;">
+                        <li>Confusing <strong>Class (<code>.name</code>)</strong> with <strong>ID (<code>#name</code>)</strong>. An ID must be unique per HTML page, whereas a class can be applied to any number of elements.</li>
+                        <li>Confusing pseudo-classes (single colon <code>:hover</code>, denoting an element state) with pseudo-elements (double colon <code>::before</code>, denoting virtual DOM parts).</li>
+                        <li>Assuming <code>div &gt; p</code> will select paragraphs nested inside a child section (that requires descendant <code>div p</code>).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Viva Questions Section -->
+            <div class="viva-callout">
+                <h4>Lecture 5 Viva Questions &amp; Answers</h4>
+                <p><strong>Q1: What is the difference between a Child Selector (&gt;) and a Descendant Selector (space)?</strong><br>
+                <em>Answer:</em> The child selector (<code>parent &gt; child</code>) selects only direct, immediate children of the parent. The descendant selector (<code>ancestor descendant</code>) selects all matching elements regardless of how deeply nested they are.</p>
+                <p style="margin-top: 10px;"><strong>Q2: If an element has rules from both an ID selector and a Class selector, which one applies?</strong><br>
+                <em>Answer:</em> The ID selector wins because its specificity value (0,1,0,0 = 100) is ten times higher than a class selector (0,0,1,0 = 10).</p>
+                <p style="margin-top: 10px;"><strong>Q3: What is the purpose of the <code>::before</code> and <code>::after</code> pseudo-elements?</strong><br>
+                <em>Answer:</em> They allow developers to insert cosmetic content or decorative styling directly before or after an element's content using CSS alone, via the <code>content: "";</code> property without adding extra HTML markup.</p>
+            </div>
+
+            <!-- Practice Task -->
+            <div class="practice-callout">
+                <h4>Practice Lab Task 5</h4>
+                <p>Create a styled button and an interactive list. Use <code>:hover</code> to change the button background, <code>:active</code> to simulate a push effect, and <code>:nth-child(even)</code> to give alternating list rows a subtle light gray background.</p>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="lecture-bottom-nav">
+                <a href="lecture4.html">&larr; Previous Lecture</a>
+                <span class="nav-sep">|</span>
+                <a href="../index.html">Home</a>
+                <span class="nav-sep">|</span>
+                <a href="lecture6.html">Next Lecture &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Course Home</a></li>
+                    <li><a href="lecture4.html">Lecture 4: Intro to CSS</a></li>
+                    <li><a href="lecture5.html">Lecture 5: CSS Selectors</a></li>
+                    <li><a href="lecture6.html">Lecture 6: Box Model</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learning Modules</h4>
+                <ul>
+                    <li><a href="lecture1.html">Module 1: Web Fundamentals</a></li>
+                    <li><a href="lecture2.html">Module 2: HTML &amp; HTML5</a></li>
+                    <li><a href="lecture4.html">Module 3: CSS Fundamentals</a></li>
+                    <li><a href="lecture7.html">Module 4: Advanced CSS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform. Built with pure HTML5 and CSS3.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

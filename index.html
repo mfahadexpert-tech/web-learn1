@@ -1,396 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>WebLearn - Learn HTML and CSS</title>
-
+    <title>Web Technologies - WebLearn Learning Platform</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
-
-    <header class="top-header">
-
-        <a href="index.html" class="logo">
-            Web<span>Learn</span>
-        </a>
-
-        <nav class="top-nav" id="topNav">
-            <a href="index.html">Home</a>
-            <a href="#courses">HTML</a>
-            <a href="#courses">CSS</a>
-            <a href="#examples">Examples</a>
-        </nav>
-
-        <button class="menu-button" id="menuButton" aria-label="Toggle navigation menu">
-            ☰
-        </button>
-
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                Web<span>Learn</span>
+                <span class="badge-tag">HTML &amp; CSS Hub</span>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#lectures-table" class="nav-link">Lectures</a>
+                <a href="examples.html" class="nav-link">Code Examples</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="viva.html" class="nav-link">Viva Prep</a>
+                <a href="practice.html" class="nav-link">Practice</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content Container -->
+    <main class="main-wrapper">
 
-    <!-- ================= HERO ================= -->
+        <!-- ================================================================
+             FIGURE 1 — HOMEPAGE OUTPUT CARD (EXACT ASSIGNMENT SPECIFICATION)
+             ================================================================ -->
+        <section id="lectures-table">
+            <div class="fig1-card-container">
 
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <p class="hero-label">
-                WEB DEVELOPMENT LEARNING
-            </p>
-
-            <h1>
-                Learn HTML &amp; CSS
-                <span>the Simple Way</span>
-            </h1>
-
-            <p class="hero-description">
-                Learn web development with simple explanations,
-                practical examples and clean starter code.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#courses" class="primary-button">
-                    Start HTML
-                </a>
-
-                <a href="#courses" class="secondary-button">
-                    Learn CSS
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-code">
-
-            <div class="code-header">
-                <span>example.html</span>
-            </div>
-
-            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-&lt;head&gt;
-    &lt;title&gt;My Website&lt;/title&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-
-    &lt;h1&gt;Hello World&lt;/h1&gt;
-
-    &lt;p&gt;
-        I am learning HTML.
-    &lt;/p&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= COURSE / TOPICS SECTION ================= -->
-
-    <section class="courses" id="courses">
-
-        <div class="section-heading">
-
-            <p>START LEARNING</p>
-
-            <h2>
-                What do you want to learn?
-            </h2>
-
-            <span>
-                Start from the basics and move through the topics
-                from your Web Technologies course.
-            </span>
-
-        </div>
-
-
-        <div class="course-grid">
-
-            <!-- HTML CARD -->
-            <article class="course-card">
-
-                <div class="course-icon">
-                    HTML
+                <!-- Header Banner -->
+                <div class="fig1-header-block">
+                    <h1 class="fig1-main-title">Web Technologies</h1>
+                    <!-- Student details: customize name and registration number below -->
+                    <p class="fig1-student-meta">Ali Khan | FA21-BCS-001</p>
                 </div>
 
-                <h3>
-                    HTML Tutorial
-                </h3>
+                <!-- Card Body & Styled Table -->
+                <div class="fig1-card-body">
+                    <div class="table-responsive">
+                        <table class="lecture-table" aria-label="Web Technologies Course Lectures">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Lecture No</th>
+                                    <th scope="col">Lecture Title</th>
+                                    <th scope="col">Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Lecture 1</strong></td>
+                                    <td>Introduction to Web Technologies</td>
+                                    <td><a href="lectures/lecture1.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 2</strong></td>
+                                    <td>HTML Basics</td>
+                                    <td><a href="lectures/lecture2.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 3</strong></td>
+                                    <td>HTML Forms and Media</td>
+                                    <td><a href="lectures/lecture3.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 4</strong></td>
+                                    <td>Introduction to CSS</td>
+                                    <td><a href="lectures/lecture4.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 5</strong></td>
+                                    <td>CSS Selectors</td>
+                                    <td><a href="lectures/lecture5.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 6</strong></td>
+                                    <td>CSS Box Model &amp; Layout</td>
+                                    <td><a href="lectures/lecture6.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 7</strong></td>
+                                    <td>Responsive Web Design</td>
+                                    <td><a href="lectures/lecture7.html" class="view-link">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lecture 8</strong></td>
+                                    <td>Introduction to JavaScript</td>
+                                    <td><a href="lectures/lecture8.html" class="view-link">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                <p>
-                    Learn how to structure web pages using HTML
-                    elements, headings, links, images, tables,
-                    forms and semantic elements.
-                </p>
+                    <!-- Figure 1 Bottom Navigation -->
+                    <div class="fig1-bottom-nav">
+                        <a href="index.html">Home</a>
+                        <span class="nav-sep">|</span>
+                        <a href="lectures/lecture1.html">Next Lecture &rarr;</a>
+                    </div>
+                </div>
 
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             PLATFORM HERO & LEARNING HUB (MASTER PROJECT SPECIFICATION)
+             ================================================================ -->
+        <section class="platform-hero">
+            <h1>WebLearn — HTML &amp; CSS Learning Hub</h1>
+            <p class="tagline">Learn Web Technologies. Understand the Code. Build It Yourself. A complete university lecture learning platform built strictly with HTML5 and CSS3.</p>
+            <div class="hero-actions">
+                <a href="lectures/lecture1.html" class="btn-primary">Start Lecture 1</a>
+                <a href="examples.html" class="btn-secondary">Browse Code Examples</a>
+                <a href="components.html" class="btn-secondary">Reusable Components</a>
+                <a href="viva.html" class="btn-secondary">Viva Questions</a>
+            </div>
+        </section>
+
+        <!-- Course Modules Grid -->
+        <section>
+            <div class="hub-section-heading">
+                <h2>Four University Course Modules</h2>
+                <p>Structured curriculum following Lectures 1 through 8 in exact sequential order.</p>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Module 1 -->
+                <article class="module-card">
+                    <div>
+                        <span class="module-badge">Module 1 &bull; Lectures 1 &amp; 2</span>
+                        <h3>Web Fundamentals</h3>
+                        <p>Internet vs. Web, Client-Server architecture, URLs, DNS resolution, HTTP/HTTPS methods, status codes, and multi-tier systems.</p>
+                        <ul>
+                            <li>Internet &amp; World Wide Web</li>
+                            <li>Client-Server Request Model</li>
+                            <li>DNS &amp; HTTP Status Codes</li>
+                            <li>Static vs. Dynamic Websites</li>
+                        </ul>
+                    </div>
+                    <a href="lectures/lecture1.html" class="module-btn">Explore Module 1 &rarr;</a>
+                </article>
+
+                <!-- Module 2 -->
+                <article class="module-card">
+                    <div>
+                        <span class="module-badge">Module 2 &bull; Lectures 3 &amp; 4</span>
+                        <h3>HTML &amp; HTML5</h3>
+                        <p>Document structure, text semantics, ordered/unordered lists, tables with colspan/rowspan, forms, multimedia, and block vs. inline elements.</p>
+                        <ul>
+                            <li>DOCTYPE &amp; Page Structure</li>
+                            <li>Text Elements &amp; Hyperlinks</li>
+                            <li>Tables &amp; Merged Cells</li>
+                            <li>HTML5 Forms &amp; Inputs</li>
+                        </ul>
+                    </div>
+                    <a href="lectures/lecture2.html" class="module-btn">Explore Module 2 &rarr;</a>
+                </article>
+
+                <!-- Module 3 -->
+                <article class="module-card">
+                    <div>
+                        <span class="module-badge">Module 3 &bull; Lectures 5 &amp; 6</span>
+                        <h3>CSS Fundamentals</h3>
+                        <p>CSS syntax, inline/internal/external types, combinators, pseudo-classes, cascade specificity calculation, and the 4-layer box model.</p>
+                        <ul>
+                            <li>Three Methods of Styling</li>
+                            <li>Combinators &amp; Selectors</li>
+                            <li>CSS Specificity Hierarchy</li>
+                            <li>Box Model &amp; Box Sizing</li>
+                        </ul>
+                    </div>
+                    <a href="lectures/lecture4.html" class="module-btn">Explore Module 3 &rarr;</a>
+                </article>
+
+                <!-- Module 4 -->
+                <article class="module-card">
+                    <div>
+                        <span class="module-badge">Module 4 &bull; Lectures 7 &amp; 8</span>
+                        <h3>Advanced CSS &amp; JS Intro</h3>
+                        <p>CSS positioning (relative, absolute, fixed, sticky), z-index, floats, media queries, rounded corners, gradients, keyframe animations, and DOM basics.</p>
+                        <ul>
+                            <li>Five Positioning Schemes</li>
+                            <li>Z-index Stacking Context</li>
+                            <li>Responsive Media Queries</li>
+                            <li>CSS Keyframes &amp; JS DOM</li>
+                        </ul>
+                    </div>
+                    <a href="lectures/lecture7.html" class="module-btn">Explore Module 4 &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Quick Access Showcase Cards -->
+        <section style="margin-top: 20px;">
+            <div class="hub-section-heading">
+                <h2>Practical Learning Resources</h2>
+                <p>Everything you need to excel in your laboratory exams and viva voce.</p>
+            </div>
+
+            <div class="comp-card-grid">
+                <div class="comp-card">
+                    <h4>📋 Code Examples Library</h4>
+                    <p>Copy-ready working snippets of HTML tables, registration forms, CSS selectors, navigation bars, and responsive layouts.</p>
+                    <a href="examples.html" style="font-weight: 600; margin-top: 10px; display: inline-block;">Open Examples &rarr;</a>
+                </div>
+
+                <div class="comp-card">
+                    <h4>🧩 Reusable Components</h4>
+                    <p>Buttons, cards, alerts, modal-free pure CSS tooltips, HTML5 accordions, and pure CSS loading spinners.</p>
+                    <a href="components.html" style="font-weight: 600; margin-top: 10px; display: inline-block;">View Components &rarr;</a>
+                </div>
+
+                <div class="comp-card">
+                    <h4>🎓 Viva Preparation</h4>
+                    <p>Frequently asked interview and lab evaluation viva questions with concise, accurate model answers across all 8 lectures.</p>
+                    <a href="viva.html" style="font-weight: 600; margin-top: 10px; display: inline-block;">Prepare for Viva &rarr;</a>
+                </div>
+
+                <div class="comp-card">
+                    <h4>💻 Practice Lab Tasks</h4>
+                    <p>Hands-on lab exercises with problem statements, design requirements, structural hints, and verified solutions.</p>
+                    <a href="practice.html" style="font-weight: 600; margin-top: 10px; display: inline-block;">Start Practice &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Web Technologies</h4>
+                <p>An educational learning hub covering university lectures 1 through 8 in full detail with pure HTML5 and CSS3.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
                 <ul>
-                    <li>HTML Structure</li>
-                    <li>HTML Elements</li>
-                    <li>Links &amp; Images</li>
-                    <li>Lists &amp; Tables</li>
-                    <li>HTML Forms</li>
+                    <li><a href="index.html">Course Home</a></li>
+                    <li><a href="lectures/lecture1.html">Lecture 1: Web Intro</a></li>
+                    <li><a href="lectures/lecture2.html">Lecture 2: HTML Basics</a></li>
+                    <li><a href="lectures/lecture3.html">Lecture 3: Forms &amp; Media</a></li>
+                    <li><a href="examples.html">Code Examples</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="viva.html">Viva Preparation</a></li>
+                    <li><a href="practice.html">Practice Lab Tasks</a></li>
                 </ul>
-
-                <a href="#courses" class="card-button">
-                    Learn HTML &rarr;
-                </a>
-
-            </article>
-
-
-            <!-- CSS CARD -->
-            <article class="course-card">
-
-                <div class="course-icon">
-                    CSS
-                </div>
-
-                <h3>
-                    CSS Tutorial
-                </h3>
-
-                <p>
-                    Learn how CSS controls colors, fonts,
-                    spacing, selectors, layouts and visual
-                    effects.
-                </p>
-
+            </div>
+            <div class="footer-col">
+                <h4>University Syllabus</h4>
                 <ul>
-                    <li>CSS Syntax</li>
-                    <li>CSS Selectors</li>
-                    <li>Colors &amp; Fonts</li>
-                    <li>Box Model</li>
-                    <li>CSS Positioning</li>
+                    <li><a href="lectures/lecture1.html">Lectures 1 &amp; 2: Web Fundamentals</a></li>
+                    <li><a href="lectures/lecture3.html">Lectures 3 &amp; 4: HTML &amp; HTML5</a></li>
+                    <li><a href="lectures/lecture5.html">Lectures 5 &amp; 6: CSS Fundamentals</a></li>
+                    <li><a href="lectures/lecture7.html">Lectures 7 &amp; 8: Advanced CSS</a></li>
                 </ul>
-
-                <a href="#courses" class="card-button">
-                    Learn CSS &rarr;
-                </a>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= LEARNING METHOD ================= -->
-
-    <section class="learning-section">
-
-        <div class="section-heading">
-
-            <p>HOW IT WORKS</p>
-
-            <h2>
-                Learn &rarr; Example &rarr; Practice
-            </h2>
-
-        </div>
-
-
-        <div class="learning-grid">
-
-            <div class="learning-card">
-                <span>01</span>
-                <h3>Learn</h3>
-                <p>
-                    Read short and simple explanations
-                    of each HTML and CSS concept.
-                </p>
             </div>
-
-            <div class="learning-card">
-                <span>02</span>
-                <h3>See Example</h3>
-                <p>
-                    Understand each topic with small
-                    practical code examples.
-                </p>
-            </div>
-
-            <div class="learning-card">
-                <span>03</span>
-                <h3>Copy Code</h3>
-                <p>
-                    Copy useful HTML and CSS code
-                    and use it in your own project.
-                </p>
-            </div>
-
         </div>
-
-    </section>
-
-
-    <!-- ================= USEFUL EXAMPLES SECTION ================= -->
-
-    <section class="examples-section" id="examples">
-
-        <div class="section-heading">
-            <p>READY-MADE CODE</p>
-            <h2>Useful Examples</h2>
-            <span>Learn the concept and then use a complete example.</span>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Web Technologies Learning Platform &bull; Built strictly with HTML5 and CSS3 (Zero JS).</p>
         </div>
-
-        <div class="example-grid">
-
-            <!-- Example 1: Form Preview -->
-            <div class="example-card">
-
-                <form class="example-preview form-preview">
-
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-
-                    <div class="gender-selection">
-                        <span>Gender:</span>
-                        <label>
-                            <input type="radio" name="gender" value="Male" checked> Male
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="Female"> Female
-                        </label>
-                    </div>
-
-                    <select>
-                        <option value="Web Development">Web Development</option>
-                        <option value="HTML Basics">HTML Basics</option>
-                        <option value="CSS Styling">CSS Styling</option>
-                    </select>
-
-                    <button type="button">
-                        Register
-                    </button>
-
-                </form>
-
-                <h3>Registration Form</h3>
-                <p>HTML form with clean CSS styling.</p>
-
-            </div>
-
-
-            <!-- Example 2: Table Preview -->
-            <div class="example-card">
-
-                <div class="example-preview table-preview">
-
-                    <div>
-                        <span>Name</span>
-                        <strong>Student</strong>
-                    </div>
-
-                    <div>
-                        <span>Email</span>
-                        <strong>student@example.com</strong>
-                    </div>
-
-                    <div>
-                        <span>Gender</span>
-                        <strong>Male</strong>
-                    </div>
-
-                    <div>
-                        <span>Course</span>
-                        <strong>Web Development</strong>
-                    </div>
-
-                </div>
-
-                <h3>Form Output Table</h3>
-                <p>Simple HTML table with CSS styling.</p>
-
-            </div>
-
-
-            <!-- Example 3: Course Card Preview -->
-            <div class="example-card">
-
-                <div class="example-preview mini-card-preview">
-                    <strong>HTML Course</strong>
-                    <span>Learn web development</span>
-                    <button type="button">Start</button>
-                </div>
-
-                <h3>Course Card</h3>
-                <p>Card design using HTML and CSS.</p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CTA ================= -->
-
-    <section class="cta-section">
-
-        <div>
-
-            <p>
-                READY TO START?
-            </p>
-
-            <h2>
-                Build your first web page.
-            </h2>
-
-            <span>
-                Begin with HTML and learn one concept at a time.
-            </span>
-
-        </div>
-
-        <a href="#courses" class="cta-button">
-            Start Learning
-        </a>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-logo">
-            Web<span>Learn</span>
-        </div>
-
-        <p>
-            Simple HTML &amp; CSS learning website.
-        </p>
-
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="#courses">HTML</a>
-            <a href="#courses">CSS</a>
-        </div>
-
-        <small>
-            Web Technologies Learning Project
-        </small>
-
     </footer>
 
-    <script src="js/script.js"></script>
-
 </body>
-
 </html>
