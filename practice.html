@@ -34,7 +34,7 @@
 
         <div class="lecture-top-header" style="margin-top: 15px;">
             <h1 class="lecture-main-heading">Practice Lab &amp; Code Playground</h1>
-            <p class="lecture-sub-italic">Interactive hands-on solutions for forms, tables, and responsive layouts with drag-and-resize code inspection</p>
+            <p class="lecture-sub-italic">Interactive solutions for forms, tables, and layouts with drag-and-resize code inspection</p>
             <hr class="lecture-divider">
         </div>
 
@@ -43,35 +43,21 @@
              ==================================================================== -->
         <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-responsive-forms">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
-                <h2 class="lecture-section-title" style="margin: 0;">Category 1: Responsive Form &amp; Multi-Column Footer</h2>
-                <span class="tag tag-html">Responsive Layouts</span>
+                <h2 class="lecture-section-title" style="margin: 0;">Question 1: Responsive Form &amp; Multi-Column Footer</h2>
+                <span class="tag tag-html">Responsive Layout</span>
             </div>
 
             <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                This problem demonstrates a complete real-world web page incorporating a responsive two-column grid form with CSS floats/clears, combined with a modern 4-column dark footer containing brand identity, social links, navigation, contact information, and an interactive message box.
+                A complete web layout featuring a responsive 2-column form (stacking to 1 column on screens below 600px) and a modern 4-column footer with brand details, navigation links, contact info, and an interactive comment form.
             </p>
-
-            <div class="practice-callout" style="margin-bottom: 20px;">
-                <h4>Key Implementation Features</h4>
-                <ul style="margin: 6px 0 0 20px; line-height: 1.6; font-size: 0.9rem; color: #334155;">
-                    <li><strong>Responsive 2-Column Grid:</strong> 25% labels and 75% inputs stack seamlessly to 100% full width on viewport screens below 600px.</li>
-                    <li><strong>4-Column CSS Grid Footer:</strong> Distinct columns for Brand Info, Quick Navigation Links, Contact Information, and Feedback Form.</li>
-                    <li><strong>Brand Header &amp; Theming:</strong> Warm gold gradient headers (<code>#ffd700</code> to <code>#f59e0b</code>) with high-contrast dark accents (<code>#0f172a</code>).</li>
-                </ul>
-            </div>
 
             <!-- Playground 1 Card -->
             <div class="playground-card" id="card-q1">
                 <!-- Preview Overlay Image with Hover & Click Effect -->
-                <div class="playground-overlay" id="overlay-q1" onclick="revealPlayground('q1')" title="Click to open interactive draggable code inspector">
+                <div class="playground-overlay" id="overlay-q1" onclick="revealPlayground('q1')" title="Click to inspect code & live output">
                     <img src="assets/images/question1-preview.svg" alt="Question 1 Output Screenshot Preview" class="playground-thumb-img">
-                    <div class="reveal-button-wrapper">
-                        <button type="button" class="reveal-button" aria-label="Inspect Code">
-                            &lt;/&gt;
-                        </button>
-                    </div>
                     <div class="playground-badge">
-                        <span>&#128065; Click Output Preview to Inspect Full Code in Draggable Split View</span>
+                        <span>&#128065; Click Output Preview to Inspect Code in Draggable Split View</span>
                     </div>
                 </div>
 
@@ -80,12 +66,11 @@
                     <div class="workspace-toolbar">
                         <div class="toolbar-title">
                             <span class="file-icon">&#128196;</span>
-                            <span>question1-responsive-form.html</span>
+                            <span>Question 1 Source &amp; Live Output</span>
                         </div>
                         <div class="toolbar-actions">
                             <button class="tool-btn" onclick="copyCode('code-q1', this)">&#128203; Copy Code</button>
-                            <button class="tool-btn" onclick="resetSplitter('split-q1')">&#8646; Reset Split (50/50)</button>
-                            <button class="tool-btn close-btn" onclick="hidePlayground('q1')">&#10005; Back to Preview</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q1')">&#10005; Close</button>
                         </div>
                     </div>
 
@@ -94,7 +79,6 @@
                         <div class="split-pane left-pane">
                             <div class="pane-header">
                                 <span>SOURCE CODE (HTML + CSS)</span>
-                                <span>UTF-8</span>
                             </div>
                             <div class="code-scroll-area">
                                 <pre><code id="code-q1">&lt;!DOCTYPE html&gt;
@@ -538,7 +522,7 @@
                         </div>
 
                         <!-- Draggable Splitter Handle -->
-                        <div class="split-dragger" title="Drag left or right to resize panes">
+                        <div class="split-dragger" title="Drag left or right to resize">
                             <div class="dragger-handle">
                                 <span></span>
                                 <span></span>
@@ -567,35 +551,21 @@
              ==================================================================== -->
         <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-tables">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
-                <h2 class="lecture-section-title" style="margin: 0;">Category 2: Geological Eras &amp; Events Table (Colspan &amp; Rowspan)</h2>
+                <h2 class="lecture-section-title" style="margin: 0;">Question 2: Geological Eras &amp; Events Table</h2>
                 <span class="tag tag-html">HTML Tables</span>
             </div>
 
             <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                This problem tests advanced table merging techniques using the <code>colspan</code> attribute to unite columns across headers, and nested <code>rowspan</code> cells to group consecutive chronological records into clean multi-row clusters.
+                A structured table demonstrating cell merging with <code>colspan="2"</code> across column headers and vertical merging with nested <code>rowspan="2"</code> and <code>rowspan="3"</code> to group era events.
             </p>
-
-            <div class="practice-callout" style="margin-bottom: 20px;">
-                <h4>Key Implementation Features</h4>
-                <ul style="margin: 6px 0 0 20px; line-height: 1.6; font-size: 0.9rem; color: #334155;">
-                    <li><strong>Column Merging (<code>colspan="2"</code>):</strong> Header cell spans across the event description and numerical era value columns.</li>
-                    <li><strong>Vertical Row Merging (<code>rowspan="2"</code> &amp; <code>rowspan="3"</code>):</strong> Combines 2 rows in the first block and 3 rows in the subsequent block without breaking the cell alignment.</li>
-                    <li><strong>Table Boundaries:</strong> Classic borders rendered using HTML table attributes and unified box styling.</li>
-                </ul>
-            </div>
 
             <!-- Playground 2 Card -->
             <div class="playground-card" id="card-q2">
                 <!-- Preview Overlay Image with Hover & Click Effect -->
-                <div class="playground-overlay" id="overlay-q2" onclick="revealPlayground('q2')" title="Click to open interactive draggable code inspector">
+                <div class="playground-overlay" id="overlay-q2" onclick="revealPlayground('q2')" title="Click to inspect code & live output">
                     <img src="assets/images/question2-preview.svg" alt="Question 2 Output Screenshot Preview" class="playground-thumb-img">
-                    <div class="reveal-button-wrapper">
-                        <button type="button" class="reveal-button" aria-label="Inspect Code">
-                            &lt;/&gt;
-                        </button>
-                    </div>
                     <div class="playground-badge">
-                        <span>&#128065; Click Output Preview to Inspect Full Code in Draggable Split View</span>
+                        <span>&#128065; Click Output Preview to Inspect Code in Draggable Split View</span>
                     </div>
                 </div>
 
@@ -604,12 +574,11 @@
                     <div class="workspace-toolbar">
                         <div class="toolbar-title">
                             <span class="file-icon">&#128196;</span>
-                            <span>question2-eras-table.html</span>
+                            <span>Question 2 Source &amp; Live Output</span>
                         </div>
                         <div class="toolbar-actions">
                             <button class="tool-btn" onclick="copyCode('code-q2', this)">&#128203; Copy Code</button>
-                            <button class="tool-btn" onclick="resetSplitter('split-q2')">&#8646; Reset Split (50/50)</button>
-                            <button class="tool-btn close-btn" onclick="hidePlayground('q2')">&#10005; Back to Preview</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q2')">&#10005; Close</button>
                         </div>
                     </div>
 
@@ -618,7 +587,6 @@
                         <div class="split-pane left-pane">
                             <div class="pane-header">
                                 <span>SOURCE CODE (HTML)</span>
-                                <span>UTF-8</span>
                             </div>
                             <div class="code-scroll-area">
                                 <pre><code id="code-q2">&lt;!DOCTYPE html&gt;
@@ -672,7 +640,7 @@
                         </div>
 
                         <!-- Draggable Splitter Handle -->
-                        <div class="split-dragger" title="Drag left or right to resize panes">
+                        <div class="split-dragger" title="Drag left or right to resize">
                             <div class="dragger-handle">
                                 <span></span>
                                 <span></span>
@@ -701,36 +669,21 @@
              ==================================================================== -->
         <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-html5-validation">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
-                <h2 class="lecture-section-title" style="margin: 0;">Category 3: HTML5 Form Validation, Datalist &amp; Attributes</h2>
+                <h2 class="lecture-section-title" style="margin: 0;">Question 3: HTML5 Form Validation, Datalist &amp; Attributes</h2>
                 <span class="tag tag-html">HTML5 Forms</span>
             </div>
 
             <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                This problem highlights modern HTML5 semantic input types and client-side form validation mechanisms without relying on external libraries. It exercises regex pattern matching, step-based numerical increments, datalist autocomplete dropdowns, and field states (readonly and disabled).
+                Advanced form validation showcasing semantic <code>&lt;fieldset&gt;</code> grouping, university ID regex pattern constraints, datalist suggestions, number stepping, and readonly/disabled field controls.
             </p>
-
-            <div class="practice-callout" style="margin-bottom: 20px;">
-                <h4>Key Implementation Features</h4>
-                <ul style="margin: 6px 0 0 20px; line-height: 1.6; font-size: 0.9rem; color: #334155;">
-                    <li><strong>Regex Pattern Validation:</strong> University registration pattern restriction (<code>pattern="FA[0-9]{2}-BSSE-[0-9]{3}"</code>) enforced on submit.</li>
-                    <li><strong>Autocomplete Datalist:</strong> Dynamic option suggestions (Vehari, Multan, Islamabad) attached to input via <code>list="cities"</code>.</li>
-                    <li><strong>Constraint Attributes:</strong> Numeric step sizing (<code>min="10" max="20" step="5"</code>), <code>readonly</code> phone number, and <code>disabled</code> search URL field.</li>
-                    <li><strong>Semantic Grouping:</strong> Enclosed inside a styled <code>&lt;fieldset&gt;</code> with descriptive <code>&lt;legend&gt;</code>.</li>
-                </ul>
-            </div>
 
             <!-- Playground 3 Card -->
             <div class="playground-card" id="card-q3">
                 <!-- Preview Overlay Image with Hover & Click Effect -->
-                <div class="playground-overlay" id="overlay-q3" onclick="revealPlayground('q3')" title="Click to open interactive draggable code inspector">
+                <div class="playground-overlay" id="overlay-q3" onclick="revealPlayground('q3')" title="Click to inspect code & live output">
                     <img src="assets/images/question3-preview.svg" alt="Question 3 Output Screenshot Preview" class="playground-thumb-img">
-                    <div class="reveal-button-wrapper">
-                        <button type="button" class="reveal-button" aria-label="Inspect Code">
-                            &lt;/&gt;
-                        </button>
-                    </div>
                     <div class="playground-badge">
-                        <span>&#128065; Click Output Preview to Inspect Full Code in Draggable Split View</span>
+                        <span>&#128065; Click Output Preview to Inspect Code in Draggable Split View</span>
                     </div>
                 </div>
 
@@ -739,12 +692,11 @@
                     <div class="workspace-toolbar">
                         <div class="toolbar-title">
                             <span class="file-icon">&#128196;</span>
-                            <span>question3-validation-form.html</span>
+                            <span>Question 3 Source &amp; Live Output</span>
                         </div>
                         <div class="toolbar-actions">
                             <button class="tool-btn" onclick="copyCode('code-q3', this)">&#128203; Copy Code</button>
-                            <button class="tool-btn" onclick="resetSplitter('split-q3')">&#8646; Reset Split (50/50)</button>
-                            <button class="tool-btn close-btn" onclick="hidePlayground('q3')">&#10005; Back to Preview</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q3')">&#10005; Close</button>
                         </div>
                     </div>
 
@@ -753,7 +705,6 @@
                         <div class="split-pane left-pane">
                             <div class="pane-header">
                                 <span>SOURCE CODE (HTML5)</span>
-                                <span>UTF-8</span>
                             </div>
                             <div class="code-scroll-area">
                                 <pre><code id="code-q3">&lt;!DOCTYPE html&gt;
@@ -833,7 +784,7 @@
                         </div>
 
                         <!-- Draggable Splitter Handle -->
-                        <div class="split-dragger" title="Drag left or right to resize panes">
+                        <div class="split-dragger" title="Drag left or right to resize">
                             <div class="dragger-handle">
                                 <span></span>
                                 <span></span>
@@ -855,139 +806,6 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- ====================================================================
-             ADDITIONAL FOUNDATIONAL PRACTICE TASKS
-             ==================================================================== -->
-        <div style="margin-top: 40px; margin-bottom: 25px;">
-            <h2 class="lecture-section-title">Foundational Exercises</h2>
-            <p style="color: #64748b; font-size: 0.9rem;">Core syllabus exercises for practicing semantic hierarchy, academic timetables, and CSS box modeling.</p>
-        </div>
-
-        <!-- Task 1 -->
-        <article class="lecture-page-card" style="margin-bottom: 30px;">
-            <h3 class="lecture-section-title" style="font-size: 1.15rem;">Exercise A: Semantic Document Structure &amp; Text Hierarchy</h3>
-            <div class="practice-callout">
-                <h4>Objective &amp; Requirements</h4>
-                <p>Construct a standalone HTML5 page named <code>about-me.html</code> that includes a valid DOCTYPE, language attribute, title, exactly one <code>&lt;h1&gt;</code>, two <code>&lt;h2&gt;</code> sub-headings, an unordered list of technical skills, and an external hyperlink.</p>
-                <p style="margin-top: 8px;"><strong>Hint:</strong> Remember that closing tags must nest properly in reverse order of opening.</p>
-            </div>
-
-            <details class="comp-accordion">
-                <summary>Click to Reveal Model Solution Code</summary>
-                <div class="comp-accordion-content">
-                    <pre class="code-box"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;About Me - Web Technologies&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Muhammad Fahad&lt;/h1&gt;
-    &lt;p&gt;Student of Software Engineering enrolled in Web Technologies.&lt;/p&gt;
-
-    &lt;h2&gt;Technical Skills&lt;/h2&gt;
-    &lt;ul&gt;
-        &lt;li&gt;HTML5 Semantic Markup&lt;/li&gt;
-        &lt;li&gt;CSS3 Layouts &amp; Box Model&lt;/li&gt;
-        &lt;li&gt;Client-Server Communication Concepts&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;h2&gt;Useful Links&lt;/h2&gt;
-    &lt;p&gt;Visit the &lt;a href="https://www.w3.org" target="_blank"&gt;W3C Standards Website&lt;/a&gt;.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                </div>
-            </details>
-        </article>
-
-        <!-- Task 2 -->
-        <article class="lecture-page-card" style="margin-bottom: 30px;">
-            <h3 class="lecture-section-title" style="font-size: 1.15rem;">Exercise B: Academic Timetable with Colspan &amp; Rowspan</h3>
-            <div class="practice-callout">
-                <h4>Objective &amp; Requirements</h4>
-                <p>Create a weekly course timetable using <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, and <code>&lt;tbody&gt;</code>. Span a single lunch break across all 5 days using <code>colspan</code>, and merge a 2-hour lab slot using <code>rowspan</code>.</p>
-                <p style="margin-top: 8px;"><strong>Hint:</strong> When using <code>rowspan="2"</code>, omit the corresponding <code>&lt;td&gt;</code> on the row immediately beneath it.</p>
-            </div>
-
-            <details class="comp-accordion">
-                <summary>Click to Reveal Model Solution Code</summary>
-                <div class="comp-accordion-content">
-                    <pre class="code-box"><code>&lt;table border="1" style="border-collapse: collapse; width: 100%; text-align: center;"&gt;
-    &lt;thead&gt;
-        &lt;tr style="background: #2b5b9c; color: white;"&gt;
-            &lt;th&gt;Day&lt;/th&gt;
-            &lt;th&gt;09:00 - 10:00&lt;/th&gt;
-            &lt;th&gt;10:00 - 11:00&lt;/th&gt;
-            &lt;th&gt;11:00 - 12:00&lt;/th&gt;
-            &lt;th&gt;12:00 - 01:00&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;strong&gt;Monday&lt;/strong&gt;&lt;/td&gt;
-            &lt;td&gt;Web Tech Lecture&lt;/td&gt;
-            &lt;td&gt;Database Systems&lt;/td&gt;
-            &lt;td colspan="2" style="background: #f1f5f9; font-weight: bold;"&gt;Web Technologies Lab (2 Hours)&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;strong&gt;Tuesday&lt;/strong&gt;&lt;/td&gt;
-            &lt;td&gt;Data Structures&lt;/td&gt;
-            &lt;td&gt;Algorithms&lt;/td&gt;
-            &lt;td&gt;Discrete Math&lt;/td&gt;
-            &lt;td&gt;Study Period&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-                </div>
-            </details>
-        </article>
-
-        <!-- Task 3 -->
-        <article class="lecture-page-card" style="margin-bottom: 30px;">
-            <h3 class="lecture-section-title" style="font-size: 1.15rem;">Exercise C: CSS Card with Absolute Badge and Box Model</h3>
-            <div class="practice-callout">
-                <h4>Objective &amp; Requirements</h4>
-                <p>Build a course offering card using <code>box-sizing: border-box</code>. Set <code>position: relative</code> on the parent card, and position an absolute "NEW" badge at <code>top: -8px</code> and <code>right: 12px</code> with <code>border-radius: 12px</code>.</p>
-            </div>
-
-            <details class="comp-accordion">
-                <summary>Click to Reveal Model Solution Code</summary>
-                <div class="comp-accordion-content">
-                    <pre class="code-box"><code>&lt;!-- HTML --&gt;
-&lt;div class="lab-card"&gt;
-    &lt;span class="lab-badge"&gt;NEW&lt;/span&gt;
-    &lt;h3&gt;Web Technologies&lt;/h3&gt;
-    &lt;p&gt;Learn HTML5 and CSS3 modern web development.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;!-- CSS --&gt;
-&lt;style&gt;
-.lab-card {
-    position: relative;
-    width: 260px;
-    padding: 20px;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-.lab-badge {
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    background: #0d9488;
-    color: #ffffff;
-    font-size: 0.72rem;
-    font-weight: bold;
-    padding: 2px 8px;
-    border-radius: 12px;
-}
-&lt;/style&gt;</code></pre>
-                </div>
-            </details>
-        </article>
 
     </main>
 

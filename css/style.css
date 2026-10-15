@@ -782,58 +782,30 @@ body.resizing {
     transform: scale(1.025);
 }
 
-/* Floating Center Reveal Button */
-.reveal-button-wrapper {
-    position: absolute;
-    z-index: 15;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.reveal-button {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: #2b5b9c;
-    color: #ffffff;
-    border: 3px solid #ffffff;
-    font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 24px rgba(43, 91, 156, 0.4);
-    transition: transform 0.25s ease, background-color 0.25s ease;
-    cursor: pointer;
-}
-
-.playground-overlay:hover .reveal-button {
-    transform: scale(1.12);
-    background: #1b3e6d;
-}
-
-/* Badge bottom banner on overlay */
+/* Clean bottom banner on overlay */
 .playground-badge {
     position: absolute;
-    bottom: 18px;
+    bottom: 16px;
     z-index: 15;
-    background: rgba(15, 23, 42, 0.85);
-    color: #ffffff;
-    padding: 8px 18px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #ffd700;
+    padding: 8px 22px;
     border-radius: 30px;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.3px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: transform 0.2s ease;
+    transition: transform 0.25s ease, background 0.25s ease;
+    border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .playground-overlay:hover .playground-badge {
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.03);
+    background: #0f172a;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* Split Pane Workspace */

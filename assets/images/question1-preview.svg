@@ -95,6 +95,6 @@
 
     <!-- Copyright -->
     <rect y="145" width="800" height="25" fill="#090e1a" />
-    <text x="400" y="161" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="10" text-anchor="middle">&copy; 2026 Fahad WebTech. All Rights Reserved.</text>
+    <text x="400" y="161" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="10" text-anchor="middle">&#169; 2026 Fahad WebTech. All Rights Reserved.</text>
   </g>
 </svg>

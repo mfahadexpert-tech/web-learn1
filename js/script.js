@@ -20,18 +20,6 @@ function hidePlayground(id) {
     }
 }
 
-// Function to reset splitter width to 50% / 50%
-function resetSplitter(containerId) {
-    const container = document.getElementById(containerId);
-    if (container) {
-        const leftPane = container.querySelector('.left-pane');
-        const rightPane = container.querySelector('.right-pane');
-        if (leftPane && rightPane) {
-            leftPane.style.flex = '0 0 50%';
-            rightPane.style.flex = '0 0 50%';
-        }
-    }
-}
 
 // Function to copy code from the pre block to clipboard
 function copyCode(codeElementId, btnElement) {
