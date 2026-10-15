@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Exercises - WebLearn</title>
+    <title>Practice Lab - WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -33,14 +33,841 @@
     <main class="main-wrapper">
 
         <div class="lecture-top-header" style="margin-top: 15px;">
-            <h1 class="lecture-main-heading">Practice Exercises</h1>
-            <p class="lecture-sub-italic">Hands-on practice exercises with objectives, requirements, hints, and model solutions</p>
+            <h1 class="lecture-main-heading">Practice Lab &amp; Code Playground</h1>
+            <p class="lecture-sub-italic">Interactive hands-on solutions for forms, tables, and responsive layouts with drag-and-resize code inspection</p>
             <hr class="lecture-divider">
+        </div>
+
+        <!-- ====================================================================
+             CATEGORY 1: RESPONSIVE LAYOUTS & FOOTER DESIGNS (QUESTION 1)
+             ==================================================================== -->
+        <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-responsive-forms">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                <h2 class="lecture-section-title" style="margin: 0;">Category 1: Responsive Form &amp; Multi-Column Footer</h2>
+                <span class="tag tag-html">Responsive Layouts</span>
+            </div>
+
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                This problem demonstrates a complete real-world web page incorporating a responsive two-column grid form with CSS floats/clears, combined with a modern 4-column dark footer containing brand identity, social links, navigation, contact information, and an interactive message box.
+            </p>
+
+            <div class="practice-callout" style="margin-bottom: 20px;">
+                <h4>Key Implementation Features</h4>
+                <ul style="margin: 6px 0 0 20px; line-height: 1.6; font-size: 0.9rem; color: #334155;">
+                    <li><strong>Responsive 2-Column Grid:</strong> 25% labels and 75% inputs stack seamlessly to 100% full width on viewport screens below 600px.</li>
+                    <li><strong>4-Column CSS Grid Footer:</strong> Distinct columns for Brand Info, Quick Navigation Links, Contact Information, and Feedback Form.</li>
+                    <li><strong>Brand Header &amp; Theming:</strong> Warm gold gradient headers (<code>#ffd700</code> to <code>#f59e0b</code>) with high-contrast dark accents (<code>#0f172a</code>).</li>
+                </ul>
+            </div>
+
+            <!-- Playground 1 Card -->
+            <div class="playground-card" id="card-q1">
+                <!-- Preview Overlay Image with Hover & Click Effect -->
+                <div class="playground-overlay" id="overlay-q1" onclick="revealPlayground('q1')" title="Click to open interactive draggable code inspector">
+                    <img src="assets/images/question1-preview.svg" alt="Question 1 Output Screenshot Preview" class="playground-thumb-img">
+                    <div class="reveal-button-wrapper">
+                        <button type="button" class="reveal-button" aria-label="Inspect Code">
+                            &lt;/&gt;
+                        </button>
+                    </div>
+                    <div class="playground-badge">
+                        <span>&#128065; Click Output Preview to Inspect Full Code in Draggable Split View</span>
+                    </div>
+                </div>
+
+                <!-- Split Pane Workspace -->
+                <div class="split-pane-workspace">
+                    <div class="workspace-toolbar">
+                        <div class="toolbar-title">
+                            <span class="file-icon">&#128196;</span>
+                            <span>question1-responsive-form.html</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="tool-btn" onclick="copyCode('code-q1', this)">&#128203; Copy Code</button>
+                            <button class="tool-btn" onclick="resetSplitter('split-q1')">&#8646; Reset Split (50/50)</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q1')">&#10005; Back to Preview</button>
+                        </div>
+                    </div>
+
+                    <div class="split-container" id="split-q1">
+                        <!-- Left Pane: Source Code -->
+                        <div class="split-pane left-pane">
+                            <div class="pane-header">
+                                <span>SOURCE CODE (HTML + CSS)</span>
+                                <span>UTF-8</span>
+                            </div>
+                            <div class="code-scroll-area">
+                                <pre><code id="code-q1">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Responsive Form &amp; Website Footer&lt;/title&gt;
+
+    &lt;!-- Google Fonts &amp; Font Awesome Icons --&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"&gt;
+
+    &lt;style&gt;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-content {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-header {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .form-header h2 {
+            background: linear-gradient(135deg, #ffd700, #f59e0b);
+            color: #111827;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-header p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-card {
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 30px;
+            width: 100%;
+            max-width: 680px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-row {
+            margin-bottom: 18px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 10px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .col-25 label {
+            font-weight: 600;
+            color: #334155;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .form-card input[type=text],
+        .form-card select,
+        .form-card textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background-color: #f8fafc;
+        }
+
+        .form-card input[type=text]:focus,
+        .form-card select:focus,
+        .form-card textarea:focus {
+            border-color: #f59e0b;
+            outline: none;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+        }
+
+        .form-card textarea {
+            resize: vertical;
+            height: 130px;
+        }
+
+        .form-card .submit-row {
+            margin-top: 20px;
+        }
+
+        .form-card input[type=submit] {
+            background: linear-gradient(135deg, #ffd700, #f59e0b);
+            color: #111827;
+            font-weight: 700;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            float: right;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+        }
+
+        .form-card input[type=submit]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+        }
+
+        .form-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            margin-top: auto;
+            border-top: 4px solid #ffd700;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 55px 24px 35px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.1fr 1.5fr;
+            gap: 36px;
+        }
+
+        .footer-brand .brand-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand .brand-title span {
+            color: #ffd700;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.65;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .social-link:hover {
+            background: #ffd700;
+            color: #0f172a;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col h4::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 32px;
+            height: 3px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+            transform: translateX(4px);
+        }
+
+        .contact-info-list {
+            list-style: none;
+        }
+
+        .contact-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .contact-info-list i {
+            color: #ffd700;
+            font-size: 15px;
+            margin-top: 3px;
+        }
+
+        .footer-form-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .footer-form-group {
+            margin-bottom: 12px;
+        }
+
+        .footer-form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 5px;
+        }
+
+        .footer-form-group input,
+        .footer-form-group textarea {
+            width: 100%;
+            padding: 9px 12px;
+            background-color: #1e293b;
+            border: 1.5px solid rgba(255, 215, 0, 0.35);
+            border-radius: 6px;
+            color: #f1f5f9;
+            font-size: 13px;
+        }
+
+        .footer-submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ffd700, #f59e0b);
+            color: #0f172a;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, .form-card input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;main class="page-content"&gt;
+        &lt;header class="form-header"&gt;
+            &lt;h2&gt;Responsive Form&lt;/h2&gt;
+            &lt;p&gt;Resize the browser window to see the responsive behavior.&lt;/p&gt;
+        &lt;/header&gt;
+
+        &lt;div class="form-card"&gt;
+            &lt;form action="/action_page.php"&gt;
+                &lt;div class="form-row"&gt;
+                    &lt;div class="col-25"&gt;
+                        &lt;label for="fname"&gt;First Name&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-75"&gt;
+                        &lt;input type="text" id="fname" name="firstname" placeholder="Your name.."&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="form-row"&gt;
+                    &lt;div class="col-25"&gt;
+                        &lt;label for="lname"&gt;Last Name&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-75"&gt;
+                        &lt;input type="text" id="lname" name="lastname" placeholder="Your last name.."&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="form-row"&gt;
+                    &lt;div class="col-25"&gt;
+                        &lt;label for="country"&gt;Country&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-75"&gt;
+                        &lt;select id="country" name="country"&gt;
+                            &lt;option value="Pakistan"&gt;Pakistan&lt;/option&gt;
+                            &lt;option value="Canada"&gt;Canada&lt;/option&gt;
+                            &lt;option value="usa"&gt;USA&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="form-row"&gt;
+                    &lt;div class="col-25"&gt;
+                        &lt;label for="subject"&gt;Subject&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-75"&gt;
+                        &lt;textarea id="subject" name="subject" placeholder="Write something.."&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="form-row submit-row"&gt;
+                    &lt;input type="submit" value="Submit"&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer class="site-footer"&gt;
+        &lt;div class="footer-container"&gt;
+            &lt;div class="footer-col footer-brand"&gt;
+                &lt;div class="brand-title"&gt;
+                    &lt;i class="fa-solid fa-code" style="color: #ffd700;"&gt;&lt;/i&gt;
+                    Fahad &lt;span&gt;WebTech&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p&gt;Building responsive, user-friendly, and modern web interfaces.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="footer-col footer-links"&gt;
+                &lt;h4&gt;Quick Links&lt;/h4&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa-solid fa-chevron-right"&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa-solid fa-chevron-right"&gt;&lt;/i&gt; Projects&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="footer-col footer-contact"&gt;
+                &lt;h4&gt;Get in Touch&lt;/h4&gt;
+                &lt;ul class="contact-info-list"&gt;
+                    &lt;li&gt;&lt;i class="fa-solid fa-location-dot"&gt;&lt;/i&gt; &lt;span&gt;Pakistan&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt; &lt;span&gt;haji@gmail.com&lt;/span&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="footer-col footer-form-section"&gt;
+                &lt;h4&gt;Leave Comments&lt;/h4&gt;
+                &lt;div class="footer-form-card"&gt;
+                    &lt;form action="#" method="post"&gt;
+                        &lt;div class="footer-form-group"&gt;
+                            &lt;label for="footer-name"&gt;NAME&lt;/label&gt;
+                            &lt;input type="text" id="footer-name" value="Fahad"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="footer-form-group"&gt;
+                            &lt;label for="footer-email"&gt;EMAIL&lt;/label&gt;
+                            &lt;input type="email" id="footer-email" value="haji@gmail.com"&gt;
+                        &lt;/div&gt;
+                        &lt;button type="submit" class="footer-submit-btn"&gt;Send Message&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Draggable Splitter Handle -->
+                        <div class="split-dragger" title="Drag left or right to resize panes">
+                            <div class="dragger-handle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Pane: Live Rendered Output -->
+                        <div class="split-pane right-pane">
+                            <div class="pane-header">
+                                <span>LIVE RENDERED OUTPUT</span>
+                                <a href="practice/question1.html" target="_blank" class="pane-link">&#8599; Open Full Page</a>
+                            </div>
+                            <div class="preview-frame-container">
+                                <iframe src="practice/question1.html" title="Question 1 Responsive Form Preview"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             CATEGORY 2: COMPLEX TABLES - COLSPAN & ROWSPAN (QUESTION 2)
+             ==================================================================== -->
+        <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-tables">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                <h2 class="lecture-section-title" style="margin: 0;">Category 2: Geological Eras &amp; Events Table (Colspan &amp; Rowspan)</h2>
+                <span class="tag tag-html">HTML Tables</span>
+            </div>
+
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                This problem tests advanced table merging techniques using the <code>colspan</code> attribute to unite columns across headers, and nested <code>rowspan</code> cells to group consecutive chronological records into clean multi-row clusters.
+            </p>
+
+            <div class="practice-callout" style="margin-bottom: 20px;">
+                <h4>Key Implementation Features</h4>
+                <ul style="margin: 6px 0 0 20px; line-height: 1.6; font-size: 0.9rem; color: #334155;">
+                    <li><strong>Column Merging (<code>colspan="2"</code>):</strong> Header cell spans across the event description and numerical era value columns.</li>
+                    <li><strong>Vertical Row Merging (<code>rowspan="2"</code> &amp; <code>rowspan="3"</code>):</strong> Combines 2 rows in the first block and 3 rows in the subsequent block without breaking the cell alignment.</li>
+                    <li><strong>Table Boundaries:</strong> Classic borders rendered using HTML table attributes and unified box styling.</li>
+                </ul>
+            </div>
+
+            <!-- Playground 2 Card -->
+            <div class="playground-card" id="card-q2">
+                <!-- Preview Overlay Image with Hover & Click Effect -->
+                <div class="playground-overlay" id="overlay-q2" onclick="revealPlayground('q2')" title="Click to open interactive draggable code inspector">
+                    <img src="assets/images/question2-preview.svg" alt="Question 2 Output Screenshot Preview" class="playground-thumb-img">
+                    <div class="reveal-button-wrapper">
+                        <button type="button" class="reveal-button" aria-label="Inspect Code">
+                            &lt;/&gt;
+                        </button>
+                    </div>
+                    <div class="playground-badge">
+                        <span>&#128065; Click Output Preview to Inspect Full Code in Draggable Split View</span>
+                    </div>
+                </div>
+
+                <!-- Split Pane Workspace -->
+                <div class="split-pane-workspace">
+                    <div class="workspace-toolbar">
+                        <div class="toolbar-title">
+                            <span class="file-icon">&#128196;</span>
+                            <span>question2-eras-table.html</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="tool-btn" onclick="copyCode('code-q2', this)">&#128203; Copy Code</button>
+                            <button class="tool-btn" onclick="resetSplitter('split-q2')">&#8646; Reset Split (50/50)</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q2')">&#10005; Back to Preview</button>
+                        </div>
+                    </div>
+
+                    <div class="split-container" id="split-q2">
+                        <!-- Left Pane: Source Code -->
+                        <div class="split-pane left-pane">
+                            <div class="pane-header">
+                                <span>SOURCE CODE (HTML)</span>
+                                <span>UTF-8</span>
+                            </div>
+                            <div class="code-scroll-area">
+                                <pre><code id="code-q2">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Geological Eras &amp; Events Table&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;ereas &lt;/th&gt;
+            &lt;th colspan="2"&gt;events&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;mesozoic&lt;/td&gt;
+            &lt;td&gt; evolution&lt;/td&gt;
+            &lt;td&gt;235&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="2"&gt;events&lt;/td&gt;
+            &lt;td&gt;away africa&lt;/td&gt;
+            &lt;td&gt;135&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;away africa&lt;/td&gt;
+            &lt;td&gt;135&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="3"&gt;events&lt;/td&gt;
+            &lt;td&gt;away africa&lt;/td&gt;
+            &lt;td&gt;135&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;away africa&lt;/td&gt;
+            &lt;td&gt;135&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;away africa&lt;/td&gt;
+            &lt;td&gt;135&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Draggable Splitter Handle -->
+                        <div class="split-dragger" title="Drag left or right to resize panes">
+                            <div class="dragger-handle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Pane: Live Rendered Output -->
+                        <div class="split-pane right-pane">
+                            <div class="pane-header">
+                                <span>LIVE RENDERED OUTPUT</span>
+                                <a href="practice/question2.html" target="_blank" class="pane-link">&#8599; Open Full Page</a>
+                            </div>
+                            <div class="preview-frame-container">
+                                <iframe src="practice/question2.html" title="Question 2 Table Preview"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             CATEGORY 3: HTML5 FORM VALIDATION & CONTROLS (QUESTION 3)
+             ==================================================================== -->
+        <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-html5-validation">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                <h2 class="lecture-section-title" style="margin: 0;">Category 3: HTML5 Form Validation, Datalist &amp; Attributes</h2>
+                <span class="tag tag-html">HTML5 Forms</span>
+            </div>
+
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                This problem highlights modern HTML5 semantic input types and client-side form validation mechanisms without relying on external libraries. It exercises regex pattern matching, step-based numerical increments, datalist autocomplete dropdowns, and field states (readonly and disabled).
+            </p>
+
+            <div class="practice-callout" style="margin-bottom: 20px;">
+                <h4>Key Implementation Features</h4>
+                <ul style="margin: 6px 0 0 20px; line-height: 1.6; font-size: 0.9rem; color: #334155;">
+                    <li><strong>Regex Pattern Validation:</strong> University registration pattern restriction (<code>pattern="FA[0-9]{2}-BSSE-[0-9]{3}"</code>) enforced on submit.</li>
+                    <li><strong>Autocomplete Datalist:</strong> Dynamic option suggestions (Vehari, Multan, Islamabad) attached to input via <code>list="cities"</code>.</li>
+                    <li><strong>Constraint Attributes:</strong> Numeric step sizing (<code>min="10" max="20" step="5"</code>), <code>readonly</code> phone number, and <code>disabled</code> search URL field.</li>
+                    <li><strong>Semantic Grouping:</strong> Enclosed inside a styled <code>&lt;fieldset&gt;</code> with descriptive <code>&lt;legend&gt;</code>.</li>
+                </ul>
+            </div>
+
+            <!-- Playground 3 Card -->
+            <div class="playground-card" id="card-q3">
+                <!-- Preview Overlay Image with Hover & Click Effect -->
+                <div class="playground-overlay" id="overlay-q3" onclick="revealPlayground('q3')" title="Click to open interactive draggable code inspector">
+                    <img src="assets/images/question3-preview.svg" alt="Question 3 Output Screenshot Preview" class="playground-thumb-img">
+                    <div class="reveal-button-wrapper">
+                        <button type="button" class="reveal-button" aria-label="Inspect Code">
+                            &lt;/&gt;
+                        </button>
+                    </div>
+                    <div class="playground-badge">
+                        <span>&#128065; Click Output Preview to Inspect Full Code in Draggable Split View</span>
+                    </div>
+                </div>
+
+                <!-- Split Pane Workspace -->
+                <div class="split-pane-workspace">
+                    <div class="workspace-toolbar">
+                        <div class="toolbar-title">
+                            <span class="file-icon">&#128196;</span>
+                            <span>question3-validation-form.html</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="tool-btn" onclick="copyCode('code-q3', this)">&#128203; Copy Code</button>
+                            <button class="tool-btn" onclick="resetSplitter('split-q3')">&#8646; Reset Split (50/50)</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q3')">&#10005; Back to Preview</button>
+                        </div>
+                    </div>
+
+                    <div class="split-container" id="split-q3">
+                        <!-- Left Pane: Source Code -->
+                        <div class="split-pane left-pane">
+                            <div class="pane-header">
+                                <span>SOURCE CODE (HTML5)</span>
+                                <span>UTF-8</span>
+                            </div>
+                            <div class="code-scroll-area">
+                                <pre><code id="code-q3">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Registration &amp; Validation Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;form action="/register" method="post"&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Form to fill&lt;/legend&gt;
+
+            &lt;label for="username"&gt;Username:&lt;/label&gt;
+            &lt;input type="email" id="username" name="username" required autocomplete="email" autofocus&gt;
+
+            &lt;label for="reg"&gt;REGISTER:&lt;/label&gt;
+            &lt;input name="reg" id="reg" pattern="FA[0-9]{2}-BSSE-[0-9]{3}" required&gt;
+            &lt;br&gt;
+
+            &lt;label for="password"&gt;Password:&lt;/label&gt;
+            &lt;input type="password" id="password" name="password" required&gt;
+
+            &lt;label for="age"&gt;Age:&lt;/label&gt;
+            &lt;input type="number" id="age" name="age" min="10" max="20" step="5" required&gt;
+            &lt;br&gt;
+
+            &lt;label for="cities"&gt;Cities:&lt;/label&gt;        
+            &lt;input list="cities" id="cities-input" name="city"&gt;
+            &lt;datalist id="cities"&gt;
+                &lt;option value="vehari"&gt;
+                &lt;option value="multan"&gt;
+                &lt;option value="islamabad"&gt;
+            &lt;/datalist&gt;
+
+            &lt;label for="phone"&gt;Phone:&lt;/label&gt;
+            &lt;input type="tel" id="phone" name="phone" pattern="\+92-[0-9]{11}" placeholder="+9234344444444" required readonly&gt;
+            &lt;br&gt;
+
+            &lt;label for="search"&gt;SEARCH:&lt;/label&gt;
+            &lt;input type="search" id="search" name="search" required&gt;
+            &lt;br&gt;
+
+            &lt;label for="url"&gt;Search website here:&lt;/label&gt;
+            &lt;input type="url" id="url" name="url" disabled&gt;
+
+            &lt;label for="gender"&gt;GENDER:&lt;/label&gt;
+            &lt;input type="radio" id="male" name="gender" value="male" required&gt;
+            &lt;label for="male"&gt;Male&lt;/label&gt;
+            &lt;input type="radio" id="female" name="gender" value="female" required&gt;
+            &lt;label for="female"&gt;Female&lt;/label&gt;
+            &lt;br&gt;
+
+            &lt;select name="country" id="country" required&gt;
+                &lt;option value=""&gt;Select a country&lt;/option&gt;
+                &lt;option value="pakistan"&gt;Pakistan&lt;/option&gt;
+                &lt;option value="usa"&gt;USA&lt;/option&gt;
+                &lt;option value="canada"&gt;Canada&lt;/option&gt;
+                &lt;option value="uk"&gt;UK&lt;/option&gt;
+            &lt;/select&gt;
+
+            &lt;label for="date"&gt;DATE:&lt;/label&gt;
+            &lt;input type="date" id="date" name="date" required&gt;
+
+            &lt;label for="address"&gt;Address:&lt;/label&gt;
+            &lt;input type="text" id="address" name="address" required&gt;
+
+            &lt;button type="submit"&gt;Register&lt;/button&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Draggable Splitter Handle -->
+                        <div class="split-dragger" title="Drag left or right to resize panes">
+                            <div class="dragger-handle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Pane: Live Rendered Output -->
+                        <div class="split-pane right-pane">
+                            <div class="pane-header">
+                                <span>LIVE RENDERED OUTPUT</span>
+                                <a href="practice/question3.html" target="_blank" class="pane-link">&#8599; Open Full Page</a>
+                            </div>
+                            <div class="preview-frame-container">
+                                <iframe src="practice/question3.html" title="Question 3 Form Validation Preview"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             ADDITIONAL FOUNDATIONAL PRACTICE TASKS
+             ==================================================================== -->
+        <div style="margin-top: 40px; margin-bottom: 25px;">
+            <h2 class="lecture-section-title">Foundational Exercises</h2>
+            <p style="color: #64748b; font-size: 0.9rem;">Core syllabus exercises for practicing semantic hierarchy, academic timetables, and CSS box modeling.</p>
         </div>
 
         <!-- Task 1 -->
         <article class="lecture-page-card" style="margin-bottom: 30px;">
-            <h2 class="lecture-section-title">Exercise 1: Semantic Document Structure &amp; Text Hierarchy</h2>
+            <h3 class="lecture-section-title" style="font-size: 1.15rem;">Exercise A: Semantic Document Structure &amp; Text Hierarchy</h3>
             <div class="practice-callout">
                 <h4>Objective &amp; Requirements</h4>
                 <p>Construct a standalone HTML5 page named <code>about-me.html</code> that includes a valid DOCTYPE, language attribute, title, exactly one <code>&lt;h1&gt;</code>, two <code>&lt;h2&gt;</code> sub-headings, an unordered list of technical skills, and an external hyperlink.</p>
@@ -77,7 +904,7 @@
 
         <!-- Task 2 -->
         <article class="lecture-page-card" style="margin-bottom: 30px;">
-            <h2 class="lecture-section-title">Exercise 2: Academic Timetable with Colspan &amp; Rowspan</h2>
+            <h3 class="lecture-section-title" style="font-size: 1.15rem;">Exercise B: Academic Timetable with Colspan &amp; Rowspan</h3>
             <div class="practice-callout">
                 <h4>Objective &amp; Requirements</h4>
                 <p>Create a weekly course timetable using <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, and <code>&lt;tbody&gt;</code>. Span a single lunch break across all 5 days using <code>colspan</code>, and merge a 2-hour lab slot using <code>rowspan</code>.</p>
@@ -119,7 +946,7 @@
 
         <!-- Task 3 -->
         <article class="lecture-page-card" style="margin-bottom: 30px;">
-            <h2 class="lecture-section-title">Exercise 3: CSS Card with Absolute Badge and Box Model</h2>
+            <h3 class="lecture-section-title" style="font-size: 1.15rem;">Exercise C: CSS Card with Absolute Badge and Box Model</h3>
             <div class="practice-callout">
                 <h4>Objective &amp; Requirements</h4>
                 <p>Build a course offering card using <code>box-sizing: border-box</code>. Set <code>position: relative</code> on the parent card, and position an absolute "NEW" badge at <code>top: -8px</code> and <code>right: 12px</code> with <code>border-radius: 12px</code>.</p>
@@ -195,5 +1022,7 @@
         </div>
     </footer>
 
+    <!-- Interactive Workspace & Draggable Resizer Controller -->
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form &amp; Website Footer</title>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main Page Content Container */
+        .page-content {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Styling */
+        .form-header {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .form-header h2 {
+            background: linear-gradient(135deg, #ffd700, #f59e0b);
+            color: #111827;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-header p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Main Form Container */
+        .form-card {
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 30px;
+            width: 100%;
+            max-width: 680px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-row {
+            margin-bottom: 18px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 10px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .col-25 label {
+            font-weight: 600;
+            color: #334155;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .form-card input[type=text],
+        .form-card select,
+        .form-card textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background-color: #f8fafc;
+        }
+
+        .form-card input[type=text]:focus,
+        .form-card select:focus,
+        .form-card textarea:focus {
+            border-color: #f59e0b;
+            outline: none;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+        }
+
+        .form-card textarea {
+            resize: vertical;
+            height: 130px;
+        }
+
+        .form-card .submit-row {
+            margin-top: 20px;
+        }
+
+        .form-card input[type=submit] {
+            background: linear-gradient(135deg, #ffd700, #f59e0b);
+            color: #111827;
+            font-weight: 700;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            float: right;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+        }
+
+        .form-card input[type=submit]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Clear floats after columns */
+        .form-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* =========================================================
+           WEBSITE FOOTER STYLES
+           ========================================================= */
+        .site-footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            margin-top: auto;
+            border-top: 4px solid #ffd700;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.12);
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 55px 24px 35px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.1fr 1.5fr;
+            gap: 36px;
+        }
+
+        /* Column 1: Brand Info */
+        .footer-brand .brand-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand .brand-title span {
+            color: #ffd700;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.65;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .social-link:hover {
+            background: #ffd700;
+            color: #0f172a;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
+        }
+
+        /* Column Headings */
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col h4::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 32px;
+            height: 3px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+
+        /* Column 2: Navigation Links */
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-links a i {
+            font-size: 11px;
+            color: #ffd700;
+            transition: transform 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+            transform: translateX(4px);
+        }
+
+        .footer-links a:hover i {
+            transform: translateX(2px);
+        }
+
+        /* Column 3: Contact Info */
+        .contact-info-list {
+            list-style: none;
+        }
+
+        .contact-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #94a3b8;
+        }
+
+        .contact-info-list i {
+            color: #ffd700;
+            font-size: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Column 4: Contact / Feedback Form */
+        .footer-form-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-form-group {
+            margin-bottom: 12px;
+        }
+
+        .footer-form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 5px;
+        }
+
+        .footer-form-group input,
+        .footer-form-group textarea {
+            width: 100%;
+            padding: 9px 12px;
+            background-color: #1e293b;
+            border: 1.5px solid rgba(255, 215, 0, 0.35);
+            border-radius: 6px;
+            color: #f1f5f9;
+            font-size: 13px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .footer-form-group input::placeholder,
+        .footer-form-group textarea::placeholder {
+            color: #64748b;
+        }
+
+        .footer-form-group input:focus,
+        .footer-form-group textarea:focus {
+            border-color: #ffd700;
+            outline: none;
+            background-color: #243047;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .footer-form-group textarea {
+            resize: vertical;
+            height: 65px;
+        }
+
+        .footer-submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ffd700, #f59e0b);
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 13px;
+            border: none;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Footer Bottom Bar */
+        .footer-bottom {
+            background-color: #090e1a;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 18px 24px;
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .footer-bottom p span {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive Breakpoints */
+        @media screen and (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, .form-card input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+            .col-25 {
+                margin-bottom: 6px;
+            }
+            .form-card input[type=submit] {
+                float: none;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                padding: 40px 18px 25px;
+            }
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content Area -->
+    <main class="page-content">
+        <header class="form-header">
+            <h2>Responsive Form</h2>
+            <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+        </header>
+
+        <div class="form-card">
+            <form action="#" method="post" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="country" name="country">
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Canada">Canada</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row submit-row">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Professional Website Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Column 1: Brand & Bio -->
+            <div class="footer-col footer-brand">
+                <div class="brand-title">
+                    <i class="fa-solid fa-code" style="color: #ffd700;"></i>
+                    Fahad <span>WebTech</span>
+                </div>
+                <p>Building responsive, user-friendly, and modern web interfaces with precision and clean design standards.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Projects</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Lab Assignments</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="footer-col footer-contact">
+                <h4>Get in Touch</h4>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Tech Campus, Main Boulevard, Pakistan</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>haji@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+92 300 1234567</span>
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Feedback / Contact Form -->
+            <div class="footer-col footer-form-section">
+                <h4>Leave Comments</h4>
+                <div class="footer-form-card">
+                    <form action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent!');">
+                        <div class="footer-form-group">
+                            <label for="footer-name">NAME</label>
+                            <input type="text" id="footer-name" name="name" value="Fahad" placeholder="Enter your name">
+                        </div>
+
+                        <div class="footer-form-group">
+                            <label for="footer-email">EMAIL</label>
+                            <input type="email" id="footer-email" name="email" value="haji@gmail.com" placeholder="Enter your email">
+                        </div>
+
+                        <div class="footer-form-group">
+                            <label for="footer-message">MESSAGE</label>
+                            <textarea id="footer-message" name="message" placeholder="leave comments">leave comments</textarea>
+                        </div>
+
+                        <button type="submit" class="footer-submit-btn">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 <span>Fahad WebTech</span>. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration &amp; Validation Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #cbd5e1;
+            max-width: 580px;
+            width: 100%;
+        }
+
+        fieldset {
+            border: 2px solid #2b5b9c;
+            border-radius: 8px;
+            padding: 20px 24px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2b5b9c;
+            font-size: 18px;
+            padding: 0 10px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #334155;
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="url"],
+        input[type="date"],
+        input[type="address"],
+        input:not([type="radio"]):not([type="submit"]):not([type="button"]),
+        select {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            border-color: #2b5b9c;
+            outline: none;
+        }
+
+        input[readonly] {
+            background-color: #f1f5f9;
+            cursor: not-allowed;
+        }
+
+        input[disabled] {
+            background-color: #e2e8f0;
+            cursor: not-allowed;
+        }
+
+        button[type="submit"] {
+            background-color: #2b5b9c;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 16px;
+            display: block;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1b3e6d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Registration submitted successfully!');">
+            <fieldset>
+                <legend>Form to fill</legend>
+
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="email" id="username" name="username" required autocomplete="email" autofocus placeholder="user@example.com" style="width: 100%;">
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="reg">REGISTER:</label>
+                        <input name="reg" id="reg" pattern="FA[0-9]{2}-BSSE-[0-9]{3}" placeholder="FA24-BSSE-067" required style="width: 100%;">
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required style="width: 100%;">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 150px;">
+                        <label for="age">Age (10-20, step 5):</label>
+                        <input type="number" id="age" name="age" min="10" max="20" step="5" required style="width: 100%;">
+                    </div>
+                    <div style="flex: 1; min-width: 150px;">
+                        <label for="city-input">Cities:</label>        
+                        <input list="cities" id="city-input" name="city" placeholder="Choose a city" style="width: 100%;">
+                        <datalist id="cities">
+                            <option value="vehari">
+                            <option value="multan">
+                            <option value="islamabad">
+                        </datalist>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="tel">Phone (Read-Only):</label>
+                        <input type="tel" id="tel" name="phone" pattern="\+92-[0-9]{11}" value="+92-3001234567" placeholder="+92-3001234567" required readonly style="width: 100%;">
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="search">SEARCH:</label>
+                        <input type="search" id="search" name="search" placeholder="Search keywords..." required style="width: 100%;">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="url">Search website here (Disabled):</label>
+                    <input type="url" id="url" name="url" disabled placeholder="https://disabled-example.com" style="width: 100%;">
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <label style="display: block;">GENDER:</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male" style="font-weight: normal; margin-right: 15px;">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female" style="font-weight: normal;">Female</label>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 150px;">
+                        <label for="country">Country:</label>
+                        <select name="country" id="country" required style="width: 100%;">
+                            <option value="">Select a country</option>
+                            <option value="pakistan">Pakistan</option>
+                            <option value="usa">USA</option>
+                            <option value="canada">Canada</option>
+                            <option value="uk">UK</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 150px;">
+                        <label for="date">DATE:</label>
+                        <input type="date" id="date" name="date" required style="width: 100%;">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required placeholder="Enter street address" style="width: 100%;">
+                </div>
+
+                <button type="submit">Register</button>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+</html>

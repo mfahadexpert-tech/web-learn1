@@ -729,3 +729,320 @@ img {
     color: #94a3b8;
 }
 
+/* ==========================================================================
+   INTERACTIVE CODE PLAYGROUND & DRAGGABLE SPLITTER
+   ========================================================================== */
+body.resizing {
+    cursor: col-resize !important;
+    user-select: none !important;
+}
+
+.playground-card {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin: 20px 0 35px 0;
+}
+
+/* Picture Click Overlay */
+.playground-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.playground-overlay.revealed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.playground-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.playground-overlay:hover .playground-thumb-img {
+    transform: scale(1.025);
+}
+
+/* Floating Center Reveal Button */
+.reveal-button-wrapper {
+    position: absolute;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reveal-button {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #2b5b9c;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(43, 91, 156, 0.4);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+    cursor: pointer;
+}
+
+.playground-overlay:hover .reveal-button {
+    transform: scale(1.12);
+    background: #1b3e6d;
+}
+
+/* Badge bottom banner on overlay */
+.playground-badge {
+    position: absolute;
+    bottom: 18px;
+    z-index: 15;
+    background: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease;
+}
+
+.playground-overlay:hover .playground-badge {
+    transform: translateY(-3px);
+}
+
+/* Split Pane Workspace */
+.split-pane-workspace {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+/* Top Toolbar */
+.workspace-toolbar {
+    height: 46px;
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: #f1f5f9;
+}
+
+.toolbar-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.toolbar-title .file-icon {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tool-btn {
+    background: #334155;
+    color: #f8fafc;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.tool-btn:hover {
+    background: #2b5b9c;
+}
+
+.tool-btn.close-btn {
+    background: #dc2626;
+}
+
+.tool-btn.close-btn:hover {
+    background: #b91c1c;
+}
+
+/* Split Container */
+.split-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.split-pane {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.left-pane {
+    flex: 0 0 50%;
+    background: #0f172a;
+    border-right: 1px solid #334155;
+}
+
+.right-pane {
+    flex: 0 0 50%;
+    background: #ffffff;
+}
+
+.pane-header {
+    height: 36px;
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.right-pane .pane-header {
+    background: #f1f5f9;
+    color: #475569;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.pane-link {
+    color: #2b5b9c;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.pane-link:hover {
+    text-decoration: underline;
+}
+
+.code-scroll-area {
+    flex: 1;
+    overflow: auto;
+    padding: 16px;
+    background: #0b1120;
+}
+
+.code-scroll-area pre {
+    margin: 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    color: #e2e8f0;
+    line-height: 1.55;
+    white-space: pre;
+}
+
+/* Draggable Splitter Divider */
+.split-dragger {
+    width: 12px;
+    background: #334155;
+    cursor: col-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    z-index: 25;
+    transition: background-color 0.2s ease;
+}
+
+.split-dragger:hover,
+.split-dragger.dragging {
+    background: #2b5b9c;
+}
+
+.dragger-handle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dragger-handle span {
+    width: 4px;
+    height: 4px;
+    background: #94a3b8;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.split-dragger:hover .dragger-handle span,
+.split-dragger.dragging .dragger-handle span {
+    background: #ffffff;
+}
+
+/* Preview Frame */
+.preview-frame-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+}
+
+.preview-frame-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .playground-card {
+        height: 640px;
+    }
+    .split-container {
+        flex-direction: column;
+    }
+    .left-pane {
+        flex: 0 0 50% !important;
+        border-right: none;
+        border-bottom: 1px solid #334155;
+    }
+    .right-pane {
+        flex: 0 0 50% !important;
+    }
+    .split-dragger {
+        display: none;
+    }
+}
+
+
