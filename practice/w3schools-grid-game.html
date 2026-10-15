@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools CSS Grid Game - Box Counting Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            min-height: 100vh;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* W3Schools Game Header Bar */
+        .w3-game-navbar {
+            max-width: 960px;
+            width: 100%;
+            background: #1e293b;
+            border-radius: 10px;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #334155;
+            margin-bottom: 24px;
+        }
+
+        .w3-brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .w3-logo-badge {
+            background: #04aa6d;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .game-level-pills {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .level-btn {
+            background: #334155;
+            color: #cbd5e1;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .level-btn.active {
+            background: #04aa6d;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(4, 170, 109, 0.4);
+        }
+
+        /* Main Game Layout */
+        .game-wrapper {
+            max-width: 960px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 24px;
+        }
+
+        /* Left Panel: Instructions and Code Editor */
+        .editor-panel {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .instructions h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instructions h2 i {
+            color: #04aa6d;
+        }
+
+        .instructions p {
+            font-size: 13.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .rule-callout {
+            background: rgba(4, 170, 109, 0.1);
+            border-left: 4px solid #04aa6d;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #6ee7b7;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .code-editor-box {
+            background: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .code-editor-box .selector {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .editor-input-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+
+        .editor-input-row label {
+            color: #38bdf8;
+            font-weight: 500;
+        }
+
+        .game-input {
+            background: #1e293b;
+            border: 1px solid #475569;
+            color: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            width: 140px;
+            transition: all 0.2s;
+        }
+
+        .game-input:focus {
+            border-color: #04aa6d;
+            outline: none;
+            box-shadow: 0 0 8px rgba(4, 170, 109, 0.4);
+            background: #243047;
+        }
+
+        .btn-run {
+            background: #04aa6d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(4, 170, 109, 0.3);
+        }
+
+        .btn-run:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Right Panel: Interactive Grid Board with Line Numbers */
+        .board-panel {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .board-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Grid Board Matrix */
+        .grid-board-outer {
+            position: relative;
+            padding: 30px;
+            background: #090e1a;
+            border-radius: 10px;
+            border: 2px solid #334155;
+            width: 100%;
+            max-width: 440px;
+            height: 380px;
+        }
+
+        /* Line Labels along edges */
+        .col-lines-labels {
+            position: absolute;
+            top: 6px;
+            left: 30px;
+            right: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            color: #f59e0b;
+        }
+
+        .row-lines-labels {
+            position: absolute;
+            left: 6px;
+            top: 30px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            color: #f59e0b;
+        }
+
+        /* Grid Matrix Display */
+        .grid-board-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Static Cell Guide Slots */
+        .grid-cell-slot {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #64748b;
+            font-family: 'Fira Code', monospace;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        /* Target Ghost Zone */
+        .target-ghost-zone {
+            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+            background: rgba(4, 170, 109, 0.15);
+            border: 2px dashed #04aa6d;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6ee7b7;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        /* The Moving Player Box */
+        .player-game-box {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border: 2px solid #60a5fa;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            z-index: 5;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .player-game-box.success {
+            background: linear-gradient(135deg, #04aa6d, #059669);
+            border-color: #6ee7b7;
+            box-shadow: 0 8px 30px rgba(4, 170, 109, 0.5);
+        }
+
+        /* Celebration Alert */
+        .status-banner {
+            margin-top: 18px;
+            width: 100%;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            display: none;
+        }
+
+        .status-banner.success {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #064e3b;
+            color: #6ee7b7;
+            border: 1px solid #04aa6d;
+        }
+
+        .status-banner.error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #7f1d1d;
+            color: #fca5a5;
+            border: 1px solid #ef4444;
+        }
+
+        @media (max-width: 768px) {
+            .game-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- W3Schools Top Bar -->
+    <header class="w3-game-navbar">
+        <div class="w3-brand">
+            <span class="w3-logo-badge">W3</span>
+            <span>CSS Grid Game: Box Counter</span>
+        </div>
+        <div class="game-level-pills">
+            <button type="button" class="level-btn active" onclick="loadLevel(1)">Level 1</button>
+            <button type="button" class="level-btn" onclick="loadLevel(2)">Level 2</button>
+            <button type="button" class="level-btn" onclick="loadLevel(3)">Level 3</button>
+        </div>
+    </header>
+
+    <!-- Main Game Section -->
+    <main class="game-wrapper">
+
+        <!-- Editor Panel -->
+        <section class="editor-panel">
+            <div class="instructions">
+                <h2><i class="fa-solid fa-gamepad"></i> <span id="level-title">Level 1: Spanning Box Columns</span></h2>
+                <p id="level-desc">
+                    Count the vertical grid lines from left to right: <strong>[1], [2], [3], [4], [5]</strong>.<br>
+                    Make the blue block start at <strong>box 1 (Line 1)</strong> and end at <strong>box 3 (Line 4)</strong>, spanning across 3 column boxes!
+                </p>
+
+                <div class="rule-callout" id="level-hint">
+                    <i class="fa-solid fa-lightbulb"></i> <strong>How Line Counting Works:</strong><br>
+                    A 4-column grid has 5 boundary lines: Line 1 (left border), Line 2, Line 3, Line 4, Line 5 (right border).<br>
+                    To cover 3 boxes from the start: <code>grid-column-start: 1;</code> and <code>grid-column-end: 4;</code> (or shorthand: <code>grid-column: 1 / 4;</code>).
+                </div>
+            </div>
+
+            <!-- Code Editor Box -->
+            <div class="code-editor-box">
+                <div class="selector">#game-grid {</div>
+                <div style="padding-left: 20px; color: #94a3b8;">display: grid;</div>
+                <div style="padding-left: 20px; color: #94a3b8;">grid-template-columns: repeat(4, 1fr);</div>
+                <div style="padding-left: 20px; color: #94a3b8;">grid-template-rows: repeat(3, 1fr);</div>
+                <div class="selector">}</div>
+                <br>
+                <div class="selector">.player-box {</div>
+                <div class="editor-input-row">
+                    <label for="col-start">grid-column-start:</label>
+                    <input type="text" id="col-start" class="game-input" value="1" placeholder="e.g. 1">;
+                </div>
+                <div class="editor-input-row">
+                    <label for="col-end">grid-column-end:</label>
+                    <input type="text" id="col-end" class="game-input" value="2" placeholder="e.g. 4">;
+                </div>
+                <div class="editor-input-row" id="row-rules">
+                    <label for="row-end">grid-row-end:</label>
+                    <input type="text" id="row-end" class="game-input" value="2" placeholder="e.g. 3">;
+                </div>
+                <div class="selector">}</div>
+            </div>
+
+            <button type="button" class="btn-run" onclick="submitGameCode()">
+                <i class="fa-solid fa-play"></i> Apply CSS &amp; Count Grid Lines
+            </button>
+        </section>
+
+        <!-- Visual Board Panel -->
+        <section class="board-panel">
+            <div class="board-title">Grid Canvas &bull; 4 Columns &times; 3 Rows</div>
+
+            <div class="grid-board-outer">
+                <!-- Column Line Labels (1 to 5) -->
+                <div class="col-lines-labels">
+                    <span>L1</span><span>L2</span><span>L3</span><span>L4</span><span>L5</span>
+                </div>
+
+                <!-- Row Line Labels (1 to 4) -->
+                <div class="row-lines-labels">
+                    <span>L1</span><span>L2</span><span>L3</span><span>L4</span>
+                </div>
+
+                <!-- 12-Slot Underlying Grid Matrix -->
+                <div class="grid-board-container" id="grid-container">
+                    <!-- Background slots -->
+                    <div class="grid-cell-slot">Box (1,1)</div>
+                    <div class="grid-cell-slot">Box (1,2)</div>
+                    <div class="grid-cell-slot">Box (1,3)</div>
+                    <div class="grid-cell-slot">Box (1,4)</div>
+                    <div class="grid-cell-slot">Box (2,1)</div>
+                    <div class="grid-cell-slot">Box (2,2)</div>
+                    <div class="grid-cell-slot">Box (2,3)</div>
+                    <div class="grid-cell-slot">Box (2,4)</div>
+                    <div class="grid-cell-slot">Box (3,1)</div>
+                    <div class="grid-cell-slot">Box (3,2)</div>
+                    <div class="grid-cell-slot">Box (3,3)</div>
+                    <div class="grid-cell-slot">Box (3,4)</div>
+
+                    <!-- Target Ghost Zone -->
+                    <div class="target-ghost-zone" id="target-zone">
+                        <span>Target: Lines 1 / 4 &bull; 3 Boxes</span>
+                    </div>
+
+                    <!-- Player Box -->
+                    <div class="player-game-box" id="player-box">
+                        <i class="fa-solid fa-cube" style="font-size: 20px; margin-bottom: 4px;"></i>
+                        <span id="player-label">Box (1 / 2)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Banner -->
+            <div class="status-banner" id="status-banner"></div>
+        </section>
+
+    </main>
+
+    <script>
+        let currentLevel = 1;
+
+        const levels = {
+            1: {
+                title: "Level 1: Start at Box 1, End at Box Counted (Line 4)",
+                desc: "Start from line 1 and count 3 boxes across to line 4. Enter grid-column-end: 4 and grid-row-end: 3 to match the target zone!",
+                targetColStart: 1,
+                targetColEnd: 4,
+                targetRowStart: 1,
+                targetRowEnd: 3,
+                ghostStyle: "grid-column: 1 / 4; grid-row: 1 / 3;",
+                ghostText: "Target Zone (Cols: 1 / 4, Rows: 1 / 3)"
+            },
+            2: {
+                title: "Level 2: Center Spanning Box Placement",
+                desc: "Position the box to span across the center: start from column line 2 and end at column line 4, and from row line 2 to row line 4.",
+                targetColStart: 2,
+                targetColEnd: 4,
+                targetRowStart: 2,
+                targetRowEnd: 4,
+                ghostStyle: "grid-column: 2 / 4; grid-row: 2 / 4;",
+                ghostText: "Target Zone (Cols: 2 / 4, Rows: 2 / 4)"
+            },
+            3: {
+                title: "Level 3: Full Width Banner Spanning",
+                desc: "Span the box across all 4 columns (from Line 1 to Line 5) on the bottom row (Row Line 3 to Line 4).",
+                targetColStart: 1,
+                targetColEnd: 5,
+                targetRowStart: 3,
+                targetRowEnd: 4,
+                ghostStyle: "grid-column: 1 / 5; grid-row: 3 / 4;",
+                ghostText: "Full Span (Cols: 1 / 5, Rows: 3 / 4)"
+            }
+        };
+
+        function loadLevel(lvl) {
+            currentLevel = lvl;
+            document.querySelectorAll('.level-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx + 1 === lvl);
+            });
+
+            const levelData = levels[lvl];
+            document.getElementById('level-title').innerText = levelData.title;
+            document.getElementById('level-desc').innerHTML = levelData.desc;
+
+            const ghost = document.getElementById('target-zone');
+            ghost.style.cssText = levelData.ghostStyle;
+            ghost.innerHTML = `<span>${levelData.ghostText}</span>`;
+
+            // Reset inputs
+            document.getElementById('col-start').value = "1";
+            document.getElementById('col-end').value = "2";
+            document.getElementById('row-end').value = "2";
+
+            const banner = document.getElementById('status-banner');
+            banner.className = 'status-banner';
+            banner.style.display = 'none';
+
+            applyPosition(1, 2, 1, 2);
+        }
+
+        function applyPosition(cStart, cEnd, rStart, rEnd) {
+            const player = document.getElementById('player-box');
+            player.style.gridColumnStart = cStart;
+            player.style.gridColumnEnd = cEnd;
+            player.style.gridRowStart = rStart;
+            player.style.gridRowEnd = rEnd;
+            document.getElementById('player-label').innerText = `Cols: ${cStart}/${cEnd}`;
+        }
+
+        function submitGameCode() {
+            const cStart = parseInt(document.getElementById('col-start').value.trim());
+            const cEnd = parseInt(document.getElementById('col-end').value.trim());
+            const rEnd = parseInt(document.getElementById('row-end').value.trim());
+            const rStart = currentLevel === 2 ? 2 : (currentLevel === 3 ? 3 : 1);
+
+            applyPosition(cStart, cEnd, rStart, rEnd);
+
+            const target = levels[currentLevel];
+            const banner = document.getElementById('status-banner');
+            const player = document.getElementById('player-box');
+
+            if (cStart === target.targetColStart && cEnd === target.targetColEnd && rEnd === target.targetRowEnd) {
+                player.classList.add('success');
+                banner.className = 'status-banner success';
+                banner.innerHTML = `<i class="fa-solid fa-circle-check"></i> Great Job! Box matched from Line ${cStart} to Line ${cEnd} (${cEnd - cStart} boxes counted)! Level Passed!`;
+                banner.style.display = 'flex';
+            } else {
+                player.classList.remove('success');
+                banner.className = 'status-banner error';
+                banner.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Not quite! Target requires Line ${target.targetColStart} to ${target.targetColEnd} and Row end ${target.targetRowEnd}. Count again!`;
+                banner.style.display = 'flex';
+            }
+        }
+
+        // Initialize Level 1
+        loadLevel(1);
+    </script>
+</body>
+</html>

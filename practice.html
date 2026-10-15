@@ -1732,6 +1732,1196 @@
             </div>
         </section>
 
+    
+        <!-- ====================================================================
+             CATEGORY 5: W3SCHOOLS CSS GRID GAME - BOX COUNTING CHALLENGE (QUESTION 5)
+             ==================================================================== -->
+        <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-w3-grid-game">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                <h2 class="lecture-section-title" style="margin: 0;">Question 5: W3Schools CSS Grid Game &bull; Box Counting Challenge</h2>
+                <span class="tag tag-grid" style="background: #04aa6d; color: white;">W3Schools Grid Game</span>
+            </div>
+
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                Interactive game challenge based on the W3Schools CSS Grid curriculum. Practice line placement by counting grid lines from left to right (<code>Line 1</code> to <code>Line 5</code>) and start at one box, spanning across to the counted end box with <code>grid-column: 1 / 4</code>.
+            </p>
+
+            <!-- Playground 5 Card -->
+            <div class="playground-card" id="card-q5">
+                <!-- Preview Overlay Image with Hover & Click Effect -->
+                <div class="playground-overlay" id="overlay-q5" onclick="revealPlayground('q5')" title="Click to inspect code &amp; play live game">
+                    <img src="assets/images/w3schools-grid-game-preview.svg" alt="W3Schools CSS Grid Game Screenshot Preview" class="playground-thumb-img">
+                    <div class="playground-badge">
+                        <span>&#128065; Click Game Screenshot to Inspect Code &amp; Play in Draggable Split View</span>
+                    </div>
+                </div>
+
+                <!-- Split Pane Workspace -->
+                <div class="split-pane-workspace">
+                    <div class="workspace-toolbar">
+                        <div class="toolbar-title">
+                            <span class="file-icon">&#127918;</span>
+                            <span>Question 5: W3Schools Grid Game Source &amp; Live Play</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="tool-btn" onclick="copyCode('code-q5', this)">&#128203; Copy Code</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q5')">&#10005; Close</button>
+                        </div>
+                    </div>
+
+                    <div class="split-container" id="split-q5">
+                        <!-- Left Pane: Source Code -->
+                        <div class="split-pane left-pane">
+                            <div class="pane-header">
+                                <span>SOURCE CODE (HTML + CSS + JS)</span>
+                            </div>
+                            <div class="code-scroll-area">
+                                <pre><code id="code-q5">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;W3Schools CSS Grid Game - Box Counting Challenge&lt;/title&gt;
+    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css&quot;&gt;
+
+    &lt;style&gt;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: &#x27;Plus Jakarta Sans&#x27;, sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            min-height: 100vh;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* W3Schools Game Header Bar */
+        .w3-game-navbar {
+            max-width: 960px;
+            width: 100%;
+            background: #1e293b;
+            border-radius: 10px;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #334155;
+            margin-bottom: 24px;
+        }
+
+        .w3-brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .w3-logo-badge {
+            background: #04aa6d;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .game-level-pills {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .level-btn {
+            background: #334155;
+            color: #cbd5e1;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .level-btn.active {
+            background: #04aa6d;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(4, 170, 109, 0.4);
+        }
+
+        /* Main Game Layout */
+        .game-wrapper {
+            max-width: 960px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 24px;
+        }
+
+        /* Left Panel: Instructions and Code Editor */
+        .editor-panel {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .instructions h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instructions h2 i {
+            color: #04aa6d;
+        }
+
+        .instructions p {
+            font-size: 13.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .rule-callout {
+            background: rgba(4, 170, 109, 0.1);
+            border-left: 4px solid #04aa6d;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #6ee7b7;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .code-editor-box {
+            background: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .code-editor-box .selector {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .editor-input-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+
+        .editor-input-row label {
+            color: #38bdf8;
+            font-weight: 500;
+        }
+
+        .game-input {
+            background: #1e293b;
+            border: 1px solid #475569;
+            color: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-size: 13px;
+            width: 140px;
+            transition: all 0.2s;
+        }
+
+        .game-input:focus {
+            border-color: #04aa6d;
+            outline: none;
+            box-shadow: 0 0 8px rgba(4, 170, 109, 0.4);
+            background: #243047;
+        }
+
+        .btn-run {
+            background: #04aa6d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(4, 170, 109, 0.3);
+        }
+
+        .btn-run:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Right Panel: Interactive Grid Board with Line Numbers */
+        .board-panel {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .board-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Grid Board Matrix */
+        .grid-board-outer {
+            position: relative;
+            padding: 30px;
+            background: #090e1a;
+            border-radius: 10px;
+            border: 2px solid #334155;
+            width: 100%;
+            max-width: 440px;
+            height: 380px;
+        }
+
+        /* Line Labels along edges */
+        .col-lines-labels {
+            position: absolute;
+            top: 6px;
+            left: 30px;
+            right: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-size: 11px;
+            font-weight: bold;
+            color: #f59e0b;
+        }
+
+        .row-lines-labels {
+            position: absolute;
+            left: 6px;
+            top: 30px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-size: 11px;
+            font-weight: bold;
+            color: #f59e0b;
+        }
+
+        /* Grid Matrix Display */
+        .grid-board-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Static Cell Guide Slots */
+        .grid-cell-slot {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #64748b;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        /* Target Ghost Zone */
+        .target-ghost-zone {
+            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+            background: rgba(4, 170, 109, 0.15);
+            border: 2px dashed #04aa6d;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6ee7b7;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        /* The Moving Player Box */
+        .player-game-box {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border: 2px solid #60a5fa;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            z-index: 5;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .player-game-box.success {
+            background: linear-gradient(135deg, #04aa6d, #059669);
+            border-color: #6ee7b7;
+            box-shadow: 0 8px 30px rgba(4, 170, 109, 0.5);
+        }
+
+        /* Celebration Alert */
+        .status-banner {
+            margin-top: 18px;
+            width: 100%;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            display: none;
+        }
+
+        .status-banner.success {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #064e3b;
+            color: #6ee7b7;
+            border: 1px solid #04aa6d;
+        }
+
+        .status-banner.error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #7f1d1d;
+            color: #fca5a5;
+            border: 1px solid #ef4444;
+        }
+
+        @media (max-width: 768px) {
+            .game-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- W3Schools Top Bar --&gt;
+    &lt;header class=&quot;w3-game-navbar&quot;&gt;
+        &lt;div class=&quot;w3-brand&quot;&gt;
+            &lt;span class=&quot;w3-logo-badge&quot;&gt;W3&lt;/span&gt;
+            &lt;span&gt;CSS Grid Game: Box Counter&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;game-level-pills&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;level-btn active&quot; onclick=&quot;loadLevel(1)&quot;&gt;Level 1&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;level-btn&quot; onclick=&quot;loadLevel(2)&quot;&gt;Level 2&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;level-btn&quot; onclick=&quot;loadLevel(3)&quot;&gt;Level 3&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Main Game Section --&gt;
+    &lt;main class=&quot;game-wrapper&quot;&gt;
+
+        &lt;!-- Editor Panel --&gt;
+        &lt;section class=&quot;editor-panel&quot;&gt;
+            &lt;div class=&quot;instructions&quot;&gt;
+                &lt;h2&gt;&lt;i class=&quot;fa-solid fa-gamepad&quot;&gt;&lt;/i&gt; &lt;span id=&quot;level-title&quot;&gt;Level 1: Spanning Box Columns&lt;/span&gt;&lt;/h2&gt;
+                &lt;p id=&quot;level-desc&quot;&gt;
+                    Count the vertical grid lines from left to right: &lt;strong&gt;[1], [2], [3], [4], [5]&lt;/strong&gt;.&lt;br&gt;
+                    Make the blue block start at &lt;strong&gt;box 1 (Line 1)&lt;/strong&gt; and end at &lt;strong&gt;box 3 (Line 4)&lt;/strong&gt;, spanning across 3 column boxes!
+                &lt;/p&gt;
+
+                &lt;div class=&quot;rule-callout&quot; id=&quot;level-hint&quot;&gt;
+                    &lt;i class=&quot;fa-solid fa-lightbulb&quot;&gt;&lt;/i&gt; &lt;strong&gt;How Line Counting Works:&lt;/strong&gt;&lt;br&gt;
+                    A 4-column grid has 5 boundary lines: Line 1 (left border), Line 2, Line 3, Line 4, Line 5 (right border).&lt;br&gt;
+                    To cover 3 boxes from the start: &lt;code&gt;grid-column-start: 1;&lt;/code&gt; and &lt;code&gt;grid-column-end: 4;&lt;/code&gt; (or shorthand: &lt;code&gt;grid-column: 1 / 4;&lt;/code&gt;).
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Code Editor Box --&gt;
+            &lt;div class=&quot;code-editor-box&quot;&gt;
+                &lt;div class=&quot;selector&quot;&gt;#game-grid {&lt;/div&gt;
+                &lt;div style=&quot;padding-left: 20px; color: #94a3b8;&quot;&gt;display: grid;&lt;/div&gt;
+                &lt;div style=&quot;padding-left: 20px; color: #94a3b8;&quot;&gt;grid-template-columns: repeat(4, 1fr);&lt;/div&gt;
+                &lt;div style=&quot;padding-left: 20px; color: #94a3b8;&quot;&gt;grid-template-rows: repeat(3, 1fr);&lt;/div&gt;
+                &lt;div class=&quot;selector&quot;&gt;}&lt;/div&gt;
+                &lt;br&gt;
+                &lt;div class=&quot;selector&quot;&gt;.player-box {&lt;/div&gt;
+                &lt;div class=&quot;editor-input-row&quot;&gt;
+                    &lt;label for=&quot;col-start&quot;&gt;grid-column-start:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;col-start&quot; class=&quot;game-input&quot; value=&quot;1&quot; placeholder=&quot;e.g. 1&quot;&gt;;
+                &lt;/div&gt;
+                &lt;div class=&quot;editor-input-row&quot;&gt;
+                    &lt;label for=&quot;col-end&quot;&gt;grid-column-end:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;col-end&quot; class=&quot;game-input&quot; value=&quot;2&quot; placeholder=&quot;e.g. 4&quot;&gt;;
+                &lt;/div&gt;
+                &lt;div class=&quot;editor-input-row&quot; id=&quot;row-rules&quot;&gt;
+                    &lt;label for=&quot;row-end&quot;&gt;grid-row-end:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;row-end&quot; class=&quot;game-input&quot; value=&quot;2&quot; placeholder=&quot;e.g. 3&quot;&gt;;
+                &lt;/div&gt;
+                &lt;div class=&quot;selector&quot;&gt;}&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;button type=&quot;button&quot; class=&quot;btn-run&quot; onclick=&quot;submitGameCode()&quot;&gt;
+                &lt;i class=&quot;fa-solid fa-play&quot;&gt;&lt;/i&gt; Apply CSS &amp;amp; Count Grid Lines
+            &lt;/button&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Visual Board Panel --&gt;
+        &lt;section class=&quot;board-panel&quot;&gt;
+            &lt;div class=&quot;board-title&quot;&gt;Grid Canvas &amp;bull; 4 Columns &amp;times; 3 Rows&lt;/div&gt;
+
+            &lt;div class=&quot;grid-board-outer&quot;&gt;
+                &lt;!-- Column Line Labels (1 to 5) --&gt;
+                &lt;div class=&quot;col-lines-labels&quot;&gt;
+                    &lt;span&gt;L1&lt;/span&gt;&lt;span&gt;L2&lt;/span&gt;&lt;span&gt;L3&lt;/span&gt;&lt;span&gt;L4&lt;/span&gt;&lt;span&gt;L5&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Row Line Labels (1 to 4) --&gt;
+                &lt;div class=&quot;row-lines-labels&quot;&gt;
+                    &lt;span&gt;L1&lt;/span&gt;&lt;span&gt;L2&lt;/span&gt;&lt;span&gt;L3&lt;/span&gt;&lt;span&gt;L4&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- 12-Slot Underlying Grid Matrix --&gt;
+                &lt;div class=&quot;grid-board-container&quot; id=&quot;grid-container&quot;&gt;
+                    &lt;!-- Background slots --&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (1,1)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (1,2)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (1,3)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (1,4)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (2,1)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (2,2)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (2,3)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (2,4)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (3,1)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (3,2)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (3,3)&lt;/div&gt;
+                    &lt;div class=&quot;grid-cell-slot&quot;&gt;Box (3,4)&lt;/div&gt;
+
+                    &lt;!-- Target Ghost Zone --&gt;
+                    &lt;div class=&quot;target-ghost-zone&quot; id=&quot;target-zone&quot;&gt;
+                        &lt;span&gt;Target: Lines 1 / 4 &amp;bull; 3 Boxes&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Player Box --&gt;
+                    &lt;div class=&quot;player-game-box&quot; id=&quot;player-box&quot;&gt;
+                        &lt;i class=&quot;fa-solid fa-cube&quot; style=&quot;font-size: 20px; margin-bottom: 4px;&quot;&gt;&lt;/i&gt;
+                        &lt;span id=&quot;player-label&quot;&gt;Box (1 / 2)&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Status Banner --&gt;
+            &lt;div class=&quot;status-banner&quot; id=&quot;status-banner&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+    &lt;/main&gt;
+
+    &lt;script&gt;
+        let currentLevel = 1;
+
+        const levels = {
+            1: {
+                title: &quot;Level 1: Start at Box 1, End at Box Counted (Line 4)&quot;,
+                desc: &quot;Start from line 1 and count 3 boxes across to line 4. Enter grid-column-end: 4 and grid-row-end: 3 to match the target zone!&quot;,
+                targetColStart: 1,
+                targetColEnd: 4,
+                targetRowStart: 1,
+                targetRowEnd: 3,
+                ghostStyle: &quot;grid-column: 1 / 4; grid-row: 1 / 3;&quot;,
+                ghostText: &quot;Target Zone (Cols: 1 / 4, Rows: 1 / 3)&quot;
+            },
+            2: {
+                title: &quot;Level 2: Center Spanning Box Placement&quot;,
+                desc: &quot;Position the box to span across the center: start from column line 2 and end at column line 4, and from row line 2 to row line 4.&quot;,
+                targetColStart: 2,
+                targetColEnd: 4,
+                targetRowStart: 2,
+                targetRowEnd: 4,
+                ghostStyle: &quot;grid-column: 2 / 4; grid-row: 2 / 4;&quot;,
+                ghostText: &quot;Target Zone (Cols: 2 / 4, Rows: 2 / 4)&quot;
+            },
+            3: {
+                title: &quot;Level 3: Full Width Banner Spanning&quot;,
+                desc: &quot;Span the box across all 4 columns (from Line 1 to Line 5) on the bottom row (Row Line 3 to Line 4).&quot;,
+                targetColStart: 1,
+                targetColEnd: 5,
+                targetRowStart: 3,
+                targetRowEnd: 4,
+                ghostStyle: &quot;grid-column: 1 / 5; grid-row: 3 / 4;&quot;,
+                ghostText: &quot;Full Span (Cols: 1 / 5, Rows: 3 / 4)&quot;
+            }
+        };
+
+        function loadLevel(lvl) {
+            currentLevel = lvl;
+            document.querySelectorAll(&#x27;.level-btn&#x27;).forEach((btn, idx) =&gt; {
+                btn.classList.toggle(&#x27;active&#x27;, idx + 1 === lvl);
+            });
+
+            const levelData = levels[lvl];
+            document.getElementById(&#x27;level-title&#x27;).innerText = levelData.title;
+            document.getElementById(&#x27;level-desc&#x27;).innerHTML = levelData.desc;
+
+            const ghost = document.getElementById(&#x27;target-zone&#x27;);
+            ghost.style.cssText = levelData.ghostStyle;
+            ghost.innerHTML = `&lt;span&gt;${levelData.ghostText}&lt;/span&gt;`;
+
+            // Reset inputs
+            document.getElementById(&#x27;col-start&#x27;).value = &quot;1&quot;;
+            document.getElementById(&#x27;col-end&#x27;).value = &quot;2&quot;;
+            document.getElementById(&#x27;row-end&#x27;).value = &quot;2&quot;;
+
+            const banner = document.getElementById(&#x27;status-banner&#x27;);
+            banner.className = &#x27;status-banner&#x27;;
+            banner.style.display = &#x27;none&#x27;;
+
+            applyPosition(1, 2, 1, 2);
+        }
+
+        function applyPosition(cStart, cEnd, rStart, rEnd) {
+            const player = document.getElementById(&#x27;player-box&#x27;);
+            player.style.gridColumnStart = cStart;
+            player.style.gridColumnEnd = cEnd;
+            player.style.gridRowStart = rStart;
+            player.style.gridRowEnd = rEnd;
+            document.getElementById(&#x27;player-label&#x27;).innerText = `Cols: ${cStart}/${cEnd}`;
+        }
+
+        function submitGameCode() {
+            const cStart = parseInt(document.getElementById(&#x27;col-start&#x27;).value.trim());
+            const cEnd = parseInt(document.getElementById(&#x27;col-end&#x27;).value.trim());
+            const rEnd = parseInt(document.getElementById(&#x27;row-end&#x27;).value.trim());
+            const rStart = currentLevel === 2 ? 2 : (currentLevel === 3 ? 3 : 1);
+
+            applyPosition(cStart, cEnd, rStart, rEnd);
+
+            const target = levels[currentLevel];
+            const banner = document.getElementById(&#x27;status-banner&#x27;);
+            const player = document.getElementById(&#x27;player-box&#x27;);
+
+            if (cStart === target.targetColStart &amp;&amp; cEnd === target.targetColEnd &amp;&amp; rEnd === target.targetRowEnd) {
+                player.classList.add(&#x27;success&#x27;);
+                banner.className = &#x27;status-banner success&#x27;;
+                banner.innerHTML = `&lt;i class=&quot;fa-solid fa-circle-check&quot;&gt;&lt;/i&gt; Great Job! Box matched from Line ${cStart} to Line ${cEnd} (${cEnd - cStart} boxes counted)! Level Passed!`;
+                banner.style.display = &#x27;flex&#x27;;
+            } else {
+                player.classList.remove(&#x27;success&#x27;);
+                banner.className = &#x27;status-banner error&#x27;;
+                banner.innerHTML = `&lt;i class=&quot;fa-solid fa-circle-xmark&quot;&gt;&lt;/i&gt; Not quite! Target requires Line ${target.targetColStart} to ${target.targetColEnd} and Row end ${target.targetRowEnd}. Count again!`;
+                banner.style.display = &#x27;flex&#x27;;
+            }
+        }
+
+        // Initialize Level 1
+        loadLevel(1);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Draggable Splitter Handle -->
+                        <div class="split-dragger" title="Drag left or right to resize">
+                            <div class="dragger-handle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Pane: Live Rendered Output -->
+                        <div class="split-pane right-pane">
+                            <div class="pane-header">
+                                <span>PLAYABLE GAME BOARD</span>
+                                <a href="practice/w3schools-grid-game.html" target="_blank" class="pane-link">&#8599; Open Full Game</a>
+                            </div>
+                            <div class="preview-frame-container">
+                                <iframe src="practice/w3schools-grid-game.html" title="W3Schools CSS Grid Game Preview"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             CATEGORY 6: W3SCHOOLS CSS FLEXBOX GAME - TARGET ALIGNMENT (QUESTION 6)
+             ==================================================================== -->
+        <section class="lecture-page-card" style="margin-bottom: 35px;" id="cat-w3-flex-game">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                <h2 class="lecture-section-title" style="margin: 0;">Question 6: W3Schools CSS Flexbox Game &bull; Target Alignment Quest</h2>
+                <span class="tag tag-flex" style="background: #2563eb; color: white;">W3Schools Flex Game</span>
+            </div>
+
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                Interactive game challenge based on W3Schools Flexbox positioning. Guide the elements across the pond to land precisely on target zones by testing main-axis alignment with <code>justify-content</code> and cross-axis alignment with <code>align-items</code>.
+            </p>
+
+            <!-- Playground 6 Card -->
+            <div class="playground-card" id="card-q6">
+                <!-- Preview Overlay Image with Hover & Click Effect -->
+                <div class="playground-overlay" id="overlay-q6" onclick="revealPlayground('q6')" title="Click to inspect code &amp; play live game">
+                    <img src="assets/images/w3schools-flex-game-preview.svg" alt="W3Schools CSS Flexbox Game Screenshot Preview" class="playground-thumb-img">
+                    <div class="playground-badge">
+                        <span>&#128065; Click Game Screenshot to Inspect Code &amp; Play in Draggable Split View</span>
+                    </div>
+                </div>
+
+                <!-- Split Pane Workspace -->
+                <div class="split-pane-workspace">
+                    <div class="workspace-toolbar">
+                        <div class="toolbar-title">
+                            <span class="file-icon">&#127918;</span>
+                            <span>Question 6: W3Schools Flexbox Game Source &amp; Live Play</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="tool-btn" onclick="copyCode('code-q6', this)">&#128203; Copy Code</button>
+                            <button class="tool-btn close-btn" onclick="hidePlayground('q6')">&#10005; Close</button>
+                        </div>
+                    </div>
+
+                    <div class="split-container" id="split-q6">
+                        <!-- Left Pane: Source Code -->
+                        <div class="split-pane left-pane">
+                            <div class="pane-header">
+                                <span>SOURCE CODE (HTML + CSS + JS)</span>
+                            </div>
+                            <div class="code-scroll-area">
+                                <pre><code id="code-q6">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;W3Schools CSS Flexbox Game - Target Alignment Challenge&lt;/title&gt;
+    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css&quot;&gt;
+
+    &lt;style&gt;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: &#x27;Plus Jakarta Sans&#x27;, sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            min-height: 100vh;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .w3-game-navbar {
+            max-width: 960px;
+            width: 100%;
+            background: #1e293b;
+            border-radius: 10px;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #334155;
+            margin-bottom: 24px;
+        }
+
+        .w3-brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .w3-logo-badge {
+            background: #04aa6d;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .level-btn {
+            background: #334155;
+            color: #cbd5e1;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .level-btn.active {
+            background: #04aa6d;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(4, 170, 109, 0.4);
+        }
+
+        .game-wrapper {
+            max-width: 960px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 24px;
+        }
+
+        .editor-panel {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .instructions h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instructions p {
+            font-size: 13.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .rule-callout {
+            background: rgba(4, 170, 109, 0.1);
+            border-left: 4px solid #04aa6d;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #6ee7b7;
+            margin-bottom: 20px;
+        }
+
+        .code-editor-box {
+            background: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .code-editor-box .selector {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .editor-input-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+
+        .editor-input-row label {
+            color: #38bdf8;
+            font-weight: 500;
+        }
+
+        .game-select {
+            background: #1e293b;
+            border: 1px solid #475569;
+            color: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-family: &#x27;Fira Code&#x27;, monospace;
+            font-size: 13px;
+        }
+
+        .btn-run {
+            background: #04aa6d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(4, 170, 109, 0.3);
+        }
+
+        .btn-run:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .board-panel {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Flexbox Pond Area */
+        .flex-pond {
+            position: relative;
+            background: #090e1a;
+            border: 2px solid #334155;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 440px;
+            height: 380px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Target Lilypads / Zones */
+        .target-zones-layer {
+            position: absolute;
+            inset: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            pointer-events: none;
+            gap: 15px;
+        }
+
+        .target-pad {
+            width: 70px;
+            height: 70px;
+            border: 2px dashed #04aa6d;
+            background: rgba(4, 170, 109, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6ee7b7;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Moving Frogs / Items Layer */
+        .flex-items-layer {
+            position: absolute;
+            inset: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .frog-item {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border: 2px solid #60a5fa;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s;
+        }
+
+        .frog-item.success {
+            background: linear-gradient(135deg, #04aa6d, #059669);
+            border-color: #6ee7b7;
+            box-shadow: 0 4px 20px rgba(4, 170, 109, 0.5);
+        }
+
+        .status-banner {
+            margin-top: 18px;
+            width: 100%;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            display: none;
+        }
+
+        .status-banner.success {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #064e3b;
+            color: #6ee7b7;
+            border: 1px solid #04aa6d;
+        }
+
+        .status-banner.error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #7f1d1d;
+            color: #fca5a5;
+            border: 1px solid #ef4444;
+        }
+
+        @media (max-width: 768px) {
+            .game-wrapper { grid-template-columns: 1fr; }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header class=&quot;w3-game-navbar&quot;&gt;
+        &lt;div class=&quot;w3-brand&quot;&gt;
+            &lt;span class=&quot;w3-logo-badge&quot;&gt;W3&lt;/span&gt;
+            &lt;span&gt;CSS Flexbox Game: Alignment Quest&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;display: flex; gap: 8px;&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;level-btn active&quot; onclick=&quot;loadFlexLevel(1)&quot;&gt;Level 1&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;level-btn&quot; onclick=&quot;loadFlexLevel(2)&quot;&gt;Level 2&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;level-btn&quot; onclick=&quot;loadFlexLevel(3)&quot;&gt;Level 3&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class=&quot;game-wrapper&quot;&gt;
+        &lt;section class=&quot;editor-panel&quot;&gt;
+            &lt;div class=&quot;instructions&quot;&gt;
+                &lt;h2&gt;&lt;i class=&quot;fa-solid fa-crosshairs&quot;&gt;&lt;/i&gt; &lt;span id=&quot;flex-level-title&quot;&gt;Level 1: Align to the Right&lt;/span&gt;&lt;/h2&gt;
+                &lt;p id=&quot;flex-level-desc&quot;&gt;
+                    Help the items jump into their target circles! Use &lt;code&gt;justify-content&lt;/code&gt; along the main axis and &lt;code&gt;align-items&lt;/code&gt; along the cross axis.
+                &lt;/p&gt;
+                &lt;div class=&quot;rule-callout&quot; id=&quot;flex-hint&quot;&gt;
+                    &lt;i class=&quot;fa-solid fa-lightbulb&quot;&gt;&lt;/i&gt; &lt;strong&gt;Hint:&lt;/strong&gt; Use &lt;code&gt;justify-content: flex-end;&lt;/code&gt; and &lt;code&gt;align-items: center;&lt;/code&gt; to align to the right side vertically centered.
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;code-editor-box&quot;&gt;
+                &lt;div class=&quot;selector&quot;&gt;#flex-pond {&lt;/div&gt;
+                &lt;div style=&quot;padding-left: 20px; color: #94a3b8;&quot;&gt;display: flex;&lt;/div&gt;
+                &lt;div class=&quot;editor-input-row&quot;&gt;
+                    &lt;label for=&quot;jc-select&quot;&gt;justify-content:&lt;/label&gt;
+                    &lt;select id=&quot;jc-select&quot; class=&quot;game-select&quot;&gt;
+                        &lt;option value=&quot;flex-start&quot;&gt;flex-start&lt;/option&gt;
+                        &lt;option value=&quot;center&quot;&gt;center&lt;/option&gt;
+                        &lt;option value=&quot;flex-end&quot;&gt;flex-end&lt;/option&gt;
+                        &lt;option value=&quot;space-between&quot;&gt;space-between&lt;/option&gt;
+                        &lt;option value=&quot;space-around&quot;&gt;space-around&lt;/option&gt;
+                    &lt;/select&gt;;
+                &lt;/div&gt;
+                &lt;div class=&quot;editor-input-row&quot;&gt;
+                    &lt;label for=&quot;ai-select&quot;&gt;align-items:&lt;/label&gt;
+                    &lt;select id=&quot;ai-select&quot; class=&quot;game-select&quot;&gt;
+                        &lt;option value=&quot;flex-start&quot;&gt;flex-start&lt;/option&gt;
+                        &lt;option value=&quot;center&quot;&gt;center&lt;/option&gt;
+                        &lt;option value=&quot;flex-end&quot;&gt;flex-end&lt;/option&gt;
+                    &lt;/select&gt;;
+                &lt;/div&gt;
+                &lt;div class=&quot;selector&quot;&gt;}&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;button type=&quot;button&quot; class=&quot;btn-run&quot; onclick=&quot;submitFlexGame()&quot;&gt;
+                &lt;i class=&quot;fa-solid fa-play&quot;&gt;&lt;/i&gt; Apply Flexbox Alignment
+            &lt;/button&gt;
+        &lt;/section&gt;
+
+        &lt;section class=&quot;board-panel&quot;&gt;
+            &lt;div style=&quot;font-size: 14px; font-weight: 700; color: #cbd5e1; margin-bottom: 16px;&quot;&gt;Flex Container Canvas&lt;/div&gt;
+
+            &lt;div class=&quot;flex-pond&quot;&gt;
+                &lt;!-- Target Layer --&gt;
+                &lt;div class=&quot;target-zones-layer&quot; id=&quot;target-layer&quot;&gt;
+                    &lt;div class=&quot;target-pad&quot;&gt;&lt;i class=&quot;fa-regular fa-circle-dot&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;div class=&quot;target-pad&quot;&gt;&lt;i class=&quot;fa-regular fa-circle-dot&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Active Items Layer --&gt;
+                &lt;div class=&quot;flex-items-layer&quot; id=&quot;items-layer&quot;&gt;
+                    &lt;div class=&quot;frog-item&quot;&gt;&lt;i class=&quot;fa-solid fa-frog&quot; style=&quot;font-size: 22px;&quot;&gt;&lt;/i&gt; Frog 1&lt;/div&gt;
+                    &lt;div class=&quot;frog-item&quot;&gt;&lt;i class=&quot;fa-solid fa-frog&quot; style=&quot;font-size: 22px;&quot;&gt;&lt;/i&gt; Frog 2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;status-banner&quot; id=&quot;flex-status-banner&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;script&gt;
+        let currentFlexLevel = 1;
+
+        const flexLevels = {
+            1: {
+                title: &quot;Level 1: Align to Right &amp; Center&quot;,
+                desc: &quot;Move both frogs to the target pads on the right edge, vertically centered.&quot;,
+                targetJc: &quot;flex-end&quot;,
+                targetAi: &quot;center&quot;,
+                targetLayerStyle: &quot;justify-content: flex-end; align-items: center;&quot;
+            },
+            2: {
+                title: &quot;Level 2: Dead Center Alignment&quot;,
+                desc: &quot;Center both frogs horizontally and vertically inside the container.&quot;,
+                targetJc: &quot;center&quot;,
+                targetAi: &quot;center&quot;,
+                targetLayerStyle: &quot;justify-content: center; align-items: center;&quot;
+            },
+            3: {
+                title: &quot;Level 3: Space Between on the Bottom Edge&quot;,
+                desc: &quot;Distribute frogs at opposite edges along the bottom cross axis.&quot;,
+                targetJc: &quot;space-between&quot;,
+                targetAi: &quot;flex-end&quot;,
+                targetLayerStyle: &quot;justify-content: space-between; align-items: flex-end;&quot;
+            }
+        };
+
+        function loadFlexLevel(lvl) {
+            currentFlexLevel = lvl;
+            document.querySelectorAll(&#x27;.level-btn&#x27;).forEach((btn, idx) =&gt; {
+                btn.classList.toggle(&#x27;active&#x27;, idx + 1 === lvl);
+            });
+
+            const data = flexLevels[lvl];
+            document.getElementById(&#x27;flex-level-title&#x27;).innerText = data.title;
+            document.getElementById(&#x27;flex-level-desc&#x27;).innerText = data.desc;
+
+            const targetLayer = document.getElementById(&#x27;target-layer&#x27;);
+            targetLayer.style.cssText = data.targetLayerStyle;
+
+            // reset
+            document.getElementById(&#x27;jc-select&#x27;).value = &quot;flex-start&quot;;
+            document.getElementById(&#x27;ai-select&#x27;).value = &quot;flex-start&quot;;
+
+            const itemsLayer = document.getElementById(&#x27;items-layer&#x27;);
+            itemsLayer.style.justifyContent = &quot;flex-start&quot;;
+            itemsLayer.style.alignItems = &quot;flex-start&quot;;
+
+            document.querySelectorAll(&#x27;.frog-item&#x27;).forEach(f =&gt; f.classList.remove(&#x27;success&#x27;));
+            const banner = document.getElementById(&#x27;flex-status-banner&#x27;);
+            banner.style.display = &#x27;none&#x27;;
+        }
+
+        function submitFlexGame() {
+            const jc = document.getElementById(&#x27;jc-select&#x27;).value;
+            const ai = document.getElementById(&#x27;ai-select&#x27;).value;
+
+            const itemsLayer = document.getElementById(&#x27;items-layer&#x27;);
+            itemsLayer.style.justifyContent = jc;
+            itemsLayer.style.alignItems = ai;
+
+            const target = flexLevels[currentFlexLevel];
+            const banner = document.getElementById(&#x27;flex-status-banner&#x27;);
+
+            if (jc === target.targetJc &amp;&amp; ai === target.targetAi) {
+                document.querySelectorAll(&#x27;.frog-item&#x27;).forEach(f =&gt; f.classList.add(&#x27;success&#x27;));
+                banner.className = &#x27;status-banner success&#x27;;
+                banner.innerHTML = `&lt;i class=&quot;fa-solid fa-circle-check&quot;&gt;&lt;/i&gt; Perfect! Frogs landed on the targets! Level Passed!`;
+                banner.style.display = &#x27;flex&#x27;;
+            } else {
+                document.querySelectorAll(&#x27;.frog-item&#x27;).forEach(f =&gt; f.classList.remove(&#x27;success&#x27;));
+                banner.className = &#x27;status-banner error&#x27;;
+                banner.innerHTML = `&lt;i class=&quot;fa-solid fa-circle-xmark&quot;&gt;&lt;/i&gt; Not aligned! Target needs justify-content: ${target.targetJc} and align-items: ${target.targetAi}.`;
+                banner.style.display = &#x27;flex&#x27;;
+            }
+        }
+
+        loadFlexLevel(1);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Draggable Splitter Handle -->
+                        <div class="split-dragger" title="Drag left or right to resize">
+                            <div class="dragger-handle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Pane: Live Rendered Output -->
+                        <div class="split-pane right-pane">
+                            <div class="pane-header">
+                                <span>PLAYABLE GAME BOARD</span>
+                                <a href="practice/w3schools-flex-game.html" target="_blank" class="pane-link">&#8599; Open Full Game</a>
+                            </div>
+                            <div class="preview-frame-container">
+                                <iframe src="practice/w3schools-flex-game.html" title="W3Schools CSS Flexbox Game Preview"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Site Footer -->
